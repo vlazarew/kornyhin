@@ -1,0 +1,15 @@
+theory Task1_2
+
+use import int.Int
+
+function cube (x:int):int = x * x * x
+
+predicate precondition (x:int) = x >= 0
+predicate postcondition (x y1:int) = (cube (y1 + 1) >= x) 
+predicate p_a (x y1 y2 y3:int) = (y3 = (cube (y1 + 1) - cube y1) /\ y2 = (cube (y1 + 1)))
+
+goal s_a: forall x. precondition x-> p_a x 0 1 1
+goal a_t_h: forall x y1 y2 y3. p_a x y1 y2 y3 /\ y2 > x /\ precondition x -> postcondition x y1
+goal a_f_a: forall x y1 y2 y3. p_a x y1 y2 y3 /\ y2 <= x /\ precondition x -> p_a x (y1 + 1) (y2 + y3 + 6 * (y1 + 1)) (y3 + 6 * (y1 + 1)) 
+
+end

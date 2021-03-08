@@ -1,0 +1,19 @@
+theory Task1_3
+
+use import int.Int
+
+predicate p (x y1 y2 y3:int) = (y3 - y2) >= 0
+predicate precondition (x:int) = x >= 1
+
+
+goal s_a: forall x. precondition x -> p x x 1 x
+
+goal a_t_a: forall x y1 y2 y3. precondition x /\ p x y1 y2 y3 /\ y2 < y3 -> p x (y1 + x) (y2 + 1) y3
+goal a_f_t_a: forall x y1 y2 y3. precondition x /\ p x y1 y2 y3 /\ y2 >= y3 /\ y3 = x -> p x y1 y2 y1
+
+goal goal_4: forall x y1 y2 y3. precondition x /\ p x y1 y2 y3 -> (y3 - y2) >= 0
+
+goal goal_5: forall x y1 y2 y3. precondition x /\ p x y1 y2 y3 /\ y2 < y3 -> (y3 - (y2 + 1)) < (y3 - y2)
+goal goal_6: forall x y1 y2 y3. precondition x /\ p x y1 y2 y3 /\ y2 >= y3 /\ y3 = x -> (y1 - y2) < (y3 - y2)
+
+end

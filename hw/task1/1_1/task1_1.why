@@ -1,0 +1,49 @@
+theory Task1_P1_T1
+
+use import int.Int
+
+predicate in_range(x: int) = x >= -128 /\ x <= 127
+
+predicate precondition(x1 x2 x3:int) = in_range (x1 - x3) /\ in_range (x1 + x2 - x3)
+predicate postcondition(x1 x2 x3 z: int) = (z = (x1 - x3 + x2))
+
+goal part_correct: forall x1 x2 x3. precondition x1 x2 x3 -> postcondition x1 x2 x3 (x1 - x3 + x2)
+goal termination: forall x1 x2 x3. precondition x1 x2 x3 -> in_range (x1 - x3) /\ in_range (x1 - x3 + x2)
+
+end
+
+
+theory Task1_P2_T1
+
+use import int.Int
+
+predicate in_range(x: int) = x >= -128 /\ x <= 127
+
+predicate precondition(x1 x2 x3:int) = in_range (x1 - x3) /\ in_range (x1 + x2 - x3)
+predicate postcondition(x1 x2 x3 z: int) = (z = (x1 - x3 + x2))
+
+goal part_correct_1: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) = (x2 <= 0) -> postcondition x1 x2 x3 (x1 - x3 + x2)
+goal part_correct_2: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) <> (x2 <= 0) -> postcondition x1 x2 x3 (x1 - x3 + x2)
+
+goal termination_1: forall x1 x2 x3. precondition x1 x2 x3 /\ ((x1 >= 0) = (x2 <= 0)) -> in_range (x1 - x3) /\ in_range (x1 - x3 + x2)
+goal termination_2: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) <> (x2 <= 0) -> in_range (x1 - x3) /\ in_range (x1 - x3 + x2)
+
+end
+
+
+theory Task1_P2_T2
+
+use import int.Int
+
+predicate in_range(x: int) = x >= -128 /\ x <= 127
+
+predicate precondition(x1 x2 x3:int) = in_range x1 /\ in_range x2 /\ in_range x3 /\ in_range (x1 + x2 - x3)
+predicate postcondition(x1 x2 x3 z: int) = (z = (x1 - x3 + x2))
+
+goal part_correct_1: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) = (x2 <= 0) -> postcondition x1 x2 x3 (x1 - x3 + x2)
+goal part_correct_2: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) <> (x2 <= 0) -> postcondition x1 x2 x3 (x1 - x3 + x2)
+
+goal termination_1: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) = (x2 <= 0) -> in_range (x1 + x2) /\ in_range (x1 - x3 + x2)
+goal termination_2: forall x1 x2 x3. precondition x1 x2 x3 /\ (x1 >= 0) <> (x2 <= 0) -> in_range (x1 - x3) /\ in_range (x1 - x3 + x2)
+
+end
