@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="4">
+<prover id="0" name="Alt-Ergo" version="2.4.0" timelimit="5" steplimit="0" memlimit="1000"/>
+<file name="../task1_2.why" expanded="true">
+<theory name="Task1_2" sum="77174b3f0fd88703d837690bcdb61716" expanded="true">
+ <goal name="s_a" expl="" expanded="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="12"/></proof>
+ </goal>
+ <goal name="a_t_h" expl="" expanded="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="8"/></proof>
+ </goal>
+ <goal name="a_f_a" expl="" expanded="true">
+ <proof prover="0"><result status="valid" time="0.01" steps="85"/></proof>
+ </goal>
+</theory>
+</file>
+</why3session>
