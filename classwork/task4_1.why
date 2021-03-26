@@ -1,0 +1,19 @@
+theory Name_1
+
+use import int.Int
+
+predicate precondition (x1 x2:int) = x1 >= 0
+predicate postcondition (x1 x2 z1:int) = z1 <= x1 * x2
+
+function mu (x1 x2:int): int = x1
+
+goal goal_recursion: forall x1 x2. precondition x1 x2 /\ x1 <> 0 -> mu(x1 - 1) x2 < mu x1 x2
+goal goal_mu_correct: forall x1 x2. precondition x1 x2 -> mu x1 x2 >= 0
+
+goal s_t_h: forall x1 x2. precondition x1 x2 /\ x1 = 0 -> postcondition x1 x2 0
+
+goal s_f_call_h: forall x1 x2 y1. precondition x1 x2  /\ x1 <> 0 /\ postcondition (x1 - 1) x2 y1 -> postcondition x1 x2 (y1 + x2)
+
+goal termination: forall x1 x2. precondition x1 x2 /\ x1 <> 0 -> precondition (x1 - 1) x2
+
+end
