@@ -1,0 +1,122 @@
+module Name_1
+
+use import int.Int
+
+type var_int = {mutable val_int:int;}
+
+predicate phi(x:int) = x >= 0
+predicate psi(x z:int) = z*z <= x < (z+1)*(z+1)
+
+predicate phi_d(x y:int) = x >= 0 /\ y > 0
+predicate psi_d(x y z:int) = 0 <= (x - y * z) < y
+
+lemma l1l1: forall x t. phi x /\ psi x t -> x >= t
+(*
+    forall x. x = Dx /\ phi_new x -> Mp x <> w /\ psi_new x (Mp x) 
+    Dz = const
+    Mp: Dx -> Dz \/ {w}
+    Dx = Z
+    phi_new x = phi x
+    psi_new x z = exists t. psi x t
+*)
+let lemma l1l2(x:int):unit
+    requires {phi x}
+    ensures {exists t. psi x t}
+=
+let y = {val_int = 0;} in
+    while y.val_int <> x do
+        invariant {exists t. psi y.val_int t}
+        invariant {y.val_int <= x}
+        variant {x - y.val_int}
+        y.val_int <- y.val_int + 1
+    done
+
+(* l1-l4 - разбиение sa на 4 части *)
+lemma l1: forall x. phi x -> exists t. x >= t /\ psi x t
+lemma l2: forall x y2. phi x /\ psi_d (x+1) 2 y2 -> exists t. y2 >= t /\ psi x t
+lemma l3: forall x y2. phi x /\ psi_d (x+1) 2 y2 -> exists t. (y2 < x -> y2 > 0) /\ psi x t
+lemma l4: forall x y2. phi x /\ psi_d (x+1) 2 y2 -> exists t. (y2 >= x -> x = t) /\ psi x t
+(* доказательство единственности *)
+(* lemma l5: forall x t1 t2. phi x /\ psi x t1 /\ psi x t2 -> t1 = t2 
+пусть t1 < t2
+t1 + 1 <= t2
+t1*t1 <= x < (t1+1)*(t1+1) <= t2*t2 <= x < (t2+1)*(t2+1)
+x < x
+ч.т.д.
+*)
+(* lemma l5l1: forall x t. phi x /\ psi x t -> t >= 0
+lemma l5l2: forall a b. 0 <= a <= b -> a*a <= b*b *)
+
+let lemma l5(x t1 t2:int)
+    requires {phi x}
+    requires {psi x t1}
+    requires {psi x t2}
+    ensures {t1 = t2}
+=
+    assert {t1 >= 0};
+    assert {t2 >= 0};
+    assert {forall a b. 0 <= a <= b -> a*a <= b*b};
+    if t1 < t2 then
+        assert {t1*t1 <= x < (t1+1)*(t1+1) <= t2*t2 <= x < (t2+1)*(t2+1)}
+    else if t1 > t2 then
+        assert {t2*t2 <= x < (t2+1)*(t2+1) <= t1*t1 <= x < (t1+1)*(t1+1)}
+
+(* predicate p(x y1 y2:int) = exists t. y1 >= t /\ y2 >= t /\ (y2 < y1 -> y2 > 0) /\ (y2 >= y1 -> y1 = t) /\ psi x t *)
+predicate p(x y1 y2:int) = forall t. psi x t -> y1 >= t /\ y2 >= t /\ (y2 < y1 -> y2 > 0) /\ (y2 >= y1 -> y1 = t)
+
+function mu(x y1 y2:int):int = y1
+
+val div(x1 x2:int):int
+requires {phi_d x1 x2}
+ensures {psi_d x1 x2 result}
+
+lemma l6: forall x y1 y2 t1 t2. phi x /\ psi_d x y2 t1 /\ psi_d (t1 + y2) 2 t2 /\ p x y1 y2 /\ y2 < y1 -> p x y2 t2  
+
+let sqrt(x: int):int
+    requires {phi x}
+    ensures {psi x result}
+=
+let y1 = {val_int = x;} in
+    let y2 = {val_int = 0;} in
+        y2.val_int <- div (x+1) 2;
+        while y2.val_int < y1.val_int do 
+            invariant {p x y1.val_int y2.val_int}
+            variant {mu x y1.val_int y2.val_int}
+            y1.val_int <- div x y2.val_int;
+            y1.val_int <- div (y1.val_int + y2.val_int) 2;
+            let t = y1.val_int in
+                y1.val_int <- y2.val_int;
+                y2.val_int <- t
+        done;
+        y1.val_int
+(* 
+    why должен сам построить
+    част. корр.
+    goal sa: forall x y2. phi x /\ psi_d (x+1) 2 y2 -> p x x y2
+    (*
+        x >= 0
+        0 <= (x+1 - 2*y2) < 2
+        forall t. psi x t -> x < t \/ y2 < t \/ (y2 < x /\ y2 <= 0) \/ (y2 >= x /\ x <> t)
+    *)
+    goal aa: forall x y1 y2 t1 t2. phi x /\ y2 < y1 /\ psi_d x y2 t1 /\ psi_d (t1+y2) 2 t2 /\ p x y1 y2 -> p x y2 t2
+    goal ah: forall x y1 y2. phi x /\ y2 >= y1 /\ p x y1 y2 -> psi x y1
+
+    (*завершаемость div*)
+    goal div1: forall x. phi x -> phi_d (x+1) 2
+    goal div2: forall x y1 y2. phi x /\ y2 < y1 /\ p x y1 y2 -> phi_d x y2
+    goal div3: forall x y1 y2 t1. phi x /\ y2 < y1 /\ p x y1 y2 /\ psi_d x y2 t1 -> phi_d (t1+y2) 2
+
+    (*завершаемость цикла*)
+    function mu(x y1 y2:int):int = y1
+    
+    goal correct_mu: forall x y1 y2. phi x /\ p x y1 y2 -> mu x y1 y2 >= 0
+    (* 
+    phi x
+    p x y1 y2
+    mu x y1 y2 < 0
+    *)
+    goal mu_dec: forall x y1 y2 t1 t2. phi x /\ y2 < y1 /\ p x y1 y2 /\ psi_d x y2 t1 /\ psi_d (t1+y2) 2 t2 
+                    -> mu x y2 t2 < mu x y1 y2 
+*)
+
+end
