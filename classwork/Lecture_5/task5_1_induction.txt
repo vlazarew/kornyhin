@@ -1,0 +1,9 @@
+// индукция
+lemma base: p 0
+lemma step: forall n. n>=0 /\ p n -> p n+1
+lemma induction_princip: forall p. p 0 /\ (forall n. n>=0 /\ p n -> p n+1) -> (forall n. n>=0 -> p n)
+lemma induction: p 0 /\ (forall n. n>=0 /\ p n -> p n+1) -> (forall n. n>=0 -> p n)
+ 
+lemma l1: forall n. n>=0 -> p(n)
+
+

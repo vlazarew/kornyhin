@@ -1,0 +1,45 @@
+theory Task2
+
+use import int.Int
+
+predicate phi(x:int) = true
+predicate psi(x z:int) = if x > 100 then z = x - 10 else z = 91
+
+(* фунд. множество 0, 1, 2, ... *)
+function mu(x:int):int = if x <= 100 then 101 - x else 0  
+
+goal correct_mu: forall x. phi x -> mu x >= 0
+
+(* Start - Call1 *)
+goal recur1: forall x. phi x /\ x <= 100 -> mu (x+11) < mu x
+(* Start - Call2 *)
+goal recur2: forall x y. phi x /\ x <= 100 /\ psi (x+11) y -> mu y < mu x
+
+(*
+Упрощаем и пытаемся понять, что такое mu
+goal recur2: 
+forall x y. phi x /\ x <= 100 /\ psi (x+11) y -> mu y < mu x
+forall x y. x <= 100 /\ if x+11 > 100 then y = x + 1 else y = 91 -> mu y < mu x
+forall x y. x <= 100 /\ if x > 89 then y = x + 1 else y = 91 -> mu y < mu x
+
+forall x y. x <= 89 /\ y = 91 -> mu y < mu x
+forall x y. x > 89 /\ x <= 100 /\ y = x + 1 -> mu y < mu x
+
+forall x y. x <= 89 -> mu 91 < mu x
+forall x y. x > 89 /\ x <= 100 -> mu (x+1) < mu x
+
+goal recur1: 
+forall x. x <= 100 -> mu (x+11) < mu x
+*)
+
+(*част. коррекность*)
+goal s_t_h: forall x. phi x /\ x > 100 -> psi x (x-10)
+goal s_f_call1_call2_h: forall x y1 y2. phi x /\ x <= 100 /\ psi (x+11) y1  /\ psi y1 y2 -> psi x y2
+
+(*завершаемость, для каждого вызова*)
+goal term1: forall x. phi x /\ x <= 100 -> phi (x+11)
+goal term2: forall x y. phi x /\ x <= 100 /\ psi (x+11) y -> phi y
+
+
+
+end
