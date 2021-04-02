@@ -1,0 +1,45 @@
+module Array
+
+use import int.Int
+
+type array 't
+type var_int = {mutable val_int:int;}
+
+
+function sizeFunc(arr: array 't): int
+
+axiom sizeIsPositive: forall arr: array 't. sizeFunc arr >= 0 
+
+val size(arr: array 't):int
+    ensures {result = sizeFunc arr}
+
+
+function atFunc(arr: array 't) (index: int): 't 
+
+(* Для оператора call *)
+val at(arr: array 't) (index: int): 't 
+    requires {index >= 0}
+    requires {sizeFunc arr > index}
+    ensures {result = atFunc arr index}
+
+exception StopFind
+
+let indexOf(arr: array 't) (value: 't): int 
+    ensures {(exists i. atFunc arr i = value /\ i >= 0 /\ i < sizeFunc arr) -> atFunc arr result = value}
+    ensures {(forall i. (i >= 0 /\ i < sizeFunc arr) -> atFunc arr i <> value) -> result = -1}
+=
+    let index = {val_int = 0;} in
+        try
+            while index.val_int < (size arr) do
+                invariant {(sizeFunc arr - index.val_int) >= 0}
+                invariant {(forall i. (i >= 0 /\ i < index.val_int) -> atFunc arr i <> value)}
+                invariant {index.val_int >= 0}
+                variant {sizeFunc arr - index.val_int}
+                if (at arr index.val_int) = value then
+                    raise StopFind;
+                index.val_int <- index.val_int + 1
+            done;
+        -1
+        with StopFind -> index.val_int
+        end
+end
