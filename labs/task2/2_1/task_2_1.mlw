@@ -1,0 +1,29 @@
+module Task2_1
+
+use import int.Int
+
+function powerFunc(n powerNum:int):int
+
+val power(n powerNum:int):int 
+    ensures{result = n * powerFunc n (powerNum - 1)}
+
+function divideMu(divider: int): int = divider
+
+lemma correct_divideMu: forall divider. divider >= 0 -> divideMu divider >= 0
+
+function divideFunc(x y:int):int
+
+val divide(x y:int):int 
+    requires{divideMu x > divideMu (x - y)}
+    ensures{(x - y) >= y -> result = divideFunc (x - y) y}
+    ensures{(x - y) < y /\ (x - y) > 0 -> result = x}
+    ensures{(x - y) = 0 -> result = 0}
+
+let proof(n: int):int
+    requires {n >= 0}
+    ensures {(forall i. i >= 0 /\ divideFunc (powerFunc 2 (3 * i) - powerFunc 3 i) 5 = 0) -> result = 0}
+    (* ensures {(exists i. i >= 0 -> divideFunc (powerFunc 2 (3 * i) - powerFunc 3 i) 5 <> 0) -> result <> 0} *)
+=
+    divide(power 2 (3 * n) - power 3 n) 5
+
+end

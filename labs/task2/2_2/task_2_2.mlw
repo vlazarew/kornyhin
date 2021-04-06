@@ -1,0 +1,5 @@
+module Task2_2
+
+use import int.Int
+
+end
