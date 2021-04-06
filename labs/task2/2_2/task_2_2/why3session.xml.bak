@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="4">
+<prover id="0" name="Z3" version="4.8.7" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="1" name="Coq" version="8.11.2" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="2" name="Alt-Ergo" version="2.4.0" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="3" name="CVC4" version="1.6" alternative="noBV" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="4" name="Alt-Ergo" version="2.4.0" alternative="-EM" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="5" name="CVC4" version="1.6" timelimit="5" steplimit="0" memlimit="1000"/>
+<file name="../task_2_2.mlw" expanded="true">
+<theory name="Task2_2" sum="274b5ffb54c992a495785ebc487080bb" expanded="true">
+ <goal name="WP_parameter takeAllPrimeNumbers" expl="VC for takeAllPrimeNumbers" expanded="true">
+ <proof prover="0" obsolete="true"><result status="timeout" time="5.00"/></proof>
+ <proof prover="1" obsolete="true"><unedited/></proof>
+ <proof prover="2" obsolete="true"><result status="highfailure" time="0.01"/></proof>
+ <proof prover="3" obsolete="true"><result status="unknown" time="0.03"/></proof>
+ <proof prover="4" obsolete="true"><result status="highfailure" time="0.01"/></proof>
+ <proof prover="5" obsolete="true"><result status="unknown" time="0.03" steps="8417"/></proof>
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter takeAllPrimeNumbers.1" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.2" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.01" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.3" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.02" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.4" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.00" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.5" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.00" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.6" expl="precondition" expanded="true">
+  <proof prover="0"><result status="timeout" time="5.00"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.7" expl="precondition">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.00" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.8" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.01" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.9" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><unedited/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.00" steps="20"/></proof>
+  <proof prover="3" obsolete="true"><result status="valid" time="0.00"/></proof>
+  <proof prover="4" obsolete="true"><result status="valid" time="0.00" steps="22"/></proof>
+  <proof prover="5" obsolete="true"><result status="valid" time="0.01" steps="1014"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.10" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><unedited/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.00" steps="18"/></proof>
+  <proof prover="3" obsolete="true"><result status="valid" time="0.01"/></proof>
+  <proof prover="4" obsolete="true"><result status="valid" time="0.00" steps="21"/></proof>
+  <proof prover="5" obsolete="true"><result status="valid" time="0.00" steps="1680"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.11" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><unedited/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.01" steps="20"/></proof>
+  <proof prover="3" obsolete="true"><result status="valid" time="0.01"/></proof>
+  <proof prover="4" obsolete="true"><result status="valid" time="0.01" steps="22"/></proof>
+  <proof prover="5" obsolete="true"><result status="valid" time="0.01" steps="1797"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.12" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02"/></proof>
+  <proof prover="1" obsolete="true"><unedited/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.01" steps="35"/></proof>
+  <proof prover="3" obsolete="true"><result status="unknown" time="0.04"/></proof>
+  <proof prover="4" obsolete="true"><result status="highfailure" time="0.01"/></proof>
+  <proof prover="5" obsolete="true"><result status="unknown" time="0.04" steps="10544"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.13" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><unedited/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.01" steps="20"/></proof>
+  <proof prover="3" obsolete="true"><result status="valid" time="0.00"/></proof>
+  <proof prover="4" obsolete="true"><result status="valid" time="0.00" steps="22"/></proof>
+  <proof prover="5" obsolete="true"><result status="valid" time="0.01" steps="1772"/></proof>
+  </goal>
+  <goal name="WP_parameter takeAllPrimeNumbers.14" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><unedited/></proof>
+  <proof prover="2" obsolete="true"><result status="valid" time="0.00" steps="26"/></proof>
+  <proof prover="3" obsolete="true"><result status="valid" time="0.00"/></proof>
+  <proof prover="4" obsolete="true"><result status="valid" time="0.00" steps="30"/></proof>
+  <proof prover="5" obsolete="true"><result status="valid" time="0.01" steps="2143"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>

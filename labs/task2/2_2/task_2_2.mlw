@@ -2,4 +2,91 @@ module Task2_2
 
 use import int.Int
 
+type var_set 't
+type var_int = {mutable val_int: int;}
+type var_set_int = {mutable values: var_set int;}
+
+function sqr(x: int):int = x * x
+
+function sizeFunc(set: var_set_int): int
+
+axiom sizeIsPositive: forall set: var_set_int. sizeFunc set >= 0 
+
+(* val size(set: var_set_int):int
+    ensures {result = sizeFunc set} *)
+
+function atFunc(set: var_set_int) (index: int): int
+
+val at(set: var_set_int) (index: int): int
+    requires {index >= 0}
+    (* requires {sizeFunc set > index} *)
+    ensures {result = atFunc set index}
+
+
+function inSetFunc(set: var_set_int) (value: int): bool
+
+val inSet(set: var_set_int) (value: int): bool
+    (* requires {index >= 0} *)
+    (* requires {sizeFunc set > index} *)
+    ensures {(exists i. i >= 0 /\ inSetFunc set i = true) -> inSetFunc set value = result}
+    ensures {(forall i. i >= 0 -> inSetFunc set i = false) -> inSetFunc set value = result}
+    (* ensures {result = inSetFunc set index} *)
+
+(* function addFunc(resultSet: set 't) (index: int): set 't 
+
+val add(resultSet: set 't) (index: int): set 't 
+    requires {index >= 0}
+    (* requires {sizeFunc arr > index} *)
+    ensures {result = addFunc resultSet index} *)
+
+function removeFunc(set: var_set_int) (value: int): var_set_int
+
+val remove(set: var_set_int) (value: int): var_set_int
+    (* requires{sizeFunc set <> 0} *)
+    requires{value >= 0}
+
+axiom removedLastValue: forall set: var_set_int, value: int. not inSetFunc (removeFunc set value) value
+axiom removedNotLastValue: forall set: var_set_int, value, tempValue: int. (value <> tempValue) -> ((inSetFunc set tempValue) = (inSetFunc (removeFunc set value) tempValue))
+
+let takeAllPrimeNumbers(n:int) (resultSet:var_set_int) (complexSet: var_set_int): var_set_int
+    requires{n >= 2}
+    requires{sizeFunc resultSet = 0}
+    requires{forall k. k >= 0 /\ k <= n -> inSetFunc complexSet k}
+=
+    let index = {val_int = 2;} in
+        while (sqr index.val_int) <= n do
+            invariant {n - (sqr (index.val_int - 1)) >= n - (sqr index.val_int)}
+            invariant {index.val_int >= 2}
+            variant {n - (sqr index.val_int)}
+                    
+            let j = {val_int = (sqr index.val_int);} in
+                while j.val_int <= n do
+                    invariant {n - j.val_int + index.val_int >= n - j.val_int}
+                    invariant {n - (sqr index.val_int) >= 0}
+                    invariant {j.val_int >= (sqr index.val_int)}
+                    variant {n - j.val_int}
+
+                    remove complexSet j.val_int;
+                    j.val_int <- j.val_int + index.val_int;
+                done;
+            index.val_int <- index.val_int + 1;
+        done;
+
+    (* let resultIndex = {val_int = 0;} in
+        let index = {val_int = 2;} in
+            while index.val_int < n do
+                invariant {n - index.val_int >= 0}
+                invariant {index.val_int >= 2}
+                variant {n - index.val_int}
+
+                if at complexSet index.val_int > 0 then
+                (* if true then *)
+                    at resultSet resultIndex.val_int = at complexSet index.val_int;
+                    resultIndex.val_int <- resultIndex.val_int + 1;
+                
+                index.val_int <- index.val_int + 1;
+            done; *)
+    (* resultSet *)
+    complexSet
+
 end
