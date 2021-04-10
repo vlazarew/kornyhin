@@ -1,0 +1,27 @@
+module Replace
+
+use import array1.Array1
+use import int.Int 
+
+type var_arr 't = {mutable val_arr: array 't;}
+
+let replace (arr :array 't) (a b:'t): array 't
+ensures {forall ind. ind >= 0 /\ ind < size_func arr /\ get_func arr ind = a -> get_func result ind = b}
+ensures {forall ind. ind >= 0 /\ ind < size_func arr /\ get_func arr ind <> a -> get_func result ind = get_func arr ind}
+ensures {size_func arr = size_func result}
+=
+let index = {val_int = 0;} in
+    let res = {val_arr = arr; } in
+        while ((index.val_int) < (size res.val_arr)) do
+            invariant {forall ind. ind >= index.val_int /\ ind < size_func arr -> get_func arr ind = get_func res.val_arr ind } 
+            invariant {size_func arr = size_func res.val_arr}
+            invariant {forall ind. ind >= 0 /\ ind < index.val_int /\ get_func arr ind = a -> get_func res.val_arr ind = b}
+            invariant {forall ind. ind >= 0 /\ ind < index.val_int /\ get_func arr ind <> a -> get_func res.val_arr ind = get_func arr ind}
+            invariant {0 <= index.val_int <= size_func res.val_arr}
+            variant {size_func res.val_arr - index.val_int}
+            if (get res.val_arr index.val_int) = a then
+                res.val_arr <- set res.val_arr index.val_int b;
+            index.val_int <- index.val_int + 1
+        done;
+        res.val_arr
+end

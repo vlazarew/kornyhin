@@ -1,0 +1,37 @@
+module Array1
+
+use import int.Int
+
+type array 't
+type var_int = {mutable val_int:int;}
+
+
+function size_func(arr: array 't): int
+
+axiom size_is_positive: forall arr: array 't. size_func arr >= 0 
+
+val size(arr: array 't):int
+    ensures {result = size_func arr}
+
+
+function get_func(arr: array 't) (index: int): 't 
+
+(* Для оператора call *)
+val get(arr: array 't) (index: int): 't 
+    requires {index >= 0}
+    requires {size_func arr > index}
+    ensures {result = get_func arr index}
+
+function set_func (arr :array 't) (i: int) (b:'t): array 't
+axiom setdef_1: forall arr: array 't, i idx:int, b: 't. 
+    0 <= idx < size_func arr /\ i <> idx /\ 0 <= i < size_func arr -> get_func arr idx = get_func (set_func arr i b) idx
+axiom setdef_2: forall arr: array 't, i idx:int, b: 't. 
+    0 <= idx < size_func arr /\ i = idx /\ 0 <= i < size_func arr -> get_func (set_func arr i b) idx = b
+axiom setdef_3: forall arr: array 't, i idx:int, b: 't. 
+    size_func arr = size_func (set_func arr i b)
+
+
+val set (arr :array 't) (i: int) (b:'t): array 't
+    requires {size_func arr > i >= 0}
+    ensures {result = set_func arr i b}
+end
