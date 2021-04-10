@@ -4,6 +4,8 @@ use import int.Int
 
 function powerFunc(n powerNum:int):int
 
+axiom power_zero: forall x. powerFunc x 0 = 1
+
 val power(n powerNum:int):int 
     ensures{result = n * powerFunc n (powerNum - 1)}
 

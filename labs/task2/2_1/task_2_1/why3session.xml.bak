@@ -9,17 +9,17 @@
 <prover id="4" name="Z3" version="4.8.7" timelimit="5" steplimit="0" memlimit="1000"/>
 <prover id="5" name="CVC4" version="1.6" timelimit="5" steplimit="0" memlimit="1000"/>
 <file name="../task_2_1.mlw" expanded="true">
-<theory name="Task2_1" sum="1e913ab9e6db8ee376fc61c3834127b5" expanded="true">
+<theory name="Task2_1" sum="46ad91d4f862dd55c876f30fda9b3d05" expanded="true">
  <goal name="correct_divideMu" expl="" expanded="true">
  <proof prover="1"><result status="valid" time="0.01" steps="0"/></proof>
  </goal>
  <goal name="WP_parameter proof" expl="VC for proof" expanded="true">
  <proof prover="0"><unedited/></proof>
  <proof prover="1"><result status="timeout" time="5.00"/></proof>
- <proof prover="2" obsolete="true"><result status="valid" time="0.00"/></proof>
+ <proof prover="2"><result status="valid" time="0.00"/></proof>
  <proof prover="3"><result status="timeout" time="5.00"/></proof>
  <proof prover="4"><result status="valid" time="0.01"/></proof>
- <proof prover="5"><result status="valid" time="0.00" steps="572"/></proof>
+ <proof prover="5"><result status="valid" time="0.00" steps="543"/></proof>
  </goal>
 </theory>
 </file>
