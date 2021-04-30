@@ -1,0 +1,118 @@
+(* theory Map
+
+type map 'k 'v
+
+function get(m: map 'k 'v)(key: 'k): 'v
+
+function set(m: map 'k 'v)(key: 'k)(value: 'v): map 'k 'v
+
+axiom set_ax1: forall key1 key2: 'k, value: 'v, m: map 'k 'v. key1 <> key2 -> get m key1 = get (set m key2 value) key1
+axiom set_ax2: forall key: 'k, value: 'v, m: map 'k 'v. get (set m key value) key = value
+
+end *)
+
+
+module Replace
+
+use import int.Int
+use import ref.Ref
+use import map.Map
+
+type elem 't 's
+function get_t (elem 't 's):'t
+function get_s (elem 't 's):'s
+function make_elem 't 's: elem 't 's
+axiom make_elem_a: forall t:'t, s:'s. get_t (make_elem t s) = t
+
+type block_id 't
+type pointer 't = {blkid: block_id 't; offset: int}
+type memory 't 's = map (pointer 't) 's (* Отображение pointer -> value *)
+type alloc_table 't = map (block_id 't) int (* Отображение block_id -> int *)
+
+function select(mem: memory 't 's) (arr: pointer 't): 's = get mem arr
+function shift(arr: pointer 't) (offset: int): pointer 't
+function store (mem: memory 't 's) ( arr: pointer 't ) ( value : 's ) : memory 't 's= set mem arr value
+
+function get_size (block_sizes: alloc_table 't) (blkid: block_id 't): int = get block_sizes blkid
+
+predicate same_block (p1 p2: pointer 't) = p1.blkid = p2.blkid
+
+axiom shift_func: forall p: pointer 't, shift_offset: int. 
+	(shift p shift_offset).offset = p.offset + shift_offset /\
+	same_block (shift p shift_offset) p
+
+predicate valid (p: pointer 't) (mem: (memory 't)) (block_sizes: alloc_table 't) = 
+    (0 <= p.offset < (get_size block_sizes p.blkid))
+
+val acc_safe (mem: memory 't 's) (block_sizes: alloc_table 't) ( p: pointer 't ): 's
+    requires { valid p mem block_sizes }
+    ensures { select mem p = result }
+
+val shift_safe ( p: pointer 't) (shift_offset: int): pointer 't
+    ensures { shift p shift_offset = result }
+
+val subs_safe ( p1 p2: pointer 't): int
+    requires { same_block p1 p2 }
+    ensures { p1 = shift p2 result }
+
+val upd_safe (mem: ref (memory 't 's)) (block_sizes: alloc_table 't) ( p: pointer 't ) ( value : 's ) : unit
+    requires { valid p !mem block_sizes }
+    ensures { select !mem p = value }
+    ensures { forall q: pointer 't. q <> p -> select !mem q = select (old !mem) q}
+    writes { mem }
+
+val malloc(mem: memory 't 's) (block_sizes: ref (alloc_table 't)) (size: int) : pointer 't
+    requires {size >= 0}
+    ensures {forall id:block_id 't. id <> result.blkid -> get_size (old !block_sizes) id = get_size !block_sizes id}
+    ensures {get_size (old !block_sizes) result.blkid < 0}
+    ensures {get_size !block_sizes result.blkid = size}
+    ensures {result.offset = 0}
+    writes { block_sizes }
+    
+val free(mem: memory 't 's) (block_sizes: ref (alloc_table 't)) (array: pointer 't): unit
+    requires {get_size !block_sizes array.blkid >= 0}
+    requires {array.offset = 0}
+    ensures {forall id:block_id 't. id <> array.blkid -> get_size (old !block_sizes) id = get_size !block_sizes id}
+    ensures {get_size !block_sizes array.blkid < 0}
+    writes { block_sizes }
+
+
+
+let replace (mem_t: ref (memory (elem 't 's) 't)) (mem_s: ref (memory (elem 't 's) 's)) (block_sizes: alloc_table (elem 't 's)) (arr: pointer (elem 't 's)) (size: int) (a: 't) (b: 's):unit
+    requires {size >= 0}
+    requires {forall ind. 0 <= ind < size -> valid (shift arr ind) !mem block_sizes}
+    ensures {forall ind. 0 <= ind < size /\ select (old !mem) (shift arr ind) = a -> select !mem (shift arr ind) = b}
+    ensures {forall ind. 0 <= ind < size /\ select (old !mem) (shift arr ind) <> a -> select !mem (shift arr ind) = select (old !mem) (shift arr ind)}
+    ensures {forall p: pointer 't. valid p !mem block_sizes /\ same_block p arr /\  not (arr.offset <= p.offset < (shift arr size).offset) 
+            -> select !mem p = select (old !mem) p}
+    ensures {forall p: pointer 't. valid p !mem block_sizes /\ not (same_block p arr) -> select !mem p = select (old !mem) p}
+=
+'Pre:
+    let p = ref arr in
+        while ((subs_safe !p arr) < size) do
+        invariant { 0 <= (!p.offset - arr.offset) <= size }
+        invariant { forall ind. 0 <= ind < !p.offset - arr.offset /\ select (at !mem 'Pre) (shift arr ind) = a -> select !mem (shift arr ind) = b }
+        invariant { forall ind. 0 <= ind < !p.offset - arr.offset /\ select (at !mem 'Pre) (shift arr ind) <> a -> select !mem (shift arr ind) = select (at !mem 'Pre) (shift arr ind)}
+        invariant { forall ind. !p.offset - arr.offset <= ind < size -> select !mem (shift arr ind) = select (at !mem 'Pre) (shift arr ind) }
+        invariant { same_block !p arr}
+        invariant {forall p: pointer 't. valid p !mem block_sizes /\ same_block p arr /\  not (arr.offset <= p.offset < (shift arr size).offset) 
+            -> select !mem p = select (at !mem 'Pre) p}
+        invariant {forall p: pointer 't. valid p !mem block_sizes /\ not (same_block p arr) -> select !mem p = select (at !mem 'Pre) p}
+        variant { size - (!p.offset - arr.offset) }
+            if get_k (acc_safe !mem block_sizes !p) = a then
+                upd_safe mem block_sizes !p e;
+            p := shift_safe !p 1;
+        done
+
+let call_replace(mem: ref (memory int)) (block_sizes: ref (alloc_table int)):unit
+    
+=
+    let a = malloc !mem block_sizes 2 in
+        upd_safe mem !block_sizes a 1;
+        upd_safe mem !block_sizes (shift_safe a 1) 2;
+        replace mem !block_sizes (shift_safe a  1) 1 2 3;
+        assert { select !mem a = 1 };
+        assert { select !mem (shift a 1) = 3 };
+        free !mem block_sizes a
+
+end
