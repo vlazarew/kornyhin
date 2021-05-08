@@ -24,25 +24,41 @@ function get_s (elem 't 's):'s
 function make_elem 't 's: elem 't 's
 axiom make_elem_a: forall t:'t, s:'s. get_t (make_elem t s) = t
 
-type block_id 't
-type pointer 't = {blkid: block_id 't; offset: int}
+(* type block_id 't *)
+(* type pointer 't = {blkid: block_id 't; offset: int} *)
+type pointer 't
 type memory 't 's = map (pointer 't) 's (* Отображение pointer -> value *)
-type alloc_table 't = map (block_id 't) int (* Отображение block_id -> int *)
+(*type alloc_table 't = map (pointer 't) int (* Отображение pointer -> int *)*)
+type alloc_table 't
+
 
 function select(mem: memory 't 's) (arr: pointer 't): 's = get mem arr
 function shift(arr: pointer 't) (offset: int): pointer 't
 function store (mem: memory 't 's) ( arr: pointer 't ) ( value : 's ) : memory 't 's= set mem arr value
 
-function get_size (block_sizes: alloc_table 't) (blkid: block_id 't): int = get block_sizes blkid
+function offset_min(pointer 't)(alloc_table 't): int
+function offset_max(pointer 't)(alloc_table 't): int
 
-predicate same_block (p1 p2: pointer 't) = p1.blkid = p2.blkid
+
+
+function get_size (block_sizes: allo)c_table 't) (blkid: pointer 't): int = get block_sizes blkid
+
+(* predicate same_block (p1 p2: pointer 't) = p1.blkid = p2.blkid *)
+predicate same_block (p1 p2: pointer 't)
+
+(* axiom same_block_pointers_have_same_size *)
 
 axiom shift_func: forall p: pointer 't, shift_offset: int. 
 	(shift p shift_offset).offset = p.offset + shift_offset /\
 	same_block (shift p shift_offset) p
 
-predicate valid (p: pointer 't) (mem: (memory 't)) (block_sizes: alloc_table 't) = 
-    (0 <= p.offset < (get_size block_sizes p.blkid))
+(* predicate valid (p: pointer 't) (mem: (memory 't)) (block_sizes: alloc_table 't) = 
+    (0 <= p.offset < (get_size block_sizes p.blkid)) *)
+predicate valid (p: pointer 't) (mem: (memory 't)) (block_sizes: alloc_table 't) =
+    (offset_min p block_sizes <= 0 <= offset_max p block_sizes)
+
+predicate valid_range (p: pointer 't) (mem: (memory 't)) (block_sizes: alloc_table 't) (b e: int) =
+    (offset_min p block_sizes <= b <= e <= offset_max p block_sizes)
 
 val acc_safe (mem: memory 't 's) (block_sizes: alloc_table 't) ( p: pointer 't ): 's
     requires { valid p mem block_sizes }
