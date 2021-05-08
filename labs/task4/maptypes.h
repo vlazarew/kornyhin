@@ -12,7 +12,8 @@ typedef struct {
 } Value;
 
 typedef struct {
-    Key key __attribute__((noembed));
+//    Key key __attribute__((noembed));
+    Key key;
     Value value;
     int existent;
 } Item;
