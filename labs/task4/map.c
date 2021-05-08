@@ -31,6 +31,7 @@ int addElement(Map *map, Key *key, Value *value) {
     }
 
     map->count++;
+    map->items[map->count] = newItem;
 
     return 1;
 }
