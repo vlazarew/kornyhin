@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
     }
 
     success = removeElement(map, key, item);
-    if (success != 0) {
+    if (success != 1) {
         printf("Error in removeElement(map, key, item)");
         return -1;
     }

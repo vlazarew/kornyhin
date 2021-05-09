@@ -7,6 +7,14 @@
  * @param size - масмальный размер массива (кол-во items в нем)
  * @return 0 - все ОК, -1 - фиаско
  */
+/*@
+    requires    size >= 0;
+    requires    \valid(map + (0..size - 1));
+    ensures     \forall integer i; 0 <= i < size ==> map->items[i].existent == 0;
+    ensures     map->capacity == size;
+    ensures     map->count == 0;
+    assigns     map[0..size - 1];
+ */
 int initializeMap(Map *map, int size) {
 //    Проверка на дурака (зачем выделять память под ничего)
     if (size <= 0) {
@@ -115,6 +123,11 @@ int removeElement(Map *map, Key *key, Value *value) {
 
             return 1;
         }
+
+//        Если вдруг найдана свободная ячейка, то это фиаско
+        if (map->items[calcIndex].existent == 0) {
+            return 0;
+        }
     }
 
 //    Когда не нашли вообще когда
@@ -136,12 +149,19 @@ int getElement(Map *map, Key *key, Value *value) {
 //        Item tempItem = map->items[calcIndex];
 
         //        Если нашли занятую ячейку и ключ совпал
+//        if (tempItem.state == BUSY &&
         if (map->items[calcIndex].existent == 1 &&
             map->items[calcIndex].key.a == key->a &&
             map->items[calcIndex].key.b == key->b) {
 //            Возвращаем значение
             *value = map->items[calcIndex].value;
             return 1;
+        }
+
+//        Если наткнулись на свободную ячейку
+//        if (tempItem.state == FREE) {
+        if (map->items[calcIndex].existent == 0) {
+            return 0;
         }
     }
 
