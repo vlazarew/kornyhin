@@ -15,6 +15,7 @@ typedef struct {
 //    Key key __attribute__((noembed));
     Key key;
     Value value;
+// 0 - не занят, 1 - занят
     int existent;
 } Item;
 

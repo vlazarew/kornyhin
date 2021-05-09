@@ -1,0 +1,15 @@
+1. Реализация
+    Поиск/добавление/удаление ключа в ассоциативном массиве реализован как описано в Варианте В (хеш-таблица с
+    линейным пробированием).
+
+
+2. Тестирование
+    2.1. Статический анализ
+         * Clang ('scan-build clang --analyze map.c',
+                 'scan-build clang -fsanitize=address map.c')
+         * Splint ('{PATH_TO_SPLINT_BINARY} -weak map.c')
+         * Cppcheck ('cppcheck map.c')
+    2.2. Динамический анализ
+        * Valgrind
+
+    2.3. Файл с тестами - tests.c

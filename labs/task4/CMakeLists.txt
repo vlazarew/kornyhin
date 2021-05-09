@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(task4
         map.h
-        maptypes.h map.c main.c)
+        maptypes.h map.c tests.c)

@@ -1,65 +1,162 @@
 #include <malloc.h>
 #include "map.h"
 
+/**
+ * Создание пустого ассоциативного массива.
+ * @param map - указатель на инициализируемый массив
+ * @param size - масмальный размер массива (кол-во items в нем)
+ * @return 0 - все ОК, -1 - фиаско
+ */
 int initializeMap(Map *map, int size) {
+//    Проверка на дурака (зачем выделять память под ничего)
+    if (size <= 0) {
+        return -1;
+    }
+
+//    Выделение памяти непосредстсвенно
+    map->items = malloc(size * sizeof(Item));
+
+//    В случае, если память не выделилась
+    if (!map->items) {
+        return -1;
+    }
+
+//    Инициализация дефолтными значениями
     map->capacity = size;
+    map->count = 0;
 
-    Item *items = malloc(sizeof(Item) * size);
-    map->items = items;
+    for (int i = 0; i < size; i++) {
+        map->items[i].existent = 0;
+    }
+
     return 0;
 }
 
+/**
+ * Освобождаем динамическую память из под map
+ * @param map - указатель на ассоциативный массив
+ */
 void finalizeMap(Map *map) {
-    free(map);
+    free(map->items);
 }
 
+/**
+ * Реализация хеш-функции
+ * @param key - указатель на ключ
+ * @return промежуточное значение для рассчета индекса
+ */
+int hash(Key *key) {
+    int result = key->a * 33 + key->b;
+    return result >= 0 ? result : -result;
+}
+
+int getCalculatedIndex(Map *map, int hashValue, int index) { return (hashValue + index) % map->capacity; }
+
+/**
+ * Добавление в ассоциативный массив отображения key -> value
+ * @param map - указатель на заданный ассоциативный массив
+ * @param key - указатель на ключ
+ * @param value - указатель на значение
+ * @return 1 - ОК, 0 - фиаско
+ */
 int addElement(Map *map, Key *key, Value *value) {
-    Item newItem;
-    newItem.key = *key;
-    newItem.value = *value;
-    newItem.existent = 1;
+//    Получение хеша от ключа
+    int hashValue = hash(key);
 
-    if (map->count == map->capacity) {
-        return 0;
-    }
+    for (int index = 0; index < map->capacity; index++) {
+        int calcIndex = getCalculatedIndex(map, hashValue, index);
+//        Item *tempItem = &map->items[calcIndex];
 
-    for (int i = 0; i < map->capacity; ++i) {
-        Item tmp = map->items[i];
-        if (tmp.key.a == newItem.key.a && tmp.key.b == newItem.key.b) {
-            return 0;
-        }
-    }
-
-    map->count++;
-    map->items[map->count] = newItem;
-
-    return 1;
-}
-
-int removeElement(Map *map, Key *key, Value *value) {
-
-    for (int i = 0; i < map->capacity; ++i) {
-        Item tmp = map->items[i];
-        if (tmp.key.a == key->a && tmp.key.b == key->b) {
-            if (value != nullptr) {
-                value = &tmp.value;
-            }
-
-            free(tmp);
-        }
-    }
-    return 0;
-}
-
-int getElement(Map *map, Key *key, Value *value) {
-
-    for (int i = 0; i < map->capacity; ++i) {
-        Item tmp = map->items[i];
-        if (tmp.key.a == key->a && tmp.key.b == key->b) {
-            value = &tmp.value;
+//        Если попали в незанятую ячейку
+        if (map->items[calcIndex].existent != 1) {
+//            Заполняем вводными данными
+            map->items[calcIndex].key = *key;
+            map->items[calcIndex].value = *value;
+            map->items[calcIndex].existent = 1;
+//            Отражаем добавление в count
+            map->count++;
+//            Well
             return 1;
         }
     }
 
+//    Если мы здесь, то ни разу не попали в незанятую ячейку => нам не хватило места
+    return 0;
+}
+
+
+/**
+ * Удаление сохраненного значения из ассоциативного массива
+ * @param map - указатель на заданный ассоциативный массив
+ * @param key - указатель на ключ
+ * @param value - указатель на значение
+ * @return 1 - ОК, 0 - фиаско
+ */
+int removeElement(Map *map, Key *key, Value *value) {
+    int hashValue = hash(key);
+
+    for (int index = 0; index < map->capacity; index++) {
+        int calcIndex = getCalculatedIndex(map, hashValue, index);
+//        Item tempItem = map->items[calcIndex];
+
+//        Если нашли занятую ячейку и ключ совпал
+        if (map->items[calcIndex].existent == 1 &&
+            map->items[calcIndex].key.a == key->a &&
+            map->items[calcIndex].key.b == key->b) {
+
+//            Помечаем как удаленную, уменьшаем счетчик в ассоц массиве
+            map->items[calcIndex].existent = 0;
+            map->count--;
+
+//            Опционально запоминаем удаляемое значение
+            if (value) {
+                *value = map->items[calcIndex].value;
+            }
+
+            return 1;
+        }
+
+//        Если вдруг найдана свободная ячейка, то это фиаско
+        if (map->items[calcIndex].existent == 0) {
+            return 0;
+        }
+    }
+
+//    Когда не нашли вообще когда
+    return 0;
+}
+
+/**
+ * Получение значения элемента по его ключу в ассоциативном массиве
+ * @param map - указатель на заданный ассоциативный массив
+ * @param key - указатель на ключ
+ * @param value - указатель на значение
+ * @return 1 - ОК, 0 - фиаско
+ */
+int getElement(Map *map, Key *key, Value *value) {
+    int hashValue = hash(key);
+
+    for (int index = 0; index < map->capacity; index++) {
+        int calcIndex = getCalculatedIndex(map, hashValue, index);
+//        Item tempItem = map->items[calcIndex];
+
+        //        Если нашли занятую ячейку и ключ совпал
+//        if (tempItem.state == BUSY &&
+        if (map->items[calcIndex].existent == 1 &&
+                map->items[calcIndex].key.a == key->a &&
+                map->items[calcIndex].key.b == key->b) {
+//            Возвращаем значение
+            *value = map->items[calcIndex].value;
+            return 1;
+        }
+
+//        Если наткнулись на свободную ячейку
+//        if (tempItem.state == FREE) {
+        if (map->items[calcIndex].existent == 0) {
+            return 0;
+        }
+    }
+
+//    Когда вообще нет такого эл-та в мапе
     return 0;
 }
