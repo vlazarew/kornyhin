@@ -55,31 +55,13 @@ int main(int argc, char *argv[]) {
     value = generateValue(20, 10);
     success = addElement(map, key, value);
     if (success != 1) {
-        printf("Error in getElement(map, key, item)");
-        return -1;
-    }
-
-    success = addElement(map, key, value);
-    if (success != 1) {
-        printf("Error in getElement(map, key, item)");
-        return -1;
-    }
-
-    success = addElement(map, key, value);
-    if (success != 1) {
-        printf("Error in getElement(map, key, item)");
-        return -1;
-    }
-
-    success = addElement(map, key, value);
-    if (success != 1) {
-        printf("Error in getElement(map, key, item)");
+        printf("Error in addElement(map, key, value)");
         return -1;
     }
 
     success = addElement(map, key, value);
     if (success != 0) {
-        printf("Error in getElement(map, key, item)");
+        printf("Error in addElement(map, key, value)");
         return -1;
     }
 
@@ -95,11 +77,6 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    success = removeElement(map, key, item);
-    if (success != 1) {
-        printf("Error in removeElement(map, key, item)");
-        return -1;
-    }
-
+    printf("Success");
     return 0;
 }
