@@ -1,5 +1,5 @@
-#include <malloc.h>
-#include "map.h"
+// #include <malloc.h>
+// #include "map.h"
 
 /*@
     predicate key_valid(Map *map, integer index) = map->items[index].key.a != 0 || map->items[index].key.b != 0;
@@ -21,8 +21,8 @@
     predicate range_existent(Map *map, integer m, integer n) = \forall integer k; m <= k < n ==> map->items[k].existent == 1;
 
     predicate item_saved{L1, L2}(Map *map, integer k) = \at(map->items[k], L1) == \at(map->items[k], L2);
-    predicate items_saved{L1, L2}(Map *map, integer m, integer n) = \forall integer k; m <= k < n ==> item_saved{L1, L2}(map, k);
-*/
+    predicate items_saved{L1, L2}(Map *map, integer m, integer n) = \forall integer k; m <= k < n ==> item_saved{L1, L2}(map, k);*/
+// */
 
 /*@ 
 
@@ -47,8 +47,8 @@ axiomatic ItemsCount{
 
     logic integer all_count(Map *map) = count(map, 0, map->capacity);
 }
-
 */
+// */
 
 
 /**
@@ -103,8 +103,8 @@ void finalizeMap(Map *map) {
  * @return промежуточное значение для рассчета индекса
  */
 /*@
-    requires \valid(key);
-*/
+    requires \valid(key);*/
+// */
 int hash(Key *key) {
     int result = key->a * 33 + key->b;
     return result >= 0 ? result : -result;
@@ -112,8 +112,8 @@ int hash(Key *key) {
 
 /*@
     requires    \valid(map) && map_valid(map);
-    requires    0 <= index <= map->capacity;
-*/
+    requires    0 <= index <= map->capacity;*/
+// */
 int getCalculatedIndex(Map *map, int hashValue, int index) { return (hashValue + index) % map->capacity; }
 
 /**
@@ -132,7 +132,7 @@ int addElement(Map *map, Key *key, Value *value) {
 //        Item *tempItem = &map->items[calcIndex];
 
 // Хранить можем только единственное отображение
-        if (map->items[calcIndex].existent == 1 && 
+        if (map->items[calcIndex].existent == 1 &&
             map->items[calcIndex].key.a == key->a &&
             map->items[calcIndex].key.b == key->b){
                 return 0;
