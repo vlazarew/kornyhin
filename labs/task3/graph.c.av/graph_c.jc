@@ -44,13 +44,12 @@ predicate is_vertex{L}(__anonstruct_Graph_4[..] g, integer v) =
 \at(((0 <= v) && (v < (g.vsize :> integer))),L)
 
 predicate edge_valid{L}(__anonstruct_Graph_4[..] g_0, integer k_1) =
-\at((((g_0.edges + k_1).existent_0 == (1 :> int32)) ==>
+\at(((! ((g_0.edges + k_1).existent_0 == 0)) ==>
       (((is_vertex{L}(g_0, ((g_0.edges + k_1).from :> integer)) &&
           is_vertex{L}(g_0, ((g_0.edges + k_1).to :> integer))) &&
-         ((g_0.vertices + ((g_0.edges + k_1).from :> integer)).existent ==
-           (1 :> int32))) &&
-        ((g_0.vertices + ((g_0.edges + k_1).to :> integer)).existent ==
-          (1 :> int32)))),L)
+         (! ((g_0.vertices + ((g_0.edges + k_1).from :> integer)).existent ==
+              0))) &&
+        (! ((g_0.vertices + ((g_0.edges + k_1).to :> integer)).existent == 0)))),L)
 
 predicate edges_valid{L}(__anonstruct_Graph_4[..] g_1, integer n_1) =
 \at((\forall integer k_2;
@@ -79,102 +78,101 @@ predicate graph_valid{L}(__anonstruct_Graph_4[..] g_2) =
        edges_valid{L}(g_2, (g_2.ecnt :> integer))) &&
       (\forall integer k_3;
         ((((g_2.ecnt :> integer) <= k_3) && (k_3 < (g_2.esize :> integer))) ==>
-          ((g_2.edges + k_3).existent_0 == (0 :> int32))))),L)
+          ((g_2.edges + k_3).existent_0 == 0)))),L)
 
-predicate edge_saved{L1, L2}(__anonstruct_Graph_4[..] g_3, integer k_4) =
-((\at((g_3.edges + k_4).from,L1) == \at((g_3.edges + k_4).from,L2)) &&
-  ((\at((g_3.edges + k_4).to,L1) == \at((g_3.edges + k_4).to,L2)) &&
-    (\at((g_3.edges + k_4).existent_0,L1) ==
-      \at((g_3.edges + k_4).existent_0,L2))))
+predicate full{L}(__anonstruct_Graph_4[..] g_3) =
+\at(range_existent{L}(g_3, 0, (g_3.esize :> integer)),L)
 
-predicate edges_saved{L1, L2}(__anonstruct_Graph_4[..] g_4, integer m,
-                              integer n_2) =
-(\forall integer k_5;
-  (((m <= k_5) && (k_5 < n_2)) ==> edge_saved{L1, L2}(g_4, k_5)))
+predicate range_existent{L}(__anonstruct_Graph_4[..] g_4, integer m,
+                            integer n_2) =
+\at((\forall integer k_4;
+      (((m <= k_4) && (k_4 < n_2)) ==>
+        (! ((g_4.edges + k_4).existent_0 == 0)))),L)
 
-predicate full{L}(__anonstruct_Graph_4[..] g_5) =
-\at(range_existent{L}(g_5, 0, (g_5.esize :> integer)),L)
+predicate edge_saved{L1, L2}(__anonstruct_Graph_4[..] g_5, integer k_5) =
+((\at((g_5.edges + k_5).from,L1) == \at((g_5.edges + k_5).from,L2)) &&
+  ((\at((g_5.edges + k_5).to,L1) == \at((g_5.edges + k_5).to,L2)) &&
+    (\at((g_5.edges + k_5).existent_0,L1) ==
+      \at((g_5.edges + k_5).existent_0,L2))))
 
-predicate range_existent{L}(__anonstruct_Graph_4[..] g_6, integer m_0,
-                            integer n_3) =
-\at((\forall integer k_6;
-      (((m_0 <= k_6) && (k_6 < n_3)) ==>
-        ((g_6.edges + k_6).existent_0 == (1 :> int32)))),L)
+predicate edges_saved{L1, L2}(__anonstruct_Graph_4[..] g_6, integer m_0,
+                              integer n_3) =
+(\forall integer k_6;
+  (((m_0 <= k_6) && (k_6 < n_3)) ==> edge_saved{L1, L2}(g_6, k_6)))
 
 axiomatic EdgesCount {
 
   logic integer count{L}(__anonstruct_Graph_4[..] g_7, integer f, integer t,
                          integer m_1, integer n_4)
    
+  logic integer all_count{L}(__anonstruct_Graph_4[..] g_8, integer f_0,
+                             integer t_0) =
+  \at(count{L}(g_8, f_0, t_0, 0, (g_8.esize :> integer)),L)
+   
+  predicate count_saved{L1, L2}(__anonstruct_Graph_4[..] g_9, integer f_1,
+                                integer t_1, integer m_2, integer n_5) =
+  (count{L1}(g_9, f_1, t_1, m_2, n_5) == count{L2}(g_9, f_1, t_1, m_2, n_5))
+   
   axiom count_zero{L} :
-  (_C_1 : (\forall __anonstruct_Graph_4[..] g_8;
-            (\forall integer f_0;
-              (\forall integer t_0;
-                (\forall integer m_2;
-                  (\forall integer n_5;
-                    ((m_2 >= n_5) ==>
-                      (count{L}(g_8, f_0, t_0, m_2, n_5) == 0))))))))
-   
-  predicate count_one_p{L}(__anonstruct_Graph_4[..] g_9, integer f_1,
-                           integer t_1, integer m_3) =
-  (count{L}(g_9, f_1, t_1, m_3, (m_3 + 1)) ==
-    (if ((((g_9.edges + m_3).existent_0 == (1 :> int32)) &&
-           (((g_9.edges + m_3).from :> integer) == f_1)) &&
-          (((g_9.edges + m_3).to :> integer) == t_1)) then 1 else 0))
-   
-  axiom count_one{L} :
-  (_C_2 : (\forall __anonstruct_Graph_4[..] g_10;
+  (_C_1 : (\forall __anonstruct_Graph_4[..] g_10;
             (\forall integer f_2;
               (\forall integer t_2;
-                (\forall integer m_4;
-                  count_one_p{L}(g_10, f_2, t_2, m_4))))))
+                (\forall integer m_3;
+                  (\forall integer n_6;
+                    ((m_3 >= n_6) ==>
+                      (count{L}(g_10, f_2, t_2, m_3, n_6) == 0))))))))
    
-  predicate count_split_p{L}(__anonstruct_Graph_4[..] g_11, integer f_3,
-                             integer t_3, integer m_5, integer n_6,
-                             integer k_7) =
-  (count{L}(g_11, f_3, t_3, m_5, k_7) ==
-    (count{L}(g_11, f_3, t_3, m_5, n_6) + count{L}(g_11, f_3, t_3, n_6, k_7)))
+  predicate count_one_p{L}(__anonstruct_Graph_4[..] g_11, integer f_3,
+                           integer t_3, integer m_4) =
+  (count{L}(g_11, f_3, t_3, m_4, (m_4 + 1)) ==
+    (if (((((g_11.edges + m_4).existent_0 :> integer) != 0) &&
+           (((g_11.edges + m_4).from :> integer) == f_3)) &&
+          (((g_11.edges + m_4).to :> integer) == t_3)) then 1 else 0))
    
-  axiom count_split{L} :
-  (_C_3 : (\forall __anonstruct_Graph_4[..] g_12;
+  axiom count_one{L} :
+  (_C_2 : (\forall __anonstruct_Graph_4[..] g_12;
             (\forall integer f_4;
               (\forall integer t_4;
-                (\forall integer m_6;
-                  (\forall integer n_7;
-                    (\forall integer k_8;
-                      (((m_6 <= n_7) && (n_7 <= k_8)) ==>
-                        count_split_p{L}(g_12, f_4, t_4, m_6, n_7, k_8)))))))))
+                (\forall integer m_5;
+                  count_one_p{L}(g_12, f_4, t_4, m_5))))))
    
-  predicate count_saved_p{L1, L2}(__anonstruct_Graph_4[..] g_13, integer f_5,
-                                  integer t_5, integer m_7, integer n_8) =
-  (count{L1}(g_13, f_5, t_5, m_7, n_8) ==
-    count{L2}(g_13, f_5, t_5, m_7, n_8))
+  predicate count_split_p{L}(__anonstruct_Graph_4[..] g_13, integer f_5,
+                             integer t_5, integer m_6, integer n_7,
+                             integer k_7) =
+  (count{L}(g_13, f_5, t_5, m_6, k_7) ==
+    (count{L}(g_13, f_5, t_5, m_6, n_7) + count{L}(g_13, f_5, t_5, n_7, k_7)))
    
-  axiom count_saved{L1, L2} :
-  (_C_4 : (\forall __anonstruct_Graph_4[..] g_14;
+  axiom count_split{L} :
+  (_C_3 : (\forall __anonstruct_Graph_4[..] g_14;
             (\forall integer f_6;
               (\forall integer t_6;
+                (\forall integer m_7;
+                  (\forall integer n_8;
+                    (\forall integer k_8;
+                      (((m_7 <= n_8) && (n_8 <= k_8)) ==>
+                        count_split_p{L}(g_14, f_6, t_6, m_7, n_8, k_8)))))))))
+   
+  axiom count_saved_ax{L1, L2} :
+  (_C_4 : (\forall __anonstruct_Graph_4[..] g_15;
+            (\forall integer f_7;
+              (\forall integer t_7;
                 (\forall integer m_8;
                   (\forall integer n_9;
                     (edges_saved{L1,
-                      L2}(g_14, m_8, n_9) ==>
-                      count_saved_p{L1,
-                      L2}(g_14, f_6, t_6, m_8, n_9))))))))
+                      L2}(g_15, m_8, n_9) ==>
+                      count_saved{L1,
+                      L2}(g_15, f_7, t_7, m_8, n_9))))))))
    
-  axiom count_existent{L} :
-  (_C_5 : (\forall __anonstruct_Graph_4[..] g_15;
-            (\forall integer f_7;
-              (\forall integer t_7;
+  axiom count_extend{L} :
+  (_C_5 : (\forall __anonstruct_Graph_4[..] g_16;
+            (\forall integer f_8;
+              (\forall integer t_8;
                 (\forall integer m_9;
                   (\forall integer n_10;
                     ((\forall integer k_9;
                        (((m_9 <= k_9) && (k_9 < n_10)) ==>
-                         ((g_15.edges + k_9).existent_0 == (0 :> int32)))) ==>
-                      (count{L}(g_15, f_7, t_7, m_9, n_10) == 0))))))))
-   
-  logic integer all_count{L}(__anonstruct_Graph_4[..] g_16, integer f_8,
-                             integer t_8) =
-  \at(count{L}(g_16, f_8, t_8, 0, (g_16.esize :> integer)),L)
+                         ((g_16.edges + k_9).existent_0 == 0))) ==>
+                      (count{L}(g_16, f_8, t_8, m_9, n_10) == 0))))))))
   
 }
 
@@ -297,37 +295,36 @@ behavior default:
 }
 
 unit add_edge(__anonstruct_Graph_4[..] g, int32 f, int32 t)
-  requires ((_C_127 : ((_C_128 : \at((((\offset_min(\at(g,Here)) <=
+  requires ((_C_126 : ((_C_127 : \at((((\offset_min(\at(g,Here)) <=
                                          \at(0,Here)) &&
                                         (\offset_max(\at(g,Here)) >=
                                           \at(0,Here))) &&
                                        true),Here)) &&
-                        (_C_129 : graph_valid{Here}(g)))) &&
-             ((_C_130 : is_vertex{Here}(g, (f :> integer))) &&
-               ((_C_131 : is_vertex{Here}(g, (t :> integer))) &&
-                 ((_C_132 : ((g.vertices + (f :> integer)).existent ==
-                              (1 :> int32))) &&
-                   ((_C_133 : ((g.vertices + (t :> integer)).existent ==
-                                (1 :> int32))) &&
-                     (_C_134 : (! full{Here}(g))))))));
+                        (_C_128 : graph_valid{Here}(g)))) &&
+             ((_C_129 : is_vertex{Here}(g, (f :> integer))) &&
+               ((_C_130 : is_vertex{Here}(g, (t :> integer))) &&
+                 ((_C_131 : (! ((g.vertices + (f :> integer)).existent == 0))) &&
+                   ((_C_132 : (! ((g.vertices + (t :> integer)).existent ==
+                                   0))) &&
+                     (_C_133 : (! full{Here}(g))))))));
 behavior default:
-  ensures (_C_122 : ((_C_123 : graph_valid{Here}(\at(g,Old))) &&
-                      ((_C_125 : (all_count{Here}(\at(g,Old),
+  ensures (_C_121 : ((_C_122 : graph_valid{Here}(\at(g,Old))) &&
+                      ((_C_124 : (all_count{Here}(\at(g,Old),
                                                   (\at(f,Old) :> integer),
                                                   (\at(t,Old) :> integer)) ==
                                    (all_count{Old}(\at(g,Old),
                                                    (\at(f,Old) :> integer),
                                                    (\at(t,Old) :> integer)) +
                                      1))) &&
-                        (_C_126 : (\forall integer f2_12;
-                                    (\forall integer t2_12;
-                                      (((! (f2_12 == (\at(f,Old) :> integer))) ||
-                                         (! (t2_12 ==
+                        (_C_125 : (\forall integer f2_11;
+                                    (\forall integer t2_11;
+                                      (((! (f2_11 == (\at(f,Old) :> integer))) ||
+                                         (! (t2_11 ==
                                               (\at(t,Old) :> integer)))) ==>
-                                        (all_count{Here}(\at(g,Old), f2_12,
-                                                         t2_12) ==
-                                          all_count{Old}(\at(g,Old), f2_12,
-                                                         t2_12)))))))));
+                                        (all_count{Here}(\at(g,Old), f2_11,
+                                                         t2_11) ==
+                                          all_count{Old}(\at(g,Old), f2_11,
+                                                         t2_11)))))))));
 {  
    (var int32 i_0);
    
@@ -396,11 +393,11 @@ behavior default:
          {  
             (assert for default: (_C_66 : (astraver : (\forall integer f2_1;
                                                         (\forall integer t2_1;
-                                                          (count_saved_p{Pre,
+                                                          (count_saved{Pre,
                                                             Here}(g, f2_1,
                                                                   t2_1, 0,
                                                                   (g.ecnt :> integer)) &&
-                                                            count_saved_p{Pre,
+                                                            count_saved{Pre,
                                                             Here}(g, f2_1,
                                                                   t2_1,
                                                                   ((g.ecnt :> integer) +
@@ -416,7 +413,7 @@ behavior default:
                                                                  (f :> integer))) ||
                                                              (! (t2_2 ==
                                                                   (t :> integer)))) ==>
-                                                            count_saved_p{Pre,
+                                                            count_saved{Pre,
                                                             Here}(g, f2_2,
                                                                   t2_2,
                                                                   (g.ecnt :> integer),
@@ -506,10 +503,10 @@ behavior default:
            invariant (_C_84 : edges_saved{Pre,
                      Here}(g, 0, (g.ecnt :> integer)));
          behavior default:
-           invariant (_C_83 : (\forall integer f2_11;
-                                (\forall integer t2_11;
-                                  (all_count{Pre}(g, f2_11, t2_11) ==
-                                    all_count{Here}(g, f2_11, t2_11)))));
+           invariant (_C_83 : (\forall integer f2_10;
+                                (\forall integer t2_10;
+                                  (all_count{Pre}(g, f2_10, t2_10) ==
+                                    all_count{Here}(g, f2_10, t2_10)))));
          behavior default:
            invariant (_C_82 : range_existent{Here}(g, 0, (i_0 :> integer)));
          variant (_C_81 : ((g.ecnt :> integer) - (i_0 :> integer)));
@@ -519,7 +516,7 @@ behavior default:
                               (goto while_0_break_0)));
                
                {  (_L : ());
-                  (if (_C_115 : (! (((_C_114 : (_C_113 : ((_C_112 : g.edges) +
+                  (if (_C_114 : (! (((_C_113 : (_C_112 : ((_C_111 : g.edges) +
                                                            i_0)).existent_0) :> int32) !=
                                      (0 :> int32)))) then 
                   {  (_C_93 : ((_C_92 : (_C_91 : ((_C_90 : g.edges) + i_0)).from) = f));
@@ -593,12 +590,12 @@ behavior default:
                      {  
                         (assert for default: (_C_107 : (astraver : (\forall integer f2_6;
                                                                     (\forall integer t2_6;
-                                                                    (count_saved_p{Pre,
+                                                                    (count_saved{Pre,
                                                                     Here}(
                                                                     g, f2_6,
                                                                     t2_6, 0,
                                                                     (i_0 :> integer)) &&
-                                                                    count_saved_p{Pre,
+                                                                    count_saved{Pre,
                                                                     Here}(
                                                                     g, f2_6,
                                                                     t2_6,
@@ -617,7 +614,7 @@ behavior default:
                                                                     (! 
                                                                     (t2_7 ==
                                                                     (t :> integer)))) ==>
-                                                                    count_saved_p{Pre,
+                                                                    count_saved{Pre,
                                                                     Here}(
                                                                     g, f2_7,
                                                                     t2_7,
@@ -653,25 +650,7 @@ behavior default:
                      };
                      
                      {  
-                        (assert for default: (_C_110 : (astraver : (\forall integer f2_9;
-                                                                    (\forall integer t2_9;
-                                                                    (((! 
-                                                                    (f2_9 ==
-                                                                    (f :> integer))) ||
-                                                                    (! 
-                                                                    (t2_9 ==
-                                                                    (t :> integer)))) ==>
-                                                                    (all_count{Here}(
-                                                                    g, f2_9,
-                                                                    t2_9) ==
-                                                                    all_count{Pre}(
-                                                                    g, f2_9,
-                                                                    t2_9))))))));
-                        ()
-                     };
-                     
-                     {  
-                        (assert for default: (_C_111 : (astraver : (all_count{Pre}(
+                        (assert for default: (_C_110 : (astraver : (all_count{Pre}(
                                                                     g,
                                                                     (f :> integer),
                                                                     (t :> integer)) ==
@@ -702,32 +681,32 @@ behavior default:
                   } else ());
                   
                   {  
-                     (assert for default: (_C_116 : (astraver : edges_saved{_L,
+                     (assert for default: (_C_115 : (astraver : edges_saved{_L,
                                                     Here}(g, 0,
                                                           (g.ecnt :> integer)))));
                      ()
                   };
                   
                   {  
-                     (assert for default: (_C_117 : (astraver : (\forall integer f2_10;
-                                                                  (\forall integer t2_10;
+                     (assert for default: (_C_116 : (astraver : (\forall integer f2_9;
+                                                                  (\forall integer t2_9;
                                                                     (all_count{_L}(
-                                                                    g, f2_10,
-                                                                    t2_10) ==
+                                                                    g, f2_9,
+                                                                    t2_9) ==
                                                                     all_count{Here}(
-                                                                    g, f2_10,
-                                                                    t2_10)))))));
+                                                                    g, f2_9,
+                                                                    t2_9)))))));
                      ()
                   }
                };
-               (_C_120 : (i_0 = (_C_119 : ((_C_118 : (i_0 + (1 :> int32))) :> int32))))
+               (_C_119 : (i_0 = (_C_118 : ((_C_117 : (i_0 + (1 :> int32))) :> int32))))
             }
          });
          (while_0_break_0 : ())
       };
       
       {  
-         (assert for default: (_C_121 : (astraver : full{Here}(g))));
+         (assert for default: (_C_120 : (astraver : full{Here}(g))));
          ()
       };
       (return_label : 

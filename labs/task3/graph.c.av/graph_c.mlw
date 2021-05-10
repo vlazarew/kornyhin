@@ -1712,37 +1712,37 @@ theory Logic_edge_saved
   
   use why3.Bool.Bool 
   
-  predicate edge_saved (g_3 : (pointer __anonstruct_Graph_4)) (k_4 : int)
-  (__anonstruct_Graph_4_edges_g_3_6_at_L2 : (memory __anonstruct_Graph_4
-  (pointer __anonstruct_Edge_3))) (__anonstruct_Graph_4_edges_g_3_6_at_L1 :
+  predicate edge_saved (g_5 : (pointer __anonstruct_Graph_4)) (k_5 : int)
+  (__anonstruct_Graph_4_edges_g_5_8_at_L2 : (memory __anonstruct_Graph_4
+  (pointer __anonstruct_Edge_3))) (__anonstruct_Graph_4_edges_g_5_8_at_L1 :
   (memory __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
-  (__anonstruct_Edge_3_existent_0_edges_21_at_L2 : (memory
+  (__anonstruct_Edge_3_existent_0_edges_22_at_L2 : (memory
   __anonstruct_Edge_3 Int32.t))
-  (__anonstruct_Edge_3_existent_0_edges_21_at_L1 : (memory
-  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_to_edges_21_at_L2 :
+  (__anonstruct_Edge_3_existent_0_edges_22_at_L1 : (memory
+  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_to_edges_22_at_L2 :
   (memory __anonstruct_Edge_3 Int32.t))
-  (__anonstruct_Edge_3_to_edges_21_at_L1 : (memory __anonstruct_Edge_3
-  Int32.t)) (__anonstruct_Edge_3_from_edges_21_at_L2 : (memory
-  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_from_edges_21_at_L1 :
+  (__anonstruct_Edge_3_to_edges_22_at_L1 : (memory __anonstruct_Edge_3
+  Int32.t)) (__anonstruct_Edge_3_from_edges_22_at_L2 : (memory
+  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_from_edges_22_at_L1 :
   (memory __anonstruct_Edge_3 Int32.t))
   =
      ((Int32.(=)
-      (select __anonstruct_Edge_3_from_edges_21_at_L1
-      (shift (select __anonstruct_Graph_4_edges_g_3_6_at_L1 g_3) k_4))
-      (select __anonstruct_Edge_3_from_edges_21_at_L2
-      (shift (select __anonstruct_Graph_4_edges_g_3_6_at_L2 g_3) k_4)))
+      (select __anonstruct_Edge_3_from_edges_22_at_L1
+      (shift (select __anonstruct_Graph_4_edges_g_5_8_at_L1 g_5) k_5))
+      (select __anonstruct_Edge_3_from_edges_22_at_L2
+      (shift (select __anonstruct_Graph_4_edges_g_5_8_at_L2 g_5) k_5)))
      /\
      ((Int32.(=)
-      (select __anonstruct_Edge_3_to_edges_21_at_L1
-      (shift (select __anonstruct_Graph_4_edges_g_3_6_at_L1 g_3) k_4))
-      (select __anonstruct_Edge_3_to_edges_21_at_L2
-      (shift (select __anonstruct_Graph_4_edges_g_3_6_at_L2 g_3) k_4)))
+      (select __anonstruct_Edge_3_to_edges_22_at_L1
+      (shift (select __anonstruct_Graph_4_edges_g_5_8_at_L1 g_5) k_5))
+      (select __anonstruct_Edge_3_to_edges_22_at_L2
+      (shift (select __anonstruct_Graph_4_edges_g_5_8_at_L2 g_5) k_5)))
      /\
      (Int32.(=)
-     (select __anonstruct_Edge_3_existent_0_edges_21_at_L1
-     (shift (select __anonstruct_Graph_4_edges_g_3_6_at_L1 g_3) k_4))
-     (select __anonstruct_Edge_3_existent_0_edges_21_at_L2
-     (shift (select __anonstruct_Graph_4_edges_g_3_6_at_L2 g_3) k_4)))))
+     (select __anonstruct_Edge_3_existent_0_edges_22_at_L1
+     (shift (select __anonstruct_Graph_4_edges_g_5_8_at_L1 g_5) k_5))
+     (select __anonstruct_Edge_3_existent_0_edges_22_at_L2
+     (shift (select __anonstruct_Graph_4_edges_g_5_8_at_L2 g_5) k_5)))))
   
   
 end
@@ -1765,31 +1765,31 @@ theory Logic_edges_saved
   
   use why3.Bool.Bool 
   
-  predicate edges_saved (g_4 : (pointer __anonstruct_Graph_4)) (m : int) (n_2
-  : int) (__anonstruct_Graph_4_edges_g_4_7_at_L2 : (memory
+  predicate edges_saved (g_6 : (pointer __anonstruct_Graph_4)) (m_0 : int)
+  (n_3 : int) (__anonstruct_Graph_4_edges_g_6_9_at_L2 : (memory
   __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
-  (__anonstruct_Graph_4_edges_g_4_7_at_L1 : (memory __anonstruct_Graph_4
+  (__anonstruct_Graph_4_edges_g_6_9_at_L1 : (memory __anonstruct_Graph_4
   (pointer __anonstruct_Edge_3)))
-  (__anonstruct_Edge_3_existent_0_edges_50_at_L2 : (memory
+  (__anonstruct_Edge_3_existent_0_edges_54_at_L2 : (memory
   __anonstruct_Edge_3 Int32.t))
-  (__anonstruct_Edge_3_existent_0_edges_50_at_L1 : (memory
-  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_to_edges_50_at_L2 :
+  (__anonstruct_Edge_3_existent_0_edges_54_at_L1 : (memory
+  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_to_edges_54_at_L2 :
   (memory __anonstruct_Edge_3 Int32.t))
-  (__anonstruct_Edge_3_to_edges_50_at_L1 : (memory __anonstruct_Edge_3
-  Int32.t)) (__anonstruct_Edge_3_from_edges_50_at_L2 : (memory
-  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_from_edges_50_at_L1 :
+  (__anonstruct_Edge_3_to_edges_54_at_L1 : (memory __anonstruct_Edge_3
+  Int32.t)) (__anonstruct_Edge_3_from_edges_54_at_L2 : (memory
+  __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_from_edges_54_at_L1 :
   (memory __anonstruct_Edge_3 Int32.t))
   =
-     (forall k_5 : int.
-      ((((<=) m k_5) /\ ((<) k_5 n_2)) ->
-       (edge_saved g_4 k_5 __anonstruct_Graph_4_edges_g_4_7_at_L2
-       __anonstruct_Graph_4_edges_g_4_7_at_L1
-       __anonstruct_Edge_3_existent_0_edges_50_at_L2
-       __anonstruct_Edge_3_existent_0_edges_50_at_L1
-       __anonstruct_Edge_3_to_edges_50_at_L2
-       __anonstruct_Edge_3_to_edges_50_at_L1
-       __anonstruct_Edge_3_from_edges_50_at_L2
-       __anonstruct_Edge_3_from_edges_50_at_L1)))
+     (forall k_6 : int.
+      ((((<=) m_0 k_6) /\ ((<) k_6 n_3)) ->
+       (edge_saved g_6 k_6 __anonstruct_Graph_4_edges_g_6_9_at_L2
+       __anonstruct_Graph_4_edges_g_6_9_at_L1
+       __anonstruct_Edge_3_existent_0_edges_54_at_L2
+       __anonstruct_Edge_3_existent_0_edges_54_at_L1
+       __anonstruct_Edge_3_to_edges_54_at_L2
+       __anonstruct_Edge_3_to_edges_54_at_L1
+       __anonstruct_Edge_3_from_edges_54_at_L2
+       __anonstruct_Edge_3_from_edges_54_at_L1)))
   
   
 end
@@ -1821,7 +1821,7 @@ theory Axiomatic_EdgesCount
   
   
   axiom Count_zero
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 90 81 188#
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 92 61 168#
   "expl:Axiom count_zero"  :
   (forall __anonstruct_Graph_4_edges_g_7_10_at_L : (memory
    __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)).
@@ -1831,22 +1831,22 @@ theory Axiomatic_EdgesCount
      __anonstruct_Edge_3 Int32.t).
      (forall __anonstruct_Edge_3_from_edges_24_at_L : (memory
       __anonstruct_Edge_3 Int32.t).
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 92 22 104#
-      (forall g_8_0 : (pointer __anonstruct_Graph_4).
-       (forall f_0_0 : int.
-        (forall t_0_0 : int.
-         (forall m_2 : int.
-          (forall n_5 : int.
-           (((>=) m_2 n_5) ->
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 94 22 104#
+      (forall g_10_0 : (pointer __anonstruct_Graph_4).
+       (forall f_2_0 : int.
+        (forall t_2_0 : int.
+         (forall m_3 : int.
+          (forall n_6 : int.
+           (((>=) m_3 n_6) ->
             ((=)
-            (count g_8_0 f_0_0 t_0_0 m_2 n_5
+            (count g_10_0 f_2_0 t_2_0 m_3 n_6
             __anonstruct_Graph_4_edges_g_7_10_at_L
             __anonstruct_Edge_3_existent_0_edges_24_at_L
             __anonstruct_Edge_3_to_edges_24_at_L
             __anonstruct_Edge_3_from_edges_24_at_L) (0)))))))))))))
   
-  predicate count_one_p (g_9 : (pointer __anonstruct_Graph_4)) (f_1 : int)
-  (t_1 : int) (m_3 : int) (__anonstruct_Graph_4_edges_g_7_10_at_L : (memory
+  predicate count_one_p (g_11 : (pointer __anonstruct_Graph_4)) (f_3 : int)
+  (t_3 : int) (m_4 : int) (__anonstruct_Graph_4_edges_g_7_10_at_L : (memory
   __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
   (__anonstruct_Edge_3_existent_0_edges_24_at_L : (memory __anonstruct_Edge_3
   Int32.t)) (__anonstruct_Edge_3_to_edges_24_at_L : (memory
@@ -1854,7 +1854,7 @@ theory Axiomatic_EdgesCount
   (memory __anonstruct_Edge_3 Int32.t))
   =
      ((=)
-     (count g_9 f_1 t_1 m_3 (Int.(+) m_3 (1))
+     (count g_11 f_3 t_3 m_4 (Int.(+) m_4 (1))
      __anonstruct_Graph_4_edges_g_7_10_at_L
      __anonstruct_Edge_3_existent_0_edges_24_at_L
      __anonstruct_Edge_3_to_edges_24_at_L
@@ -1862,23 +1862,23 @@ theory Axiomatic_EdgesCount
      (if
       (Bool.andb
       (Bool.andb
-      (Int32.(=)
+      ((<>)
+      (Int32.to_int
       (select __anonstruct_Edge_3_existent_0_edges_24_at_L
-      (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_9) m_3))
-      (#"graph_c.jc" 121 43 55# "expl:Integer cast" (Int32.of_int (1))))
+      (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_11) m_4))) (0))
       ((=)
       (Int32.to_int
       (select __anonstruct_Edge_3_from_edges_24_at_L
-      (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_9) m_3))) f_1))
+      (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_11) m_4))) f_3))
       ((=)
       (Int32.to_int
       (select __anonstruct_Edge_3_to_edges_24_at_L
-      (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_9) m_3))) t_1))
+      (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_11) m_4))) t_3))
       then (1) else (0)))
   
   
   axiom Count_one
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 96 120 205#
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 98 115 200#
   "expl:Axiom count_one"  :
   (forall __anonstruct_Graph_4_edges_g_7_10_at_L : (memory
    __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)).
@@ -1888,19 +1888,19 @@ theory Axiomatic_EdgesCount
      __anonstruct_Edge_3 Int32.t).
      (forall __anonstruct_Edge_3_from_edges_24_at_L : (memory
       __anonstruct_Edge_3 Int32.t).
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 98 24 82#
-      (forall g_10 : (pointer __anonstruct_Graph_4).
-       (forall f_2_0 : int.
-        (forall t_2_0 : int.
-         (forall m_4 : int.
-          (count_one_p g_10 f_2_0 t_2_0 m_4
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 100 24 82#
+      (forall g_12 : (pointer __anonstruct_Graph_4).
+       (forall f_4 : int.
+        (forall t_4 : int.
+         (forall m_5 : int.
+          (count_one_p g_12 f_4 t_4 m_5
           __anonstruct_Graph_4_edges_g_7_10_at_L
           __anonstruct_Edge_3_existent_0_edges_24_at_L
           __anonstruct_Edge_3_to_edges_24_at_L
           __anonstruct_Edge_3_from_edges_24_at_L))))))))))
   
-  predicate count_split_p (g_11 : (pointer __anonstruct_Graph_4)) (f_3 : int)
-  (t_3 : int) (m_5 : int) (n_6 : int) (k_7 : int)
+  predicate count_split_p (g_13 : (pointer __anonstruct_Graph_4)) (f_5 : int)
+  (t_5 : int) (m_6 : int) (n_7 : int) (k_7 : int)
   (__anonstruct_Graph_4_edges_g_7_10_at_L : (memory __anonstruct_Graph_4
   (pointer __anonstruct_Edge_3)))
   (__anonstruct_Edge_3_existent_0_edges_24_at_L : (memory __anonstruct_Edge_3
@@ -1909,23 +1909,23 @@ theory Axiomatic_EdgesCount
   (memory __anonstruct_Edge_3 Int32.t))
   =
      ((=)
-     (count g_11 f_3 t_3 m_5 k_7 __anonstruct_Graph_4_edges_g_7_10_at_L
+     (count g_13 f_5 t_5 m_6 k_7 __anonstruct_Graph_4_edges_g_7_10_at_L
      __anonstruct_Edge_3_existent_0_edges_24_at_L
      __anonstruct_Edge_3_to_edges_24_at_L
      __anonstruct_Edge_3_from_edges_24_at_L)
      (Int.(+)
-     (count g_11 f_3 t_3 m_5 n_6 __anonstruct_Graph_4_edges_g_7_10_at_L
+     (count g_13 f_5 t_5 m_6 n_7 __anonstruct_Graph_4_edges_g_7_10_at_L
      __anonstruct_Edge_3_existent_0_edges_24_at_L
      __anonstruct_Edge_3_to_edges_24_at_L
      __anonstruct_Edge_3_from_edges_24_at_L)
-     (count g_11 f_3 t_3 n_6 k_7 __anonstruct_Graph_4_edges_g_7_10_at_L
+     (count g_13 f_5 t_5 n_7 k_7 __anonstruct_Graph_4_edges_g_7_10_at_L
      __anonstruct_Edge_3_existent_0_edges_24_at_L
      __anonstruct_Edge_3_to_edges_24_at_L
      __anonstruct_Edge_3_from_edges_24_at_L)))
   
   
   axiom Count_split
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 101 76 201#
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 103 76 201#
   "expl:Axiom count_split"  :
   (forall __anonstruct_Graph_4_edges_g_7_10_at_L : (memory
    __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)).
@@ -1935,22 +1935,22 @@ theory Axiomatic_EdgesCount
      __anonstruct_Edge_3 Int32.t).
      (forall __anonstruct_Edge_3_from_edges_24_at_L : (memory
       __anonstruct_Edge_3 Int32.t).
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 103 26 122#
-      (forall g_12 : (pointer __anonstruct_Graph_4).
-       (forall f_4 : int.
-        (forall t_4 : int.
-         (forall m_6 : int.
-          (forall n_7 : int.
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 105 26 122#
+      (forall g_14 : (pointer __anonstruct_Graph_4).
+       (forall f_6 : int.
+        (forall t_6 : int.
+         (forall m_7 : int.
+          (forall n_8 : int.
            (forall k_8 : int.
-            ((((<=) m_6 n_7) /\ ((<=) n_7 k_8)) ->
-             (count_split_p g_12 f_4 t_4 m_6 n_7 k_8
+            ((((<=) m_7 n_8) /\ ((<=) n_8 k_8)) ->
+             (count_split_p g_14 f_6 t_6 m_7 n_8 k_8
              __anonstruct_Graph_4_edges_g_7_10_at_L
              __anonstruct_Edge_3_existent_0_edges_24_at_L
              __anonstruct_Edge_3_to_edges_24_at_L
              __anonstruct_Edge_3_from_edges_24_at_L)))))))))))))
   
-  predicate count_saved_p (g_13 : (pointer __anonstruct_Graph_4)) (f_5 : int)
-  (t_5 : int) (m_7 : int) (n_8 : int)
+  predicate count_saved (g_9 : (pointer __anonstruct_Graph_4)) (f_1 : int)
+  (t_1 : int) (m_2 : int) (n_5 : int)
   (__anonstruct_Graph_4_edges_g_7_10_at_L2 : (memory __anonstruct_Graph_4
   (pointer __anonstruct_Edge_3))) (__anonstruct_Graph_4_edges_g_7_10_at_L1 :
   (memory __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
@@ -1965,19 +1965,19 @@ theory Axiomatic_EdgesCount
   (memory __anonstruct_Edge_3 Int32.t))
   =
      ((=)
-     (count g_13 f_5 t_5 m_7 n_8 __anonstruct_Graph_4_edges_g_7_10_at_L1
+     (count g_9 f_1 t_1 m_2 n_5 __anonstruct_Graph_4_edges_g_7_10_at_L1
      __anonstruct_Edge_3_existent_0_edges_24_at_L1
      __anonstruct_Edge_3_to_edges_24_at_L1
      __anonstruct_Edge_3_from_edges_24_at_L1)
-     (count g_13 f_5 t_5 m_7 n_8 __anonstruct_Graph_4_edges_g_7_10_at_L2
+     (count g_9 f_1 t_1 m_2 n_5 __anonstruct_Graph_4_edges_g_7_10_at_L2
      __anonstruct_Edge_3_existent_0_edges_24_at_L2
      __anonstruct_Edge_3_to_edges_24_at_L2
      __anonstruct_Edge_3_from_edges_24_at_L2))
   
   
-  axiom Count_saved
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 113 65 218#
-  "expl:Axiom count_saved"  :
+  axiom Count_saved_ax
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 106 40 190#
+  "expl:Axiom count_saved_ax"  :
   (forall __anonstruct_Graph_4_edges_g_7_10_at_L2 : (memory
    __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)).
    (forall __anonstruct_Graph_4_edges_g_7_10_at_L1 : (memory
@@ -1994,13 +1994,13 @@ theory Axiomatic_EdgesCount
          __anonstruct_Edge_3 Int32.t).
          (forall __anonstruct_Edge_3_from_edges_24_at_L1 : (memory
           __anonstruct_Edge_3 Int32.t).
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 115 31 150#
-          (forall g_14 : (pointer __anonstruct_Graph_4).
-           (forall f_6 : int.
-            (forall t_6 : int.
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 108 34 147#
+          (forall g_15 : (pointer __anonstruct_Graph_4).
+           (forall f_7 : int.
+            (forall t_7 : int.
              (forall m_8 : int.
               (forall n_9 : int.
-               ((edges_saved g_14 m_8 n_9
+               ((edges_saved g_15 m_8 n_9
                 __anonstruct_Graph_4_edges_g_7_10_at_L2
                 __anonstruct_Graph_4_edges_g_7_10_at_L1
                 __anonstruct_Edge_3_existent_0_edges_24_at_L2
@@ -2009,7 +2009,7 @@ theory Axiomatic_EdgesCount
                 __anonstruct_Edge_3_to_edges_24_at_L1
                 __anonstruct_Edge_3_from_edges_24_at_L2
                 __anonstruct_Edge_3_from_edges_24_at_L1) ->
-                (count_saved_p g_14 f_6 t_6 m_8 n_9
+                (count_saved g_15 f_7 t_7 m_8 n_9
                 __anonstruct_Graph_4_edges_g_7_10_at_L2
                 __anonstruct_Graph_4_edges_g_7_10_at_L1
                 __anonstruct_Edge_3_existent_0_edges_24_at_L2
@@ -2019,9 +2019,9 @@ theory Axiomatic_EdgesCount
                 __anonstruct_Edge_3_from_edges_24_at_L2
                 __anonstruct_Edge_3_from_edges_24_at_L1))))))))))))))))
   
-  axiom Count_existent
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 116 82 252#
-  "expl:Axiom count_existent"  :
+  axiom Count_extend
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 109 76 236#
+  "expl:Axiom count_extend"  :
   (forall __anonstruct_Graph_4_edges_g_7_10_at_L : (memory
    __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)).
    (forall __anonstruct_Edge_3_existent_0_edges_24_at_L : (memory
@@ -2030,38 +2030,38 @@ theory Axiomatic_EdgesCount
      __anonstruct_Edge_3 Int32.t).
      (forall __anonstruct_Edge_3_from_edges_24_at_L : (memory
       __anonstruct_Edge_3 Int32.t).
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 118 26 167#
-      (forall g_15 : (pointer __anonstruct_Graph_4).
-       (forall f_7 : int.
-        (forall t_7 : int.
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 111 24 157#
+      (forall g_16 : (pointer __anonstruct_Graph_4).
+       (forall f_8 : int.
+        (forall t_8 : int.
          (forall m_9 : int.
           (forall n_10 : int.
            ((forall k_9 : int.
              ((((<=) m_9 k_9) /\ ((<) k_9 n_10)) ->
-              (Int32.(=)
+              ((=)
+              (Int32.to_int
               (select __anonstruct_Edge_3_existent_0_edges_24_at_L
-              (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_15)
-              k_9)) (#"graph_c.jc" 172 59 71# "expl:Integer cast"
-              (Int32.of_int (0)))))) ->
+              (shift (select __anonstruct_Graph_4_edges_g_7_10_at_L g_16)
+              k_9))) (0)))) ->
             ((=)
-            (count g_15 f_7 t_7 m_9 n_10
+            (count g_16 f_8 t_8 m_9 n_10
             __anonstruct_Graph_4_edges_g_7_10_at_L
             __anonstruct_Edge_3_existent_0_edges_24_at_L
             __anonstruct_Edge_3_to_edges_24_at_L
             __anonstruct_Edge_3_from_edges_24_at_L) (0)))))))))))))
   
-  function all_count (g_16 : (pointer __anonstruct_Graph_4)) (f_8 : int) (t_8
-  : int) (__anonstruct_Graph_4_esize_g_16_14_at_L : (memory
-  __anonstruct_Graph_4 Int32.t)) (__anonstruct_Graph_4_edges_g_16_14_at_L :
+  function all_count (g_8 : (pointer __anonstruct_Graph_4)) (f_0 : int) (t_0
+  : int) (__anonstruct_Graph_4_esize_g_8_11_at_L : (memory
+  __anonstruct_Graph_4 Int32.t)) (__anonstruct_Graph_4_edges_g_8_11_at_L :
   (memory __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
   (__anonstruct_Edge_3_existent_0_edges_84_at_L : (memory __anonstruct_Edge_3
   Int32.t)) (__anonstruct_Edge_3_to_edges_84_at_L : (memory
   __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_from_edges_84_at_L :
   (memory __anonstruct_Edge_3 Int32.t)) : int
   =
-     (count g_16 f_8 t_8 (0)
-     (Int32.to_int (select __anonstruct_Graph_4_esize_g_16_14_at_L g_16))
-     __anonstruct_Graph_4_edges_g_16_14_at_L
+     (count g_8 f_0 t_0 (0)
+     (Int32.to_int (select __anonstruct_Graph_4_esize_g_8_11_at_L g_8))
+     __anonstruct_Graph_4_edges_g_8_11_at_L
      __anonstruct_Edge_3_existent_0_edges_84_at_L
      __anonstruct_Edge_3_to_edges_84_at_L
      __anonstruct_Edge_3_from_edges_84_at_L)
@@ -2117,6 +2117,8 @@ theory Logic_edge_valid
   
   use enum.Int32 
   
+  use import int.Int 
+  
   use why3.Bool.Bool 
   
   predicate edge_valid (g_0 : (pointer __anonstruct_Graph_4)) (k_1 : int)
@@ -2132,10 +2134,12 @@ theory Logic_edge_valid
   (__anonstruct_Vertex_2_existent_vertices_18_at_L : (memory
   __anonstruct_Vertex_2 Int32.t))
   =
-     ((Int32.(=)
+     ((not
+      ((=)
+      (Int32.to_int
       (select __anonstruct_Edge_3_existent_0_edges_17_at_L
-      (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1))
-      (#"graph_c.jc" 47 38 50# "expl:Integer cast" (Int32.of_int (1)))) ->
+      (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1))) (0)))
+      ->
       ((is_vertex g_0
        (Int32.to_int
        (select __anonstruct_Edge_3_from_edges_17_at_L
@@ -2148,21 +2152,25 @@ theory Logic_edge_valid
        (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1)))
        __anonstruct_Graph_4_vsize_g_0_3_at_L)
       /\
-      ((Int32.(=)
+      ((not
+       ((=)
+       (Int32.to_int
        (select __anonstruct_Vertex_2_existent_vertices_18_at_L
        (shift (select __anonstruct_Graph_4_vertices_g_0_3_at_L g_0)
        (Int32.to_int
        (select __anonstruct_Edge_3_from_edges_17_at_L
-       (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1)))))
-       (#"graph_c.jc" 51 11 23# "expl:Integer cast" (Int32.of_int (1))))
+       (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1))))))
+       (0)))
       /\
-      (Int32.(=)
+      (not
+      ((=)
+      (Int32.to_int
       (select __anonstruct_Vertex_2_existent_vertices_18_at_L
       (shift (select __anonstruct_Graph_4_vertices_g_0_3_at_L g_0)
       (Int32.to_int
       (select __anonstruct_Edge_3_to_edges_17_at_L
-      (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1)))))
-      (#"graph_c.jc" 53 10 22# "expl:Integer cast" (Int32.of_int (1))))))))
+      (shift (select __anonstruct_Graph_4_edges_g_0_3_at_L g_0) k_1))))))
+      (0)))))))
   
   
 end
@@ -2254,16 +2262,16 @@ theory Logic_graph_valid
   __anonstruct_Vertex_2 Int32.t))
   =
      ((Int32.(>) (select __anonstruct_Graph_4_vsize_g_2_5_at_L g_2)
-      (#"graph_c.jc" 60 24 36# "expl:Integer cast" (Int32.of_int (0))))
+      (#"graph_c.jc" 59 24 36# "expl:Integer cast" (Int32.of_int (0))))
      /\
      ((Int32.(>) (select __anonstruct_Graph_4_esize_g_2_5_at_L g_2)
-      (#"graph_c.jc" 60 54 66# "expl:Integer cast" (Int32.of_int (0))))
+      (#"graph_c.jc" 59 54 66# "expl:Integer cast" (Int32.of_int (0))))
      /\
      ((Int32.(>=) (select __anonstruct_Graph_4_esize_g_2_5_at_L g_2)
       (select __anonstruct_Graph_4_ecnt_g_2_5_at_L g_2))
      /\
      ((Int32.(>=) (select __anonstruct_Graph_4_ecnt_g_2_5_at_L g_2)
-      (#"graph_c.jc" 62 23 35# "expl:Integer cast" (Int32.of_int (0))))
+      (#"graph_c.jc" 61 23 35# "expl:Integer cast" (Int32.of_int (0))))
      /\
      ((if
        ((<=) (0)
@@ -2327,10 +2335,10 @@ theory Logic_graph_valid
        /\
        ((<) k_3
        (Int32.to_int (select __anonstruct_Graph_4_esize_g_2_5_at_L g_2)))) ->
-       (Int32.(=)
+       ((=)
+       (Int32.to_int
        (select __anonstruct_Edge_3_existent_0_edges_20_at_L
-       (shift (select __anonstruct_Graph_4_edges_g_2_5_at_L g_2) k_3))
-       (#"graph_c.jc" 82 43 55# "expl:Integer cast" (Int32.of_int (0)))))))))))))
+       (shift (select __anonstruct_Graph_4_edges_g_2_5_at_L g_2) k_3))) (0)))))))))))
   
   
 end
@@ -2352,7 +2360,7 @@ module Exceptions
 end
 
 module Function_count_0_safety
-#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 0 29#
+#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 125 0 29#
 "expl:count, safety"
 
   use import core.Tag_table_type 
@@ -2393,11 +2401,11 @@ module Function_count_0_safety
   
   use why3.Bool.Bool 
   
-  let count_0 #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 0 29#
+  let count_0 #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 125 0 29#
   "expl:Function count, safety" =
   fun
-   (g_0_0 : (pointer __anonstruct_Graph_4)) (f_0 : Int32.t) (t_0 : Int32.t)
-   (__anonstruct_Edge_3_edges_31_alloc_table : (alloc_table
+   (g_0_0 : (pointer __anonstruct_Graph_4)) (f_0_0 : Int32.t) (t_0_0 :
+   Int32.t) (__anonstruct_Edge_3_edges_31_alloc_table : (alloc_table
    __anonstruct_Edge_3)) (__anonstruct_Graph_4_g_0_15_alloc_table :
    (alloc_table __anonstruct_Graph_4))
    (__anonstruct_Vertex_2_vertices_30_alloc_table : (alloc_table
@@ -2417,19 +2425,19 @@ module Function_count_0_safety
    (__anonstruct_Graph_4_esize_g_0_15 : (memory __anonstruct_Graph_4
    Int32.t)) 
    requires {
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 126 13 22#
-    (#"graph_c.jc" 182 12 740#
-    ((#"graph_c.jc" 182 12 740#
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 117 13 22#
+    (#"graph_c.jc" 180 12 740#
+    ((#"graph_c.jc" 180 12 740#
      ((<=) (offset_min __anonstruct_Graph_4_g_0_15_alloc_table g_0_0) (0)))
     /\
-    (#"graph_c.jc" 182 12 740#
-    ((#"graph_c.jc" 182 12 740#
+    (#"graph_c.jc" 180 12 740#
+    ((#"graph_c.jc" 180 12 740#
      ((>=) (offset_max __anonstruct_Graph_4_g_0_15_alloc_table g_0_0) (0)))
-    /\ (#"graph_c.jc" 182 12 740# ((=) true true)))))))
+    /\ (#"graph_c.jc" 180 12 740# ((=) true true)))))))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 126 26 40#
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 117 26 40#
     (graph_valid g_0_0 __anonstruct_Vertex_2_vertices_30_alloc_table
     __anonstruct_Edge_3_edges_31_alloc_table
     __anonstruct_Graph_4_esize_g_0_15 __anonstruct_Graph_4_ecnt_g_0_15
@@ -2439,27 +2447,27 @@ module Function_count_0_safety
     __anonstruct_Edge_3_from_edges_31
     __anonstruct_Vertex_2_existent_vertices_30))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 127 13 28#
-    (is_vertex g_0_0 (Int32.to_int f_0) __anonstruct_Graph_4_vsize_g_0_15))
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 118 13 28#
+    (is_vertex g_0_0 (Int32.to_int f_0_0) __anonstruct_Graph_4_vsize_g_0_15))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 128 13 28#
-    (is_vertex g_0_0 (Int32.to_int t_0) __anonstruct_Graph_4_vsize_g_0_15))
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 119 13 28#
+    (is_vertex g_0_0 (Int32.to_int t_0_0) __anonstruct_Graph_4_vsize_g_0_15))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 13 41#
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 120 13 41#
     (Int32.(=)
     (select __anonstruct_Vertex_2_existent_vertices_30
     (shift (select __anonstruct_Graph_4_vertices_g_0_15 g_0_0)
-    (Int32.to_int f_0))) (#"graph_c.jc" 191 29 41# "expl:Integer cast"
+    (Int32.to_int f_0_0))) (#"graph_c.jc" 189 29 41# "expl:Integer cast"
     (Int32.of_int (1)))))
    /\
-   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 13 41#
+   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 121 13 41#
    (Int32.(=)
    (select __anonstruct_Vertex_2_existent_vertices_30
    (shift (select __anonstruct_Graph_4_vertices_g_0_15 g_0_0)
-   (Int32.to_int t_0))) (#"graph_c.jc" 193 30 42# "expl:Integer cast"
+   (Int32.to_int t_0_0))) (#"graph_c.jc" 191 30 42# "expl:Integer cast"
    (Int32.of_int (1))))))))))))))) } ensures { ("expl:Postcondition" true) } 
    ->
    'Init:
@@ -2471,60 +2479,60 @@ module Function_count_0_safety
     begin
     (c :=
      (let _jessie_13 =
-     (#"graph_c.jc" 203 19 31# "expl:Integer cast" (Safe_int32.of_int (0)))
+     (#"graph_c.jc" 201 19 31# "expl:Integer cast" (Safe_int32.of_int (0)))
      in
      begin
      (assert {
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 136 8 9#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 127 8 9#
      "expl:Pointer index bounds" true) }); _jessie_13 end));
      try
       begin
       (i :=
        (let _jessie_16 =
-       (#"graph_c.jc" 205 22 34# "expl:Integer cast" (Safe_int32.of_int (0)))
+       (#"graph_c.jc" 203 22 34# "expl:Integer cast" (Safe_int32.of_int (0)))
        in
        begin
        (assert {
-       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 143 13 14#
+       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 13 14#
        "expl:Pointer index bounds" true) }); _jessie_16 end));
        'LoopEntry:
        begin
        'LoopEntry:
        'Loop_2:
        loop
-       invariant { (#"graph_c.jc" 207 9 5572# true) }
+       invariant { (#"graph_c.jc" 205 9 5572# true) }
          variant {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 141 21 32#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 132 21 32#
            (Int.(-)
            (Int32.to_int (select __anonstruct_Graph_4_ecnt_g_0_15 g_0_0))
            (Int32.to_int !i))) }
         begin
         any unit
-        requires { true } reads { f_0, g_0_0, t_0 }
+        requires { true } reads { f_0_0, g_0_0, t_0_0 }
         ensures {
-          ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 140 23 48#
+          ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 131 23 48#
            ((=) (Int32.to_int !c)
-           (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+           (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
            (Int32.to_int !i) __anonstruct_Graph_4_edges_g_0_15
            __anonstruct_Edge_3_existent_0_edges_31
            __anonstruct_Edge_3_to_edges_31 __anonstruct_Edge_3_from_edges_31)))
           /\
-          ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 23 34#
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 23 34#
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 23 29#
-            (Int32.(<=) (#"graph_c.jc" 212 41 53# "expl:Integer cast"
+          ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 23 34#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 23 34#
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 23 29#
+            (Int32.(<=) (#"graph_c.jc" 210 41 53# "expl:Integer cast"
             (Int32.of_int (0))) !c))
            /\
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 28 34#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 28 34#
            (Int32.(<=) !c !i)))))
           /\
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 23 40#
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 23 40#
-          ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 23 29#
-           (Int32.(<=) (#"graph_c.jc" 209 41 53# "expl:Integer cast"
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 23 40#
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 23 40#
+          ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 23 29#
+           (Int32.(<=) (#"graph_c.jc" 207 41 53# "expl:Integer cast"
            (Int32.of_int (0))) !i))
           /\
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 28 40#
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 28 40#
           (Int32.(<=) !i (select __anonstruct_Graph_4_ecnt_g_0_15 g_0_0))))))))
           } ;
          try
@@ -2533,84 +2541,84 @@ module Function_count_0_safety
           begin
           'LoopCurrent:
           (if
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 143 20 31#
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 20 31#
           (Safe_int32.(<)  !i
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 143 24 31#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 24 31#
            "expl:Pointer dereference"
            (acc  __anonstruct_Graph_4_g_0_15_alloc_table
             __anonstruct_Graph_4_ecnt_g_0_15 g_0_0 )) )) then ()
           else (raise (Goto_while_0_break_exc ())));
            begin
            (if
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 12 32#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 12 32#
            (Safe_int32.(<>) 
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 12 32#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 12 32#
             "expl:Pointer dereference"
             (acc_offset_typesafe  __anonstruct_Edge_3_edges_31_alloc_table
              __anonstruct_Edge_3_existent_0_edges_31
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 12 20#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 12 20#
              "expl:Pointer dereference"
              (acc  __anonstruct_Graph_4_g_0_15_alloc_table
               __anonstruct_Graph_4_edges_g_0_15 g_0_0 ))
              (Safe_int32.to_int  !i ) ))
-            (#"graph_c.jc" 226 33 45# "expl:Integer cast"
+            (#"graph_c.jc" 224 33 45# "expl:Integer cast"
             (Safe_int32.of_int (0))) ))
            then
             (if
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 36 57#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 36 57#
             (Safe_int32.(=) 
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 36 52#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 36 52#
              "expl:Pointer dereference"
              (acc_offset_typesafe  __anonstruct_Edge_3_edges_31_alloc_table
               __anonstruct_Edge_3_from_edges_31
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 36 44#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 36 44#
               "expl:Pointer dereference"
               (acc  __anonstruct_Graph_4_g_0_15_alloc_table
                __anonstruct_Graph_4_edges_g_0_15 g_0_0 ))
-              (Safe_int32.to_int  !i ) )) f_0 ))
+              (Safe_int32.to_int  !i ) )) f_0_0 ))
             then
              (if
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 61 80#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 61 80#
              (Safe_int32.(=) 
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 61 75#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 61 75#
               "expl:Pointer dereference"
               (acc_offset_typesafe  __anonstruct_Edge_3_edges_31_alloc_table
                __anonstruct_Edge_3_to_edges_31
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 61 69#
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 61 69#
                "expl:Pointer dereference"
                (acc  __anonstruct_Graph_4_g_0_15_alloc_table
                 __anonstruct_Graph_4_edges_g_0_15 g_0_0 ))
-               (Safe_int32.to_int  !i ) )) t_0 ))
+               (Safe_int32.to_int  !i ) )) t_0_0 ))
              then
               (c :=
                (let _jessie_14 =
                (Safe_int32.(+)  !c
-                (#"graph_c.jc" 239 68 80# "expl:Integer cast"
+                (#"graph_c.jc" 237 68 80# "expl:Integer cast"
                 (Safe_int32.of_int (1))) ) in
                begin
                (assert {
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 12 16#
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 136 12 16#
                "expl:Pointer index bounds" true) }); _jessie_14 end))
              else ()) else ()) else ());
             begin
             any unit
-            requires { true } reads { f_0, g_0_0, t_0 }
+            requires { true } reads { f_0_0, g_0_0, t_0_0 }
             ensures {
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 147 19 94#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 19 94#
               ((=)
-              (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+              (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
               (Int.(+) (Int32.to_int !i) (1))
               __anonstruct_Graph_4_edges_g_0_15
               __anonstruct_Edge_3_existent_0_edges_31
               __anonstruct_Edge_3_to_edges_31
               __anonstruct_Edge_3_from_edges_31)
               (Int.(+)
-              (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+              (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
               (Int32.to_int !i) __anonstruct_Graph_4_edges_g_0_15
               __anonstruct_Edge_3_existent_0_edges_31
               __anonstruct_Edge_3_to_edges_31
               __anonstruct_Edge_3_from_edges_31)
-              (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
+              (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0)
               (Int32.to_int !i) (Int.(+) (Int32.to_int !i) (1))
               __anonstruct_Graph_4_edges_g_0_15
               __anonstruct_Edge_3_existent_0_edges_31
@@ -2618,24 +2626,24 @@ module Function_count_0_safety
               __anonstruct_Edge_3_from_edges_31)))) } ; () end;
             begin
             any unit
-            requires { true } reads { f_0, g_0_0, t_0 }
+            requires { true } reads { f_0_0, g_0_0, t_0_0 }
             ensures {
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 148 19 108#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 19 108#
               ((=)
-              (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+              (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
               (Int32.to_int (select __anonstruct_Graph_4_esize_g_0_15 g_0_0))
               __anonstruct_Graph_4_edges_g_0_15
               __anonstruct_Edge_3_existent_0_edges_31
               __anonstruct_Edge_3_to_edges_31
               __anonstruct_Edge_3_from_edges_31)
               (Int.(+)
-              (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+              (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
               (Int.(+) (Int32.to_int !i) (1))
               __anonstruct_Graph_4_edges_g_0_15
               __anonstruct_Edge_3_existent_0_edges_31
               __anonstruct_Edge_3_to_edges_31
               __anonstruct_Edge_3_from_edges_31)
-              (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
+              (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0)
               (Int.(+) (Int32.to_int !i) (1))
               (Int32.to_int (select __anonstruct_Graph_4_esize_g_0_15 g_0_0))
               __anonstruct_Graph_4_edges_g_0_15
@@ -2645,11 +2653,11 @@ module Function_count_0_safety
            (i :=
             (let _jessie_15 =
             (Safe_int32.(+)  !i
-             (#"graph_c.jc" 289 53 65# "expl:Integer cast"
+             (#"graph_c.jc" 287 53 65# "expl:Integer cast"
              (Safe_int32.of_int (1))) ) in
             begin
             (assert {
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 143 33 36#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 33 36#
             "expl:Pointer index bounds" true) }); _jessie_15 end)) end;
            (raise (Loop_continue_exc ())) end with Loop_continue_exc
           _jessie_3 -> () end end end; (raise (Goto_while_0_break_exc ()))
@@ -2659,14 +2667,14 @@ module Function_count_0_safety
      (return :=
       (let _jessie_17 = !c in
       begin
-      (assert { (#"graph_c.jc" 295 7 15# "expl:Pointer index bounds" true) });
+      (assert { (#"graph_c.jc" 293 7 15# "expl:Pointer index bounds" true) });
        _jessie_17 end)); (raise Return) end end)); absurd  end with Return ->
     !return end)
   
 end
 
 module Function_count_0_behaviors
-#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 0 29#
+#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 125 0 29#
 "expl:count, behaviors"
 
   use Unsafe_int32 
@@ -2708,11 +2716,11 @@ module Function_count_0_behaviors
   use why3.Bool.Bool 
   
   let count_ensures_default
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 0 29#
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 125 0 29#
   "expl:Function count, default behavior" =
   fun
-   (g_0_0 : (pointer __anonstruct_Graph_4)) (f_0 : Int32.t) (t_0 : Int32.t)
-   (__anonstruct_Edge_3_edges_31_alloc_table : (alloc_table
+   (g_0_0 : (pointer __anonstruct_Graph_4)) (f_0_0 : Int32.t) (t_0_0 :
+   Int32.t) (__anonstruct_Edge_3_edges_31_alloc_table : (alloc_table
    __anonstruct_Edge_3)) (__anonstruct_Graph_4_g_0_15_alloc_table :
    (alloc_table __anonstruct_Graph_4))
    (__anonstruct_Vertex_2_vertices_30_alloc_table : (alloc_table
@@ -2732,19 +2740,19 @@ module Function_count_0_behaviors
    (__anonstruct_Graph_4_esize_g_0_15 : (memory __anonstruct_Graph_4
    Int32.t)) 
    requires {
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 126 13 22#
-    (#"graph_c.jc" 182 12 740#
-    ((#"graph_c.jc" 182 12 740#
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 117 13 22#
+    (#"graph_c.jc" 180 12 740#
+    ((#"graph_c.jc" 180 12 740#
      ((<=) (offset_min __anonstruct_Graph_4_g_0_15_alloc_table g_0_0) (0)))
     /\
-    (#"graph_c.jc" 182 12 740#
-    ((#"graph_c.jc" 182 12 740#
+    (#"graph_c.jc" 180 12 740#
+    ((#"graph_c.jc" 180 12 740#
      ((>=) (offset_max __anonstruct_Graph_4_g_0_15_alloc_table g_0_0) (0)))
-    /\ (#"graph_c.jc" 182 12 740# ((=) true true)))))))
+    /\ (#"graph_c.jc" 180 12 740# ((=) true true)))))))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 126 26 40#
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 117 26 40#
     (graph_valid g_0_0 __anonstruct_Vertex_2_vertices_30_alloc_table
     __anonstruct_Edge_3_edges_31_alloc_table
     __anonstruct_Graph_4_esize_g_0_15 __anonstruct_Graph_4_ecnt_g_0_15
@@ -2754,34 +2762,34 @@ module Function_count_0_behaviors
     __anonstruct_Edge_3_from_edges_31
     __anonstruct_Vertex_2_existent_vertices_30))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 127 13 28#
-    (is_vertex g_0_0 (Int32.to_int f_0) __anonstruct_Graph_4_vsize_g_0_15))
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 118 13 28#
+    (is_vertex g_0_0 (Int32.to_int f_0_0) __anonstruct_Graph_4_vsize_g_0_15))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 128 13 28#
-    (is_vertex g_0_0 (Int32.to_int t_0) __anonstruct_Graph_4_vsize_g_0_15))
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 119 13 28#
+    (is_vertex g_0_0 (Int32.to_int t_0_0) __anonstruct_Graph_4_vsize_g_0_15))
    /\
-   (#"graph_c.jc" 182 12 740#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 13 41#
+   (#"graph_c.jc" 180 12 740#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 120 13 41#
     (Int32.(=)
     (select __anonstruct_Vertex_2_existent_vertices_30
     (shift (select __anonstruct_Graph_4_vertices_g_0_15 g_0_0)
-    (Int32.to_int f_0))) (#"graph_c.jc" 191 29 41# "expl:Integer cast"
+    (Int32.to_int f_0_0))) (#"graph_c.jc" 189 29 41# "expl:Integer cast"
     (Int32.of_int (1)))))
    /\
-   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 13 41#
+   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 121 13 41#
    (Int32.(=)
    (select __anonstruct_Vertex_2_existent_vertices_30
    (shift (select __anonstruct_Graph_4_vertices_g_0_15 g_0_0)
-   (Int32.to_int t_0))) (#"graph_c.jc" 193 30 42# "expl:Integer cast"
+   (Int32.to_int t_0_0))) (#"graph_c.jc" 191 30 42# "expl:Integer cast"
    (Int32.of_int (1))))))))))))))) }
    ensures {
      ("expl:Postcondition"
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 131 12 41#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 122 12 41#
      "expl:Ensures clause"
      ((=) (Int32.to_int result)
-     (all_count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
+     (all_count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0)
      __anonstruct_Graph_4_esize_g_0_15 __anonstruct_Graph_4_edges_g_0_15
      __anonstruct_Edge_3_existent_0_edges_31 __anonstruct_Edge_3_to_edges_31
      __anonstruct_Edge_3_from_edges_31)))) } diverges  ->
@@ -2793,11 +2801,11 @@ module Function_count_0_behaviors
     (let i = ref (Unsafe_int32.any_  () ) in
     begin
     (c :=
-     (#"graph_c.jc" 203 19 31# "expl:Integer cast" (Unsafe_int32.of_int (0))));
+     (#"graph_c.jc" 201 19 31# "expl:Integer cast" (Unsafe_int32.of_int (0))));
      try
       begin
       (i :=
-       (#"graph_c.jc" 205 22 34# "expl:Integer cast"
+       (#"graph_c.jc" 203 22 34# "expl:Integer cast"
        (Unsafe_int32.of_int (0))));
        'LoopEntry:
        begin
@@ -2805,27 +2813,27 @@ module Function_count_0_behaviors
        'Loop_1:
        loop
        invariant
-         { ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 23 40#
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 23 40#
-            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 23 29#
-             (Int32.(<=) (#"graph_c.jc" 209 41 53# "expl:Integer cast"
+         { ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 23 40#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 23 40#
+            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 23 29#
+             (Int32.(<=) (#"graph_c.jc" 207 41 53# "expl:Integer cast"
              (Int32.of_int (0))) !i))
             /\
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 28 40#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 28 40#
             (Int32.(<=) !i (select __anonstruct_Graph_4_ecnt_g_0_15 g_0_0))))))
            &&
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 23 34#
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 23 34#
-            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 23 29#
-             (Int32.(<=) (#"graph_c.jc" 212 41 53# "expl:Integer cast"
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 23 34#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 23 34#
+            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 23 29#
+             (Int32.(<=) (#"graph_c.jc" 210 41 53# "expl:Integer cast"
              (Int32.of_int (0))) !c))
             /\
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 28 34#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 28 34#
             (Int32.(<=) !c !i)))))
            &&
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 140 23 48#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 131 23 48#
            ((=) (Int32.to_int !c)
-           (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+           (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
            (Int32.to_int !i) __anonstruct_Graph_4_edges_g_0_15
            __anonstruct_Edge_3_existent_0_edges_31
            __anonstruct_Edge_3_to_edges_31 __anonstruct_Edge_3_from_edges_31))))) }
@@ -2838,55 +2846,55 @@ module Function_count_0_behaviors
           begin
           'LoopCurrent:
           (if
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 143 20 31#
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 134 20 31#
           (Unsafe_int32.(<)  !i
            (acc  __anonstruct_Graph_4_ecnt_g_0_15 g_0_0 ) )) then ()
           else (raise (Goto_while_0_break_exc ())));
            begin
            (if
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 12 32#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 12 32#
            (Unsafe_int32.(<>) 
             (acc  __anonstruct_Edge_3_existent_0_edges_31
              (shift_  (acc  __anonstruct_Graph_4_edges_g_0_15 g_0_0 )
               (Unsafe_int32.to_int  !i ) ) )
-            (#"graph_c.jc" 226 33 45# "expl:Integer cast"
+            (#"graph_c.jc" 224 33 45# "expl:Integer cast"
             (Unsafe_int32.of_int (0))) ))
            then
             (if
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 36 57#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 36 57#
             (Unsafe_int32.(=) 
              (acc  __anonstruct_Edge_3_from_edges_31
               (shift_  (acc  __anonstruct_Graph_4_edges_g_0_15 g_0_0 )
-               (Unsafe_int32.to_int  !i ) ) ) f_0 ))
+               (Unsafe_int32.to_int  !i ) ) ) f_0_0 ))
             then
              (if
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 144 61 80#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 135 61 80#
              (Unsafe_int32.(=) 
               (acc  __anonstruct_Edge_3_to_edges_31
                (shift_  (acc  __anonstruct_Graph_4_edges_g_0_15 g_0_0 )
-                (Unsafe_int32.to_int  !i ) ) ) t_0 ))
+                (Unsafe_int32.to_int  !i ) ) ) t_0_0 ))
              then
               (c :=
                (Unsafe_int32.(+)  !c
-                (#"graph_c.jc" 239 68 80# "expl:Integer cast"
+                (#"graph_c.jc" 237 68 80# "expl:Integer cast"
                 (Unsafe_int32.of_int (1))) )) else ()) else ()) else ());
             begin
             (assert {
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 147 19 94#
-            "expl:Assertion in line 147"
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 138 19 94#
+            "expl:Assertion in line 138"
             ((=)
-            (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+            (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
             (Int.(+) (Int32.to_int !i) (1)) __anonstruct_Graph_4_edges_g_0_15
             __anonstruct_Edge_3_existent_0_edges_31
             __anonstruct_Edge_3_to_edges_31
             __anonstruct_Edge_3_from_edges_31)
             (Int.(+)
-            (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+            (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
             (Int32.to_int !i) __anonstruct_Graph_4_edges_g_0_15
             __anonstruct_Edge_3_existent_0_edges_31
             __anonstruct_Edge_3_to_edges_31
             __anonstruct_Edge_3_from_edges_31)
-            (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
+            (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0)
             (Int32.to_int !i) (Int.(+) (Int32.to_int !i) (1))
             __anonstruct_Graph_4_edges_g_0_15
             __anonstruct_Edge_3_existent_0_edges_31
@@ -2894,22 +2902,22 @@ module Function_count_0_behaviors
             __anonstruct_Edge_3_from_edges_31)))) }); () end;
             begin
             (assert {
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 148 19 108#
-            "expl:Assertion in line 148"
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 139 19 108#
+            "expl:Assertion in line 139"
             ((=)
-            (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+            (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
             (Int32.to_int (select __anonstruct_Graph_4_esize_g_0_15 g_0_0))
             __anonstruct_Graph_4_edges_g_0_15
             __anonstruct_Edge_3_existent_0_edges_31
             __anonstruct_Edge_3_to_edges_31
             __anonstruct_Edge_3_from_edges_31)
             (Int.(+)
-            (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0) (0)
+            (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0) (0)
             (Int.(+) (Int32.to_int !i) (1)) __anonstruct_Graph_4_edges_g_0_15
             __anonstruct_Edge_3_existent_0_edges_31
             __anonstruct_Edge_3_to_edges_31
             __anonstruct_Edge_3_from_edges_31)
-            (count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
+            (count g_0_0 (Int32.to_int f_0_0) (Int32.to_int t_0_0)
             (Int.(+) (Int32.to_int !i) (1))
             (Int32.to_int (select __anonstruct_Graph_4_esize_g_0_15 g_0_0))
             __anonstruct_Graph_4_edges_g_0_15
@@ -2918,7 +2926,7 @@ module Function_count_0_behaviors
             __anonstruct_Edge_3_from_edges_31)))) }); () end end;
            (i :=
             (Unsafe_int32.(+)  !i
-             (#"graph_c.jc" 289 53 65# "expl:Integer cast"
+             (#"graph_c.jc" 287 53 65# "expl:Integer cast"
              (Unsafe_int32.of_int (1))) )) end;
            (raise (Loop_continue_exc ())) end with Loop_continue_exc
           _jessie_3 -> () end end end; (raise (Goto_while_0_break_exc ()))
@@ -2945,18 +2953,19 @@ theory Logic_range_existent
   
   use why3.Bool.Bool 
   
-  predicate range_existent (g_6 : (pointer __anonstruct_Graph_4)) (m_0 : int)
-  (n_3 : int) (__anonstruct_Graph_4_edges_g_6_9_at_L : (memory
+  predicate range_existent (g_4 : (pointer __anonstruct_Graph_4)) (m : int)
+  (n_2 : int) (__anonstruct_Graph_4_edges_g_4_7_at_L : (memory
   __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
-  (__anonstruct_Edge_3_existent_0_edges_22_at_L : (memory __anonstruct_Edge_3
+  (__anonstruct_Edge_3_existent_0_edges_21_at_L : (memory __anonstruct_Edge_3
   Int32.t))
   =
-     (forall k_6 : int.
-      ((((<=) m_0 k_6) /\ ((<) k_6 n_3)) ->
-       (Int32.(=)
-       (select __anonstruct_Edge_3_existent_0_edges_22_at_L
-       (shift (select __anonstruct_Graph_4_edges_g_6_9_at_L g_6) k_6))
-       (#"graph_c.jc" 102 41 53# "expl:Integer cast" (Int32.of_int (1))))))
+     (forall k_4 : int.
+      ((((<=) m k_4) /\ ((<) k_4 n_2)) ->
+       (not
+       ((=)
+       (Int32.to_int
+       (select __anonstruct_Edge_3_existent_0_edges_21_at_L
+       (shift (select __anonstruct_Graph_4_edges_g_4_7_at_L g_4) k_4))) (0)))))
   
   
 end
@@ -2977,23 +2986,23 @@ theory Logic_full
   
   use why3.Bool.Bool 
   
-  predicate full (g_5 : (pointer __anonstruct_Graph_4))
-  (__anonstruct_Graph_4_esize_g_5_8_at_L : (memory __anonstruct_Graph_4
-  Int32.t)) (__anonstruct_Graph_4_edges_g_5_8_at_L : (memory
+  predicate full (g_3 : (pointer __anonstruct_Graph_4))
+  (__anonstruct_Graph_4_esize_g_3_6_at_L : (memory __anonstruct_Graph_4
+  Int32.t)) (__anonstruct_Graph_4_edges_g_3_6_at_L : (memory
   __anonstruct_Graph_4 (pointer __anonstruct_Edge_3)))
-  (__anonstruct_Edge_3_existent_0_edges_54_at_L : (memory __anonstruct_Edge_3
+  (__anonstruct_Edge_3_existent_0_edges_50_at_L : (memory __anonstruct_Edge_3
   Int32.t))
   =
-     (range_existent g_5 (0)
-     (Int32.to_int (select __anonstruct_Graph_4_esize_g_5_8_at_L g_5))
-     __anonstruct_Graph_4_edges_g_5_8_at_L
-     __anonstruct_Edge_3_existent_0_edges_54_at_L)
+     (range_existent g_3 (0)
+     (Int32.to_int (select __anonstruct_Graph_4_esize_g_3_6_at_L g_3))
+     __anonstruct_Graph_4_edges_g_3_6_at_L
+     __anonstruct_Edge_3_existent_0_edges_50_at_L)
   
   
 end
 
 module Function_add_edge_safety
-#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 165 0 32#
+#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 0 32#
 "expl:add_edge, safety"
 
   use import core.Upd_safe 
@@ -3050,10 +3059,10 @@ module Function_add_edge_safety
   
   use why3.Bool.Bool 
   
-  let add_edge #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 165 0 32#
+  let add_edge #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 0 32#
   "expl:Function add_edge, safety" =
   fun
-   (g_8 : (pointer __anonstruct_Graph_4)) (f_2 : Int32.t) (t_2 : Int32.t)
+   (g_10 : (pointer __anonstruct_Graph_4)) (f_2 : Int32.t) (t_2 : Int32.t)
    (__anonstruct_Edge_3_from_edges_33 : ref (memory __anonstruct_Edge_3
    Int32.t)) (__anonstruct_Edge_3_to_edges_33 : ref (memory
    __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_existent_0_edges_33 :
@@ -3073,20 +3082,20 @@ module Function_add_edge_safety
    __anonstruct_Edge_3))) (__anonstruct_Graph_4_esize_g_16 : (memory
    __anonstruct_Graph_4 Int32.t)) 
    requires {
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 154 11 20#
-    (#"graph_c.jc" 300 12 792#
-    ((#"graph_c.jc" 300 12 792#
-     ((<=) (offset_min __anonstruct_Graph_4_g_16_alloc_table g_8) (0)))
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 11 20#
+    (#"graph_c.jc" 298 12 751#
+    ((#"graph_c.jc" 298 12 751#
+     ((<=) (offset_min __anonstruct_Graph_4_g_16_alloc_table g_10) (0)))
     /\
-    (#"graph_c.jc" 300 12 792#
-    ((#"graph_c.jc" 300 12 792#
-     ((>=) (offset_max __anonstruct_Graph_4_g_16_alloc_table g_8) (0)))
-    /\ (#"graph_c.jc" 300 12 792# ((=) true true)))))))
+    (#"graph_c.jc" 298 12 751#
+    ((#"graph_c.jc" 298 12 751#
+     ((>=) (offset_max __anonstruct_Graph_4_g_16_alloc_table g_10) (0)))
+    /\ (#"graph_c.jc" 298 12 751# ((=) true true)))))))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 154 24 38#
-    (graph_valid g_8 __anonstruct_Vertex_2_vertices_32_alloc_table
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 24 38#
+    (graph_valid g_10 __anonstruct_Vertex_2_vertices_32_alloc_table
     __anonstruct_Edge_3_edges_33_alloc_table __anonstruct_Graph_4_esize_g_16
     !__anonstruct_Graph_4_ecnt_g_16 __anonstruct_Graph_4_edges_g_16
     __anonstruct_Graph_4_vsize_g_16 __anonstruct_Graph_4_vertices_g_16
@@ -3094,33 +3103,35 @@ module Function_add_edge_safety
     !__anonstruct_Edge_3_from_edges_33
     __anonstruct_Vertex_2_existent_vertices_32))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 155 11 26#
-    (is_vertex g_8 (Int32.to_int f_2) __anonstruct_Graph_4_vsize_g_16))
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 146 11 26#
+    (is_vertex g_10 (Int32.to_int f_2) __anonstruct_Graph_4_vsize_g_16))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 11 26#
-    (is_vertex g_8 (Int32.to_int t_2) __anonstruct_Graph_4_vsize_g_16))
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 147 11 26#
+    (is_vertex g_10 (Int32.to_int t_2) __anonstruct_Graph_4_vsize_g_16))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 157 11 39#
-    (Int32.(=)
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 148 11 34#
+    (not
+    ((=)
+    (Int32.to_int
     (select __anonstruct_Vertex_2_existent_vertices_32
-    (shift (select __anonstruct_Graph_4_vertices_g_16 g_8)
-    (Int32.to_int f_2))) (#"graph_c.jc" 309 30 42# "expl:Integer cast"
-    (Int32.of_int (1)))))
+    (shift (select __anonstruct_Graph_4_vertices_g_16 g_10)
+    (Int32.to_int f_2)))) (0))))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 11 39#
-    (Int32.(=)
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 149 11 34#
+    (not
+    ((=)
+    (Int32.to_int
     (select __anonstruct_Vertex_2_existent_vertices_32
-    (shift (select __anonstruct_Graph_4_vertices_g_16 g_8)
-    (Int32.to_int t_2))) (#"graph_c.jc" 311 32 44# "expl:Integer cast"
-    (Int32.of_int (1)))))
+    (shift (select __anonstruct_Graph_4_vertices_g_16 g_10)
+    (Int32.to_int t_2)))) (0))))
    /\
-   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 11 19#
+   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 150 11 19#
    (not
-   (full g_8 __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
+   (full g_10 __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
    !__anonstruct_Edge_3_existent_0_edges_33))))))))))))))) }
    ensures { ("expl:Postcondition" true) }  ->
    'Init:
@@ -3130,37 +3141,37 @@ module Function_add_edge_safety
     try
      begin
      (if
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 167 8 26#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 8 26#
      (Safe_int32.(<) 
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 167 8 15#
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 8 15#
       "expl:Pointer dereference"
       (acc  __anonstruct_Graph_4_g_16_alloc_table
-       !__anonstruct_Graph_4_ecnt_g_16 g_8 ))
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 167 18 26#
+       !__anonstruct_Graph_4_ecnt_g_16 g_10 ))
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 18 26#
       "expl:Pointer dereference"
       (acc  __anonstruct_Graph_4_g_16_alloc_table
-       __anonstruct_Graph_4_esize_g_16 g_8 )) ))
+       __anonstruct_Graph_4_esize_g_16 g_10 )) ))
      then
       begin
       (let _jessie_71 =
       (let _jessie_70 = f_2 in
       begin
       (assert {
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 168 8 34#
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 8 34#
       "expl:Pointer index bounds" true) }); _jessie_70 end) in
       (let _jessie_72 =
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 168 8 16#
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 8 16#
       "expl:Pointer dereference"
       (acc  __anonstruct_Graph_4_g_16_alloc_table
-       __anonstruct_Graph_4_edges_g_16 g_8 )) in
+       __anonstruct_Graph_4_edges_g_16 g_10 )) in
       (let _jessie_73 =
       (Safe_int32.to_int 
-       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 168 17 24#
+       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 17 24#
        "expl:Pointer dereference"
        (acc  __anonstruct_Graph_4_g_16_alloc_table
-        !__anonstruct_Graph_4_ecnt_g_16 g_8 )) ) in
+        !__anonstruct_Graph_4_ecnt_g_16 g_10 )) ) in
       (let _jessie_74 = (shift_typesafe  _jessie_72 _jessie_73 ) in
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 168 8 34#
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 8 34#
       "expl:Pointer dereference"
       (upd_offset_typesafe  __anonstruct_Edge_3_edges_33_alloc_table
        __anonstruct_Edge_3_from_edges_33 _jessie_72 _jessie_73 _jessie_71 ))))));
@@ -3169,46 +3180,46 @@ module Function_add_edge_safety
        (let _jessie_65 = t_2 in
        begin
        (assert {
-       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 169 8 32#
+       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 8 32#
        "expl:Pointer index bounds" true) }); _jessie_65 end) in
        (let _jessie_67 =
-       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 169 8 16#
+       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 8 16#
        "expl:Pointer dereference"
        (acc  __anonstruct_Graph_4_g_16_alloc_table
-        __anonstruct_Graph_4_edges_g_16 g_8 )) in
+        __anonstruct_Graph_4_edges_g_16 g_10 )) in
        (let _jessie_68 =
        (Safe_int32.to_int 
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 169 17 24#
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 17 24#
         "expl:Pointer dereference"
         (acc  __anonstruct_Graph_4_g_16_alloc_table
-         !__anonstruct_Graph_4_ecnt_g_16 g_8 )) ) in
+         !__anonstruct_Graph_4_ecnt_g_16 g_10 )) ) in
        (let _jessie_69 = (shift_typesafe  _jessie_67 _jessie_68 ) in
-       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 169 8 32#
+       (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 8 32#
        "expl:Pointer dereference"
        (upd_offset_typesafe  __anonstruct_Edge_3_edges_33_alloc_table
         __anonstruct_Edge_3_to_edges_33 _jessie_67 _jessie_68 _jessie_66 ))))));
         begin
         (let _jessie_61 =
         (let _jessie_60 =
-        (#"graph_c.jc" 337 91 103# "expl:Integer cast"
+        (#"graph_c.jc" 334 91 103# "expl:Integer cast"
         (Safe_int32.of_int (1))) in
         begin
         (assert {
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 170 8 38#
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 8 38#
         "expl:Pointer index bounds" true) }); _jessie_60 end) in
         (let _jessie_62 =
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 170 8 16#
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 8 16#
         "expl:Pointer dereference"
         (acc  __anonstruct_Graph_4_g_16_alloc_table
-         __anonstruct_Graph_4_edges_g_16 g_8 )) in
+         __anonstruct_Graph_4_edges_g_16 g_10 )) in
         (let _jessie_63 =
         (Safe_int32.to_int 
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 170 17 24#
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 17 24#
          "expl:Pointer dereference"
          (acc  __anonstruct_Graph_4_g_16_alloc_table
-          !__anonstruct_Graph_4_ecnt_g_16 g_8 )) ) in
+          !__anonstruct_Graph_4_ecnt_g_16 g_10 )) ) in
         (let _jessie_64 = (shift_typesafe  _jessie_62 _jessie_63 ) in
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 170 8 38#
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 8 38#
         "expl:Pointer dereference"
         (upd_offset_typesafe  __anonstruct_Edge_3_edges_33_alloc_table
          __anonstruct_Edge_3_existent_0_edges_33 _jessie_62 _jessie_63
@@ -3217,13 +3228,13 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, g_8 }
+         __anonstruct_Graph_4_ecnt_g_16, g_10 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-            (edges_saved g_8 (0)
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+            (edges_saved g_10 (0)
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
             __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33 (at
             !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -3232,11 +3243,11 @@ module Function_add_edge_safety
             !__anonstruct_Edge_3_from_edges_33 (at
             !__anonstruct_Edge_3_from_edges_33 'Init)))
            /\
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-           (edges_saved g_8
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+           (edges_saved g_10
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -3248,11 +3259,11 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, g_8 }
+         __anonstruct_Graph_4_ecnt_g_16, g_10 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 174 19 41#
-           (edge_valid g_8
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 165 19 41#
+           (edge_valid g_10
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_vsize_g_16
            __anonstruct_Graph_4_vertices_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
@@ -3263,14 +3274,14 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, f_2, g_8, t_2 }
+         __anonstruct_Graph_4_ecnt_g_16, f_2, g_10, t_2 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 175 19 60#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 166 19 60#
            ((=)
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
            __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
@@ -3279,17 +3290,17 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, g_8 }
+         __anonstruct_Graph_4_ecnt_g_16, g_10 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 176 19 91#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 167 19 91#
            (forall f2 : int.
             (forall t2 : int.
              ((=)
-             (count g_8 f2 t2
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+             (count g_10 f2 t2
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
              (Int.(+)
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-             __anonstruct_Graph_4_edges_g_16 (at
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
+             (1)) __anonstruct_Graph_4_edges_g_16 (at
              !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
              !__anonstruct_Edge_3_to_edges_33 'Init) (at
              !__anonstruct_Edge_3_from_edges_33 'Init)) (0))))) } ; () end;
@@ -3297,18 +3308,18 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, f_2, g_8, t_2 }
+         __anonstruct_Graph_4_ecnt_g_16, f_2, g_10, t_2 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 177 19 111#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 168 19 111#
            (forall f2_0 : int.
             (forall t2_0 : int.
              (((not ((=) f2_0 (Int32.to_int f_2))) \/
               (not ((=) t2_0 (Int32.to_int t_2)))) ->
               ((=)
-              (count g_8 f2_0 t2_0
-              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+              (count g_10 f2_0 t2_0
+              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
               (Int.(+)
-              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
               (1)) __anonstruct_Graph_4_edges_g_16
               !__anonstruct_Edge_3_existent_0_edges_33
               !__anonstruct_Edge_3_to_edges_33
@@ -3317,13 +3328,13 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, g_8 }
+         __anonstruct_Graph_4_ecnt_g_16, g_10 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 178 19 177#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 169 19 173#
            (forall f2_1 : int.
             (forall t2_1 : int.
-             ((count_saved_p g_8 f2_1 t2_1 (0)
-              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+             ((count_saved g_10 f2_1 t2_1 (0)
+              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
               __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
               !__anonstruct_Edge_3_existent_0_edges_33 (at
               !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -3332,10 +3343,11 @@ module Function_add_edge_safety
               !__anonstruct_Edge_3_from_edges_33 (at
               !__anonstruct_Edge_3_from_edges_33 'Init))
              /\
-             (count_saved_p g_8 f2_1 t2_1
+             (count_saved g_10 f2_1 t2_1
              (Int.(+)
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-             (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
+             (1))
+             (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
              __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
              !__anonstruct_Edge_3_existent_0_edges_33 (at
              !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -3347,17 +3359,17 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, f_2, g_8, t_2 }
+         __anonstruct_Graph_4_ecnt_g_16, f_2, g_10, t_2 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 182 19 125#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 173 19 123#
            (forall f2_2 : int.
             (forall t2_2 : int.
              (((not ((=) f2_2 (Int32.to_int f_2))) \/
               (not ((=) t2_2 (Int32.to_int t_2)))) ->
-              (count_saved_p g_8 f2_2 t2_2
-              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+              (count_saved g_10 f2_2 t2_2
+              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
               (Int.(+)
-              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+              (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
               (1)) __anonstruct_Graph_4_edges_g_16
               __anonstruct_Graph_4_edges_g_16
               !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -3370,28 +3382,28 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, g_8 }
+         __anonstruct_Graph_4_ecnt_g_16, g_10 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 19 133#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 174 19 133#
            (forall f2_3 : int.
             (forall t2_3 : int.
              ((=)
-             (all_count g_8 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
+             (all_count g_10 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
              __anonstruct_Graph_4_edges_g_16
              !__anonstruct_Edge_3_existent_0_edges_33
              !__anonstruct_Edge_3_to_edges_33
              !__anonstruct_Edge_3_from_edges_33)
              (Int.(+)
-             (all_count g_8 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
+             (all_count g_10 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
              __anonstruct_Graph_4_edges_g_16 (at
              !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
              !__anonstruct_Edge_3_to_edges_33 'Init) (at
              !__anonstruct_Edge_3_from_edges_33 'Init))
-             (count g_8 f2_3 t2_3
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+             (count g_10 f2_3 t2_3
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
              (Int.(+)
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-             __anonstruct_Graph_4_edges_g_16
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
+             (1)) __anonstruct_Graph_4_edges_g_16
              !__anonstruct_Edge_3_existent_0_edges_33
              !__anonstruct_Edge_3_to_edges_33
              !__anonstruct_Edge_3_from_edges_33)))))) } ; () end;
@@ -3399,35 +3411,35 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, f_2, g_8, t_2 }
+         __anonstruct_Graph_4_ecnt_g_16, f_2, g_10, t_2 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 184 19 146#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 175 19 146#
            ((=)
-           (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+           (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
            __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
            !__anonstruct_Edge_3_from_edges_33)
            (Int.(+)
            (Int.(+)
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2) (0)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2) (0)
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
            !__anonstruct_Edge_3_from_edges_33)
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
            __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
            !__anonstruct_Edge_3_from_edges_33))
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
@@ -3436,35 +3448,35 @@ module Function_add_edge_safety
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, f_2, g_8, t_2 }
+         __anonstruct_Graph_4_ecnt_g_16, f_2, g_10, t_2 }
          ensures {
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 185 19 166#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 176 19 166#
            ((=)
-           (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+           (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
            __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
            (at !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
            !__anonstruct_Edge_3_to_edges_33 'Init) (at
            !__anonstruct_Edge_3_from_edges_33 'Init))
            (Int.(+)
            (Int.(+)
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2) (0)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2) (0)
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
            !__anonstruct_Edge_3_to_edges_33 'Init) (at
            !__anonstruct_Edge_3_from_edges_33 'Init))
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
            __anonstruct_Graph_4_edges_g_16 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
            !__anonstruct_Edge_3_to_edges_33 'Init) (at
            !__anonstruct_Edge_3_from_edges_33 'Init)))
-           (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+           (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
            !__anonstruct_Edge_3_to_edges_33 'Init) (at
@@ -3473,81 +3485,81 @@ module Function_add_edge_safety
          (let _jessie_56 =
          (let _jessie_55 =
          (Safe_int32.(+) 
-          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 186 11 18#
+          (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 177 11 18#
           "expl:Pointer dereference"
           (acc  __anonstruct_Graph_4_g_16_alloc_table
-           !__anonstruct_Graph_4_ecnt_g_16 g_8 ))
-          (#"graph_c.jc" 489 59 71# "expl:Integer cast"
+           !__anonstruct_Graph_4_ecnt_g_16 g_10 ))
+          (#"graph_c.jc" 486 59 71# "expl:Integer cast"
           (Safe_int32.of_int (1))) ) in
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 186 8 18#
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 177 8 18#
          "expl:Pointer index bounds" true) }); _jessie_55 end) in
-         (let _jessie_57 = g_8 in
+         (let _jessie_57 = g_10 in
          (let _jessie_58 = (0) in
          (let _jessie_59 = _jessie_57 in
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 186 8 18#
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 177 8 18#
          "expl:Pointer dereference"
          (upd  __anonstruct_Graph_4_g_16_alloc_table
           __anonstruct_Graph_4_ecnt_g_16 _jessie_57 _jessie_56 ))))));
           (raise (Return_label_exc ())) end end end end else ());
       begin
       any unit
-      requires { true } reads { __anonstruct_Graph_4_ecnt_g_16, g_8 }
+      requires { true } reads { __anonstruct_Graph_4_ecnt_g_16, g_10 }
       ensures {
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 190 15 34#
-        (Int32.(=) (select __anonstruct_Graph_4_esize_g_16 g_8)
-        (select !__anonstruct_Graph_4_ecnt_g_16 g_8))) } ; () end;
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 181 15 34#
+        (Int32.(=) (select __anonstruct_Graph_4_esize_g_16 g_10)
+        (select !__anonstruct_Graph_4_ecnt_g_16 g_10))) } ; () end;
       try
        begin
        (i_0 :=
         (let _jessie_91 =
-        (#"graph_c.jc" 499 25 37# "expl:Integer cast"
+        (#"graph_c.jc" 496 25 37# "expl:Integer cast"
         (Safe_int32.of_int (0))) in
         begin
         (assert {
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 13 14#
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 189 13 14#
         "expl:Pointer index bounds" true) }); _jessie_91 end));
         'LoopEntry:
         begin
         'LoopEntry:
         'Loop_4:
         loop
-        invariant { (#"graph_c.jc" 501 9 14514# true) }
+        invariant { (#"graph_c.jc" 498 9 13262# true) }
           variant {
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 196 21 32#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 187 21 32#
             (Int.(-)
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
             (Int32.to_int !i_0))) }
          begin
          any unit
          requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33,
          __anonstruct_Edge_3_from_edges_33, __anonstruct_Edge_3_to_edges_33,
-         __anonstruct_Graph_4_ecnt_g_16, g_8 }
+         __anonstruct_Graph_4_ecnt_g_16, g_10 }
          ensures {
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 46#
-            (range_existent g_8 (0) (Int32.to_int !i_0)
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 186 23 46#
+            (range_existent g_10 (0) (Int32.to_int !i_0)
             __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33))
            /\
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 194 23 102#
-            (forall f2_11 : int.
-             (forall t2_11 : int.
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 185 23 102#
+            (forall f2_10 : int.
+             (forall t2_10 : int.
               ((=)
-              (all_count g_8 f2_11 t2_11 __anonstruct_Graph_4_esize_g_16
+              (all_count g_10 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
               __anonstruct_Graph_4_edges_g_16 (at
               !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
               !__anonstruct_Edge_3_to_edges_33 'Init) (at
               !__anonstruct_Edge_3_from_edges_33 'Init))
-              (all_count g_8 f2_11 t2_11 __anonstruct_Graph_4_esize_g_16
+              (all_count g_10 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
               __anonstruct_Graph_4_edges_g_16
               !__anonstruct_Edge_3_existent_0_edges_33
               !__anonstruct_Edge_3_to_edges_33
               !__anonstruct_Edge_3_from_edges_33)))))
            /\
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 193 23 60#
-            (edges_saved g_8 (0)
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 184 23 60#
+            (edges_saved g_10 (0)
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
             __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33 (at
             !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -3556,14 +3568,14 @@ module Function_add_edge_safety
             !__anonstruct_Edge_3_from_edges_33 (at
             !__anonstruct_Edge_3_from_edges_33 'Init)))
            /\
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 23 40#
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 23 40#
-           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 23 29#
-            (Int32.(<=) (#"graph_c.jc" 503 41 53# "expl:Integer cast"
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 23 40#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 23 40#
+           ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 23 29#
+            (Int32.(<=) (#"graph_c.jc" 500 41 53# "expl:Integer cast"
             (Int32.of_int (0))) !i_0))
            /\
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 28 40#
-           (Int32.(<=) !i_0 (select !__anonstruct_Graph_4_ecnt_g_16 g_8)))))))))
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 28 40#
+           (Int32.(<=) !i_0 (select !__anonstruct_Graph_4_ecnt_g_16 g_10)))))))))
            } ;
           try
            begin
@@ -3571,30 +3583,30 @@ module Function_add_edge_safety
            begin
            'LoopCurrent:
            (if
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 20 31#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 189 20 31#
            (Safe_int32.(<)  !i_0
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 24 31#
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 189 24 31#
             "expl:Pointer dereference"
             (acc  __anonstruct_Graph_4_g_16_alloc_table
-             !__anonstruct_Graph_4_ecnt_g_16 g_8 )) )) then ()
+             !__anonstruct_Graph_4_ecnt_g_16 g_10 )) )) then ()
            else (raise (Goto_while_0_break_0_exc ())));
             'U__L:
             begin
             'U__L: ();
              (if
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 200 12 33#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 191 12 33#
              (Bool.notb 
               (Safe_int32.(<>) 
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 200 13 33#
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 191 13 33#
                "expl:Pointer dereference"
                (acc_offset_typesafe  __anonstruct_Edge_3_edges_33_alloc_table
                 !__anonstruct_Edge_3_existent_0_edges_33
-                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 200 13 21#
+                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 191 13 21#
                 "expl:Pointer dereference"
                 (acc  __anonstruct_Graph_4_g_16_alloc_table
-                 __anonstruct_Graph_4_edges_g_16 g_8 ))
+                 __anonstruct_Graph_4_edges_g_16 g_10 ))
                 (Safe_int32.to_int  !i_0 ) ))
-               (#"graph_c.jc" 524 37 49# "expl:Integer cast"
+               (#"graph_c.jc" 521 37 49# "expl:Integer cast"
                (Safe_int32.of_int (0))) ) ))
              then
               begin
@@ -3602,16 +3614,16 @@ module Function_add_edge_safety
               (let _jessie_85 = f_2 in
               begin
               (assert {
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 201 12 32#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 12 32#
               "expl:Pointer index bounds" true) }); _jessie_85 end) in
               (let _jessie_87 =
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 201 12 20#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 12 20#
               "expl:Pointer dereference"
               (acc  __anonstruct_Graph_4_g_16_alloc_table
-               __anonstruct_Graph_4_edges_g_16 g_8 )) in
+               __anonstruct_Graph_4_edges_g_16 g_10 )) in
               (let _jessie_88 = (Safe_int32.to_int  !i_0 ) in
               (let _jessie_89 = (shift_typesafe  _jessie_87 _jessie_88 ) in
-              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 201 12 32#
+              (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 12 32#
               "expl:Pointer dereference"
               (upd_offset_typesafe  __anonstruct_Edge_3_edges_33_alloc_table
                __anonstruct_Edge_3_from_edges_33 _jessie_87 _jessie_88
@@ -3621,16 +3633,16 @@ module Function_add_edge_safety
                (let _jessie_80 = t_2 in
                begin
                (assert {
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 202 12 30#
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 193 12 30#
                "expl:Pointer index bounds" true) }); _jessie_80 end) in
                (let _jessie_82 =
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 202 12 20#
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 193 12 20#
                "expl:Pointer dereference"
                (acc  __anonstruct_Graph_4_g_16_alloc_table
-                __anonstruct_Graph_4_edges_g_16 g_8 )) in
+                __anonstruct_Graph_4_edges_g_16 g_10 )) in
                (let _jessie_83 = (Safe_int32.to_int  !i_0 ) in
                (let _jessie_84 = (shift_typesafe  _jessie_82 _jessie_83 ) in
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 202 12 30#
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 193 12 30#
                "expl:Pointer dereference"
                (upd_offset_typesafe  __anonstruct_Edge_3_edges_33_alloc_table
                 __anonstruct_Edge_3_to_edges_33 _jessie_82 _jessie_83
@@ -3638,20 +3650,20 @@ module Function_add_edge_safety
                 begin
                 (let _jessie_76 =
                 (let _jessie_75 =
-                (#"graph_c.jc" 527 92 104# "expl:Integer cast"
+                (#"graph_c.jc" 524 92 104# "expl:Integer cast"
                 (Safe_int32.of_int (1))) in
                 begin
                 (assert {
-                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 203 12 36#
+                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 194 12 36#
                 "expl:Pointer index bounds" true) }); _jessie_75 end) in
                 (let _jessie_77 =
-                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 203 12 20#
+                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 194 12 20#
                 "expl:Pointer dereference"
                 (acc  __anonstruct_Graph_4_g_16_alloc_table
-                 __anonstruct_Graph_4_edges_g_16 g_8 )) in
+                 __anonstruct_Graph_4_edges_g_16 g_10 )) in
                 (let _jessie_78 = (Safe_int32.to_int  !i_0 ) in
                 (let _jessie_79 = (shift_typesafe  _jessie_77 _jessie_78 ) in
-                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 203 12 36#
+                (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 194 12 36#
                 "expl:Pointer dereference"
                 (upd_offset_typesafe 
                  __anonstruct_Edge_3_edges_33_alloc_table
@@ -3662,12 +3674,12 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, g_8 }
+                 __anonstruct_Edge_3_to_edges_33, g_10 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                    (edges_saved g_8 (0) (Int32.to_int !i_0)
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                    (edges_saved g_10 (0) (Int32.to_int !i_0)
                     __anonstruct_Graph_4_edges_g_16
                     __anonstruct_Graph_4_edges_g_16
                     !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -3677,10 +3689,10 @@ module Function_add_edge_safety
                     !__anonstruct_Edge_3_from_edges_33 (at
                     !__anonstruct_Edge_3_from_edges_33 'Init)))
                    /\
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                   (edges_saved g_8 (Int.(+) (Int32.to_int !i_0) (1))
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                   (edges_saved g_10 (Int.(+) (Int32.to_int !i_0) (1))
                    (Int32.to_int
-                   (select __anonstruct_Graph_4_esize_g_16 g_8))
+                   (select __anonstruct_Graph_4_esize_g_16 g_10))
                    __anonstruct_Graph_4_edges_g_16
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -3694,10 +3706,10 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, g_8 }
+                 __anonstruct_Edge_3_to_edges_33, g_10 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 207 23 39#
-                   (edge_valid g_8 (Int32.to_int !i_0)
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 23 39#
+                   (edge_valid g_10 (Int32.to_int !i_0)
                    __anonstruct_Graph_4_edges_g_16
                    __anonstruct_Graph_4_vsize_g_16
                    __anonstruct_Graph_4_vertices_g_16
@@ -3710,11 +3722,11 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, f_2, g_8, t_2 }
+                 __anonstruct_Edge_3_to_edges_33, f_2, g_10, t_2 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 208 23 52#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 199 23 52#
                    ((=)
-                   (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                   (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                    (Int32.to_int !i_0) (Int.(+) (Int32.to_int !i_0) (1))
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33
@@ -3725,13 +3737,13 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, g_8 }
+                 __anonstruct_Edge_3_to_edges_33, g_10 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 209 23 83#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 200 23 83#
                    (forall f2_4 : int.
                     (forall t2_4 : int.
                      ((=)
-                     (count g_8 f2_4 t2_4 (Int32.to_int !i_0)
+                     (count g_10 f2_4 t2_4 (Int32.to_int !i_0)
                      (Int.(+) (Int32.to_int !i_0) (1))
                      __anonstruct_Graph_4_edges_g_16 (at
                      !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
@@ -3743,15 +3755,15 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, f_2, g_8, t_2 }
+                 __anonstruct_Edge_3_to_edges_33, f_2, g_10, t_2 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 210 23 103#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 201 23 103#
                    (forall f2_5 : int.
                     (forall t2_5 : int.
                      (((not ((=) f2_5 (Int32.to_int f_2))) \/
                       (not ((=) t2_5 (Int32.to_int t_2)))) ->
                       ((=)
-                      (count g_8 f2_5 t2_5 (Int32.to_int !i_0)
+                      (count g_10 f2_5 t2_5 (Int32.to_int !i_0)
                       (Int.(+) (Int32.to_int !i_0) (1))
                       __anonstruct_Graph_4_edges_g_16
                       !__anonstruct_Edge_3_existent_0_edges_33
@@ -3762,12 +3774,12 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, g_8 }
+                 __anonstruct_Edge_3_to_edges_33, g_10 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 211 23 177#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 202 23 173#
                    (forall f2_6 : int.
                     (forall t2_6 : int.
-                     ((count_saved_p g_8 f2_6 t2_6 (0) (Int32.to_int !i_0)
+                     ((count_saved g_10 f2_6 t2_6 (0) (Int32.to_int !i_0)
                       __anonstruct_Graph_4_edges_g_16
                       __anonstruct_Graph_4_edges_g_16
                       !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -3777,10 +3789,10 @@ module Function_add_edge_safety
                       !__anonstruct_Edge_3_from_edges_33 (at
                       !__anonstruct_Edge_3_from_edges_33 'Init))
                      /\
-                     (count_saved_p g_8 f2_6 t2_6
+                     (count_saved g_10 f2_6 t2_6
                      (Int.(+) (Int32.to_int !i_0) (1))
                      (Int32.to_int
-                     (select __anonstruct_Graph_4_esize_g_16 g_8))
+                     (select __anonstruct_Graph_4_esize_g_16 g_10))
                      __anonstruct_Graph_4_edges_g_16
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -3795,14 +3807,14 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, f_2, g_8, t_2 }
+                 __anonstruct_Edge_3_to_edges_33, f_2, g_10, t_2 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 215 23 117#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 206 23 115#
                    (forall f2_7 : int.
                     (forall t2_7 : int.
                      (((not ((=) f2_7 (Int32.to_int f_2))) \/
                       (not ((=) t2_7 (Int32.to_int t_2)))) ->
-                      (count_saved_p g_8 f2_7 t2_7 (Int32.to_int !i_0)
+                      (count_saved g_10 f2_7 t2_7 (Int32.to_int !i_0)
                       (Int.(+) (Int32.to_int !i_0) (1))
                       __anonstruct_Graph_4_edges_g_16
                       __anonstruct_Graph_4_edges_g_16
@@ -3818,33 +3830,34 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, g_8 }
+                 __anonstruct_Edge_3_to_edges_33, g_10 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 216 23 158#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 207 23 158#
                    (forall f2_8 : int.
                     (forall t2_8 : int.
                      ((=)
-                     (all_count g_8 f2_8 t2_8 __anonstruct_Graph_4_esize_g_16
+                     (all_count g_10 f2_8 t2_8
+                     __anonstruct_Graph_4_esize_g_16
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33
                      !__anonstruct_Edge_3_to_edges_33
                      !__anonstruct_Edge_3_from_edges_33)
                      (Int.(+)
                      (Int.(+)
-                     (count g_8 f2_8 t2_8 (0) (Int32.to_int !i_0)
+                     (count g_10 f2_8 t2_8 (0) (Int32.to_int !i_0)
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33
                      !__anonstruct_Edge_3_to_edges_33
                      !__anonstruct_Edge_3_from_edges_33)
-                     (count g_8 f2_8 t2_8 (Int32.to_int !i_0)
+                     (count g_10 f2_8 t2_8 (Int32.to_int !i_0)
                      (Int.(+) (Int32.to_int !i_0) (1))
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33
                      !__anonstruct_Edge_3_to_edges_33
                      !__anonstruct_Edge_3_from_edges_33))
-                     (count g_8 f2_8 t2_8 (Int.(+) (Int32.to_int !i_0) (1))
+                     (count g_10 f2_8 t2_8 (Int.(+) (Int32.to_int !i_0) (1))
                      (Int32.to_int
-                     (select __anonstruct_Graph_4_esize_g_16 g_8))
+                     (select __anonstruct_Graph_4_esize_g_16 g_10))
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33
                      !__anonstruct_Edge_3_to_edges_33
@@ -3854,37 +3867,11 @@ module Function_add_edge_safety
                  requires { true } reads {
                  __anonstruct_Edge_3_existent_0_edges_33,
                  __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, f_2, g_8, t_2 }
+                 __anonstruct_Edge_3_to_edges_33, f_2, g_10, t_2 }
                  ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 217 23 121#
-                   (forall f2_9 : int.
-                    (forall t2_9 : int.
-                     (((not ((=) f2_9 (Int32.to_int f_2))) \/
-                      (not ((=) t2_9 (Int32.to_int t_2)))) ->
-                      ((=)
-                      (all_count g_8 f2_9 t2_9
-                      __anonstruct_Graph_4_esize_g_16
-                      __anonstruct_Graph_4_edges_g_16
-                      !__anonstruct_Edge_3_existent_0_edges_33
-                      !__anonstruct_Edge_3_to_edges_33
-                      !__anonstruct_Edge_3_from_edges_33)
-                      (all_count g_8 f2_9 t2_9
-                      __anonstruct_Graph_4_esize_g_16
-                      __anonstruct_Graph_4_edges_g_16 (at
-                      !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
-                      !__anonstruct_Edge_3_to_edges_33 'Init) (at
-                      !__anonstruct_Edge_3_from_edges_33 'Init))))))) } ; ()
-                 end;
-                 begin
-                 any unit
-                 requires { true } reads {
-                 __anonstruct_Edge_3_existent_0_edges_33,
-                 __anonstruct_Edge_3_from_edges_33,
-                 __anonstruct_Edge_3_to_edges_33, f_2, g_8, t_2 }
-                 ensures {
-                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 218 23 146#
+                   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 209 23 146#
                    ((=)
-                   (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                   (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                    __anonstruct_Graph_4_esize_g_16
                    __anonstruct_Graph_4_edges_g_16 (at
                    !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
@@ -3892,21 +3879,21 @@ module Function_add_edge_safety
                    !__anonstruct_Edge_3_from_edges_33 'Init))
                    (Int.(+)
                    (Int.(+)
-                   (count g_8 (Int32.to_int f_2) (Int32.to_int t_2) (0)
+                   (count g_10 (Int32.to_int f_2) (Int32.to_int t_2) (0)
                    (Int32.to_int !i_0) __anonstruct_Graph_4_edges_g_16 (at
                    !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                    !__anonstruct_Edge_3_to_edges_33 'Init) (at
                    !__anonstruct_Edge_3_from_edges_33 'Init))
-                   (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                   (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                    (Int32.to_int !i_0) (Int.(+) (Int32.to_int !i_0) (1))
                    __anonstruct_Graph_4_edges_g_16 (at
                    !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                    !__anonstruct_Edge_3_to_edges_33 'Init) (at
                    !__anonstruct_Edge_3_from_edges_33 'Init)))
-                   (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                   (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                    (Int.(+) (Int32.to_int !i_0) (1))
                    (Int32.to_int
-                   (select __anonstruct_Graph_4_esize_g_16 g_8))
+                   (select __anonstruct_Graph_4_esize_g_16 g_10))
                    __anonstruct_Graph_4_edges_g_16 (at
                    !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                    !__anonstruct_Edge_3_to_edges_33 'Init) (at
@@ -3918,11 +3905,11 @@ module Function_add_edge_safety
              __anonstruct_Edge_3_existent_0_edges_33,
              __anonstruct_Edge_3_from_edges_33,
              __anonstruct_Edge_3_to_edges_33, __anonstruct_Graph_4_ecnt_g_16,
-             g_8 }
+             g_10 }
              ensures {
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 221 19 54#
-               (edges_saved g_8 (0)
-               (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 212 19 54#
+               (edges_saved g_10 (0)
+               (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
                __anonstruct_Graph_4_edges_g_16
                __anonstruct_Graph_4_edges_g_16
                !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -3936,18 +3923,18 @@ module Function_add_edge_safety
              requires { true } reads {
              __anonstruct_Edge_3_existent_0_edges_33,
              __anonstruct_Edge_3_from_edges_33,
-             __anonstruct_Edge_3_to_edges_33, g_8 }
+             __anonstruct_Edge_3_to_edges_33, g_10 }
              ensures {
-               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 222 19 96#
-               (forall f2_10 : int.
-                (forall t2_10 : int.
+               (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 213 19 96#
+               (forall f2_9 : int.
+                (forall t2_9 : int.
                  ((=)
-                 (all_count g_8 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
+                 (all_count g_10 f2_9 t2_9 __anonstruct_Graph_4_esize_g_16
                  __anonstruct_Graph_4_edges_g_16 (at
                  !__anonstruct_Edge_3_existent_0_edges_33 'U__L) (at
                  !__anonstruct_Edge_3_to_edges_33 'U__L) (at
                  !__anonstruct_Edge_3_from_edges_33 'U__L))
-                 (all_count g_8 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
+                 (all_count g_10 f2_9 t2_9 __anonstruct_Graph_4_esize_g_16
                  __anonstruct_Graph_4_edges_g_16
                  !__anonstruct_Edge_3_existent_0_edges_33
                  !__anonstruct_Edge_3_to_edges_33
@@ -3955,11 +3942,11 @@ module Function_add_edge_safety
             (i_0 :=
              (let _jessie_90 =
              (Safe_int32.(+)  !i_0
-              (#"graph_c.jc" 723 60 72# "expl:Integer cast"
+              (#"graph_c.jc" 702 60 72# "expl:Integer cast"
               (Safe_int32.of_int (1))) ) in
              begin
              (assert {
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 33 36#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 189 33 36#
              "expl:Pointer index bounds" true) }); _jessie_90 end)) end;
             (raise (Loop_continue_exc ())) end with Loop_continue_exc
            _jessie_7 -> () end end end; (raise (Goto_while_0_break_0_exc ()))
@@ -3967,11 +3954,11 @@ module Function_add_edge_safety
        'While_0_break_0: 'While_0_break_0: () end;
       begin
       any unit
-      requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33, g_8
+      requires { true } reads { __anonstruct_Edge_3_existent_0_edges_33, g_10
       }
       ensures {
-        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 224 15 22#
-        (full g_8 __anonstruct_Graph_4_esize_g_16
+        (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 215 15 22#
+        (full g_10 __anonstruct_Graph_4_esize_g_16
         __anonstruct_Graph_4_edges_g_16
         !__anonstruct_Edge_3_existent_0_edges_33)) } ; () end;
       (raise (Return_label_exc ())) end with Return_label_exc _jessie_5 ->
@@ -3981,7 +3968,7 @@ module Function_add_edge_safety
 end
 
 module Function_add_edge_behaviors
-#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 165 0 32#
+#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 0 32#
 "expl:add_edge, behaviors"
 
   use import core.Upd_unsafe 
@@ -4035,10 +4022,10 @@ module Function_add_edge_behaviors
   use why3.Bool.Bool 
   
   let add_edge_ensures_default
-  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 165 0 32#
+  #"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 0 32#
   "expl:Function add_edge, default behavior" =
   fun
-   (g_8 : (pointer __anonstruct_Graph_4)) (f_2 : Int32.t) (t_2 : Int32.t)
+   (g_10 : (pointer __anonstruct_Graph_4)) (f_2 : Int32.t) (t_2 : Int32.t)
    (__anonstruct_Edge_3_from_edges_33 : ref (memory __anonstruct_Edge_3
    Int32.t)) (__anonstruct_Edge_3_to_edges_33 : ref (memory
    __anonstruct_Edge_3 Int32.t)) (__anonstruct_Edge_3_existent_0_edges_33 :
@@ -4058,20 +4045,20 @@ module Function_add_edge_behaviors
    __anonstruct_Edge_3))) (__anonstruct_Graph_4_esize_g_16 : (memory
    __anonstruct_Graph_4 Int32.t)) 
    requires {
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 154 11 20#
-    (#"graph_c.jc" 300 12 792#
-    ((#"graph_c.jc" 300 12 792#
-     ((<=) (offset_min __anonstruct_Graph_4_g_16_alloc_table g_8) (0)))
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 11 20#
+    (#"graph_c.jc" 298 12 751#
+    ((#"graph_c.jc" 298 12 751#
+     ((<=) (offset_min __anonstruct_Graph_4_g_16_alloc_table g_10) (0)))
     /\
-    (#"graph_c.jc" 300 12 792#
-    ((#"graph_c.jc" 300 12 792#
-     ((>=) (offset_max __anonstruct_Graph_4_g_16_alloc_table g_8) (0)))
-    /\ (#"graph_c.jc" 300 12 792# ((=) true true)))))))
+    (#"graph_c.jc" 298 12 751#
+    ((#"graph_c.jc" 298 12 751#
+     ((>=) (offset_max __anonstruct_Graph_4_g_16_alloc_table g_10) (0)))
+    /\ (#"graph_c.jc" 298 12 751# ((=) true true)))))))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 154 24 38#
-    (graph_valid g_8 __anonstruct_Vertex_2_vertices_32_alloc_table
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 24 38#
+    (graph_valid g_10 __anonstruct_Vertex_2_vertices_32_alloc_table
     __anonstruct_Edge_3_edges_33_alloc_table __anonstruct_Graph_4_esize_g_16
     !__anonstruct_Graph_4_ecnt_g_16 __anonstruct_Graph_4_edges_g_16
     __anonstruct_Graph_4_vsize_g_16 __anonstruct_Graph_4_vertices_g_16
@@ -4079,43 +4066,45 @@ module Function_add_edge_behaviors
     !__anonstruct_Edge_3_from_edges_33
     __anonstruct_Vertex_2_existent_vertices_32))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 155 11 26#
-    (is_vertex g_8 (Int32.to_int f_2) __anonstruct_Graph_4_vsize_g_16))
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 146 11 26#
+    (is_vertex g_10 (Int32.to_int f_2) __anonstruct_Graph_4_vsize_g_16))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 11 26#
-    (is_vertex g_8 (Int32.to_int t_2) __anonstruct_Graph_4_vsize_g_16))
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 147 11 26#
+    (is_vertex g_10 (Int32.to_int t_2) __anonstruct_Graph_4_vsize_g_16))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 157 11 39#
-    (Int32.(=)
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 148 11 34#
+    (not
+    ((=)
+    (Int32.to_int
     (select __anonstruct_Vertex_2_existent_vertices_32
-    (shift (select __anonstruct_Graph_4_vertices_g_16 g_8)
-    (Int32.to_int f_2))) (#"graph_c.jc" 309 30 42# "expl:Integer cast"
-    (Int32.of_int (1)))))
+    (shift (select __anonstruct_Graph_4_vertices_g_16 g_10)
+    (Int32.to_int f_2)))) (0))))
    /\
-   (#"graph_c.jc" 300 12 792#
-   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 11 39#
-    (Int32.(=)
+   (#"graph_c.jc" 298 12 751#
+   ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 149 11 34#
+    (not
+    ((=)
+    (Int32.to_int
     (select __anonstruct_Vertex_2_existent_vertices_32
-    (shift (select __anonstruct_Graph_4_vertices_g_16 g_8)
-    (Int32.to_int t_2))) (#"graph_c.jc" 311 32 44# "expl:Integer cast"
-    (Int32.of_int (1)))))
+    (shift (select __anonstruct_Graph_4_vertices_g_16 g_10)
+    (Int32.to_int t_2)))) (0))))
    /\
-   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 11 19#
+   (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 150 11 19#
    (not
-   (full g_8 __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
+   (full g_10 __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
    !__anonstruct_Edge_3_existent_0_edges_33))))))))))))))) }
    ensures {
      ("expl:Postcondition"
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
      "expl:Ensures clause"
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
      "expl:Ensures clause"
-     ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+     ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
       "expl:Ensures clause"
-      (graph_valid g_8 __anonstruct_Vertex_2_vertices_32_alloc_table
+      (graph_valid g_10 __anonstruct_Vertex_2_vertices_32_alloc_table
       __anonstruct_Edge_3_edges_33_alloc_table
       __anonstruct_Graph_4_esize_g_16 !__anonstruct_Graph_4_ecnt_g_16
       __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_vsize_g_16
@@ -4124,34 +4113,34 @@ module Function_add_edge_behaviors
       !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33
       __anonstruct_Vertex_2_existent_vertices_32))
      /\
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
      "expl:Ensures clause"
-     ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 10 59#
+     ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 152 10 59#
       "expl:Ensures clause"
       ((=)
-      (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+      (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
       __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
       !__anonstruct_Edge_3_existent_0_edges_33
       !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33)
       (Int.(+)
-      (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+      (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
       __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16 (old
       !__anonstruct_Edge_3_existent_0_edges_33) (old
       !__anonstruct_Edge_3_to_edges_33) (old
       !__anonstruct_Edge_3_from_edges_33)) (1))))
      /\
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 10 108#
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 153 10 108#
      "expl:Ensures clause"
-     (forall f2_12 : int.
-      (forall t2_12 : int.
-       (((not ((=) f2_12 (Int32.to_int f_2))) \/
-        (not ((=) t2_12 (Int32.to_int t_2)))) ->
+     (forall f2_11 : int.
+      (forall t2_11 : int.
+       (((not ((=) f2_11 (Int32.to_int f_2))) \/
+        (not ((=) t2_11 (Int32.to_int t_2)))) ->
         ((=)
-        (all_count g_8 f2_12 t2_12 __anonstruct_Graph_4_esize_g_16
+        (all_count g_10 f2_11 t2_11 __anonstruct_Graph_4_esize_g_16
         __anonstruct_Graph_4_edges_g_16
         !__anonstruct_Edge_3_existent_0_edges_33
         !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33)
-        (all_count g_8 f2_12 t2_12 __anonstruct_Graph_4_esize_g_16
+        (all_count g_10 f2_11 t2_11 __anonstruct_Graph_4_esize_g_16
         __anonstruct_Graph_4_edges_g_16 (old
         !__anonstruct_Edge_3_existent_0_edges_33) (old
         !__anonstruct_Edge_3_to_edges_33) (old
@@ -4163,44 +4152,45 @@ module Function_add_edge_behaviors
     try
      begin
      (if
-     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 167 8 26#
-     (Unsafe_int32.(<)  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_8 )
-      (acc  __anonstruct_Graph_4_esize_g_16 g_8 ) ))
+     (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 8 26#
+     (Unsafe_int32.(<)  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_10 )
+      (acc  __anonstruct_Graph_4_esize_g_16 g_10 ) ))
      then
       begin
       (let _jessie_34 = f_2 in
-      (let _jessie_35 = (acc  __anonstruct_Graph_4_edges_g_16 g_8 ) in
+      (let _jessie_35 = (acc  __anonstruct_Graph_4_edges_g_16 g_10 ) in
       (let _jessie_36 =
-      (Unsafe_int32.to_int  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_8 ) ) in
+      (Unsafe_int32.to_int  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_10 ) ) in
       (let _jessie_37 = (shift_  _jessie_35 _jessie_36 ) in
       (upd  __anonstruct_Edge_3_from_edges_33 _jessie_37 _jessie_34 )))));
        begin
        (let _jessie_29 = t_2 in
-       (let _jessie_30 = (acc  __anonstruct_Graph_4_edges_g_16 g_8 ) in
+       (let _jessie_30 = (acc  __anonstruct_Graph_4_edges_g_16 g_10 ) in
        (let _jessie_31 =
-       (Unsafe_int32.to_int  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_8 ) ) in
+       (Unsafe_int32.to_int  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_10 ) )
+       in
        (let _jessie_32 = (shift_  _jessie_30 _jessie_31 ) in
        (upd  __anonstruct_Edge_3_to_edges_33 _jessie_32 _jessie_29 )))));
         begin
         (let _jessie_24 =
-        (#"graph_c.jc" 337 91 103# "expl:Integer cast"
+        (#"graph_c.jc" 334 91 103# "expl:Integer cast"
         (Unsafe_int32.of_int (1))) in
-        (let _jessie_25 = (acc  __anonstruct_Graph_4_edges_g_16 g_8 ) in
+        (let _jessie_25 = (acc  __anonstruct_Graph_4_edges_g_16 g_10 ) in
         (let _jessie_26 =
-        (Unsafe_int32.to_int  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_8 ) )
+        (Unsafe_int32.to_int  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_10 ) )
         in
         (let _jessie_27 = (shift_  _jessie_25 _jessie_26 ) in
         (upd  __anonstruct_Edge_3_existent_0_edges_33 _jessie_27 _jessie_24 )))));
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-         "expl:Assertion in line 171"
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-         "expl:Assertion in line 171"
-         ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-          "expl:Assertion in line 171"
-          (edges_saved g_8 (0)
-          (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+         "expl:Assertion in line 162"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+         "expl:Assertion in line 162"
+         ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+          "expl:Assertion in line 162"
+          (edges_saved g_10 (0)
+          (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
           __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
           !__anonstruct_Edge_3_existent_0_edges_33 (at
           !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -4209,11 +4199,12 @@ module Function_add_edge_behaviors
           !__anonstruct_Edge_3_from_edges_33 (at
           !__anonstruct_Edge_3_from_edges_33 'Init)))
          /\
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 171 19 120#
-         "expl:Assertion in line 171"
-         (edges_saved g_8
-         (Int.(+) (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (1)) (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 19 120#
+         "expl:Assertion in line 162"
+         (edges_saved g_10
+         (Int.(+)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+         (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
          __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
          !__anonstruct_Edge_3_existent_0_edges_33 (at
          !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -4223,10 +4214,10 @@ module Function_add_edge_behaviors
          !__anonstruct_Edge_3_from_edges_33 'Init)))))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 174 19 41#
-         "expl:Assertion in line 174"
-         (edge_valid g_8
-         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 165 19 41#
+         "expl:Assertion in line 165"
+         (edge_valid g_10
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
          __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_vsize_g_16
          __anonstruct_Graph_4_vertices_g_16
          !__anonstruct_Edge_3_existent_0_edges_33
@@ -4234,56 +4225,57 @@ module Function_add_edge_behaviors
          __anonstruct_Vertex_2_existent_vertices_32)) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 175 19 60#
-         "expl:Assertion in line 175"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 166 19 60#
+         "expl:Assertion in line 166"
          ((=)
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (Int.(+) (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (1)) __anonstruct_Graph_4_edges_g_16
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
+         (Int.(+)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+         __anonstruct_Graph_4_edges_g_16
          !__anonstruct_Edge_3_existent_0_edges_33
          !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33)
          (1))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 176 19 91#
-         "expl:Assertion in line 176"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 167 19 91#
+         "expl:Assertion in line 167"
          (forall f2 : int.
           (forall t2 : int.
            ((=)
-           (count g_8 f2 t2
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 f2 t2
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
            __anonstruct_Graph_4_edges_g_16 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
            !__anonstruct_Edge_3_to_edges_33 'Init) (at
            !__anonstruct_Edge_3_from_edges_33 'Init)) (0))))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 177 19 111#
-         "expl:Assertion in line 177"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 168 19 111#
+         "expl:Assertion in line 168"
          (forall f2_0 : int.
           (forall t2_0 : int.
            (((not ((=) f2_0 (Int32.to_int f_2))) \/
             (not ((=) t2_0 (Int32.to_int t_2)))) ->
             ((=)
-            (count g_8 f2_0 t2_0
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+            (count g_10 f2_0 t2_0
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
             (Int.(+)
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
             __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33
             !__anonstruct_Edge_3_to_edges_33
             !__anonstruct_Edge_3_from_edges_33) (0)))))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 178 19 177#
-         "expl:Assertion in line 178"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 169 19 173#
+         "expl:Assertion in line 169"
          (forall f2_1 : int.
           (forall t2_1 : int.
-           ((count_saved_p g_8 f2_1 t2_1 (0)
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           ((count_saved g_10 f2_1 t2_1 (0)
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
             __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33 (at
             !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -4292,10 +4284,10 @@ module Function_add_edge_behaviors
             !__anonstruct_Edge_3_from_edges_33 (at
             !__anonstruct_Edge_3_from_edges_33 'Init))
            /\
-           (count_saved_p g_8 f2_1 t2_1
+           (count_saved g_10 f2_1 t2_1
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
-           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+           (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
            __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -4305,16 +4297,16 @@ module Function_add_edge_behaviors
            !__anonstruct_Edge_3_from_edges_33 'Init)))))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 182 19 125#
-         "expl:Assertion in line 182"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 173 19 123#
+         "expl:Assertion in line 173"
          (forall f2_2 : int.
           (forall t2_2 : int.
            (((not ((=) f2_2 (Int32.to_int f_2))) \/
             (not ((=) t2_2 (Int32.to_int t_2)))) ->
-            (count_saved_p g_8 f2_2 t2_2
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+            (count_saved g_10 f2_2 t2_2
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
             (Int.(+)
-            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+            (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
             __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33 (at
             !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -4324,111 +4316,115 @@ module Function_add_edge_behaviors
             !__anonstruct_Edge_3_from_edges_33 'Init)))))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 19 133#
-         "expl:Assertion in line 183"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 174 19 133#
+         "expl:Assertion in line 174"
          (forall f2_3 : int.
           (forall t2_3 : int.
            ((=)
-           (all_count g_8 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
+           (all_count g_10 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
            __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
            !__anonstruct_Edge_3_from_edges_33)
            (Int.(+)
-           (all_count g_8 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
+           (all_count g_10 f2_3 t2_3 __anonstruct_Graph_4_esize_g_16
            __anonstruct_Graph_4_edges_g_16 (at
            !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
            !__anonstruct_Edge_3_to_edges_33 'Init) (at
            !__anonstruct_Edge_3_from_edges_33 'Init))
-           (count g_8 f2_3 t2_3
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+           (count g_10 f2_3 t2_3
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
            (Int.(+)
-           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8)) (1))
+           (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
            __anonstruct_Graph_4_edges_g_16
            !__anonstruct_Edge_3_existent_0_edges_33
            !__anonstruct_Edge_3_to_edges_33
            !__anonstruct_Edge_3_from_edges_33)))))) }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 184 19 146#
-         "expl:Assertion in line 184"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 175 19 146#
+         "expl:Assertion in line 175"
          ((=)
-         (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+         (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
          __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16
          !__anonstruct_Edge_3_existent_0_edges_33
          !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33)
          (Int.(+)
          (Int.(+)
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2) (0)
-         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2) (0)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
          __anonstruct_Graph_4_edges_g_16
          !__anonstruct_Edge_3_existent_0_edges_33
          !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33)
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (Int.(+) (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (1)) __anonstruct_Graph_4_edges_g_16
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
+         (Int.(+)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+         __anonstruct_Graph_4_edges_g_16
          !__anonstruct_Edge_3_existent_0_edges_33
          !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33))
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-         (Int.(+) (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (1)) (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+         (Int.(+)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+         (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
          __anonstruct_Graph_4_edges_g_16
          !__anonstruct_Edge_3_existent_0_edges_33
          !__anonstruct_Edge_3_to_edges_33 !__anonstruct_Edge_3_from_edges_33))))
          }); () end;
          begin
          (assert {
-         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 185 19 166#
-         "expl:Assertion in line 185"
+         (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 176 19 166#
+         "expl:Assertion in line 176"
          ((=)
-         (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+         (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
          __anonstruct_Graph_4_esize_g_16 __anonstruct_Graph_4_edges_g_16 (at
          !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
          !__anonstruct_Edge_3_to_edges_33 'Init) (at
          !__anonstruct_Edge_3_from_edges_33 'Init))
          (Int.(+)
          (Int.(+)
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2) (0)
-         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2) (0)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
          __anonstruct_Graph_4_edges_g_16 (at
          !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
          !__anonstruct_Edge_3_to_edges_33 'Init) (at
          !__anonstruct_Edge_3_from_edges_33 'Init))
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (Int.(+) (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (1)) __anonstruct_Graph_4_edges_g_16 (at
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
+         (Int.(+)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+         __anonstruct_Graph_4_edges_g_16 (at
          !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
          !__anonstruct_Edge_3_to_edges_33 'Init) (at
          !__anonstruct_Edge_3_from_edges_33 'Init)))
-         (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
-         (Int.(+) (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
-         (1)) (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+         (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
+         (Int.(+)
+         (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10)) (1))
+         (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
          __anonstruct_Graph_4_edges_g_16 (at
          !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
          !__anonstruct_Edge_3_to_edges_33 'Init) (at
          !__anonstruct_Edge_3_from_edges_33 'Init))))) }); () end;
          begin
          (let _jessie_19 =
-         (Unsafe_int32.(+)  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_8 )
-          (#"graph_c.jc" 489 59 71# "expl:Integer cast"
+         (Unsafe_int32.(+)  (acc  !__anonstruct_Graph_4_ecnt_g_16 g_10 )
+          (#"graph_c.jc" 486 59 71# "expl:Integer cast"
           (Unsafe_int32.of_int (1))) ) in
-         (let _jessie_20 = g_8 in
+         (let _jessie_20 = g_10 in
          (let _jessie_21 = (0) in
          (let _jessie_22 = _jessie_20 in
          (upd  __anonstruct_Graph_4_ecnt_g_16 _jessie_22 _jessie_19 )))));
           (raise (Return_label_exc ())) end end end end else ());
       begin
       (assert {
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 190 15 34#
-      "expl:Assertion in line 190"
-      (Int32.(=) (select __anonstruct_Graph_4_esize_g_16 g_8)
-      (select !__anonstruct_Graph_4_ecnt_g_16 g_8))) }); () end;
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 181 15 34#
+      "expl:Assertion in line 181"
+      (Int32.(=) (select __anonstruct_Graph_4_esize_g_16 g_10)
+      (select !__anonstruct_Graph_4_ecnt_g_16 g_10))) }); () end;
       try
        begin
        (i_0 :=
-        (#"graph_c.jc" 499 25 37# "expl:Integer cast"
+        (#"graph_c.jc" 496 25 37# "expl:Integer cast"
         (Unsafe_int32.of_int (0))));
         'LoopEntry:
         begin
@@ -4436,18 +4432,18 @@ module Function_add_edge_behaviors
         'Loop_3:
         loop
         invariant
-          { ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 23 40#
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 23 40#
-             ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 23 29#
-              (Int32.(<=) (#"graph_c.jc" 503 41 53# "expl:Integer cast"
+          { ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 23 40#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 23 40#
+             ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 23 29#
+              (Int32.(<=) (#"graph_c.jc" 500 41 53# "expl:Integer cast"
               (Int32.of_int (0))) !i_0))
              /\
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 192 28 40#
-             (Int32.(<=) !i_0 (select !__anonstruct_Graph_4_ecnt_g_16 g_8))))))
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 183 28 40#
+             (Int32.(<=) !i_0 (select !__anonstruct_Graph_4_ecnt_g_16 g_10))))))
             &&
-            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 193 23 60#
-             (edges_saved g_8 (0)
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 184 23 60#
+             (edges_saved g_10 (0)
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
              __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
              !__anonstruct_Edge_3_existent_0_edges_33 (at
              !__anonstruct_Edge_3_existent_0_edges_33 'Init)
@@ -4456,23 +4452,23 @@ module Function_add_edge_behaviors
              !__anonstruct_Edge_3_from_edges_33 (at
              !__anonstruct_Edge_3_from_edges_33 'Init)))
             &&
-            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 194 23 102#
-             (forall f2_11 : int.
-              (forall t2_11 : int.
+            ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 185 23 102#
+             (forall f2_10 : int.
+              (forall t2_10 : int.
                ((=)
-               (all_count g_8 f2_11 t2_11 __anonstruct_Graph_4_esize_g_16
+               (all_count g_10 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
                __anonstruct_Graph_4_edges_g_16 (at
                !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                !__anonstruct_Edge_3_to_edges_33 'Init) (at
                !__anonstruct_Edge_3_from_edges_33 'Init))
-               (all_count g_8 f2_11 t2_11 __anonstruct_Graph_4_esize_g_16
+               (all_count g_10 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
                __anonstruct_Graph_4_edges_g_16
                !__anonstruct_Edge_3_existent_0_edges_33
                !__anonstruct_Edge_3_to_edges_33
                !__anonstruct_Edge_3_from_edges_33)))))
             &&
-            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 46#
-            (range_existent g_8 (0) (Int32.to_int !i_0)
+            (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 186 23 46#
+            (range_existent g_10 (0) (Int32.to_int !i_0)
             __anonstruct_Graph_4_edges_g_16
             !__anonstruct_Edge_3_existent_0_edges_33))))) } 
          begin
@@ -4483,56 +4479,56 @@ module Function_add_edge_behaviors
            begin
            'LoopCurrent:
            (if
-           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 20 31#
+           (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 189 20 31#
            (Unsafe_int32.(<)  !i_0
-            (acc  !__anonstruct_Graph_4_ecnt_g_16 g_8 ) )) then ()
+            (acc  !__anonstruct_Graph_4_ecnt_g_16 g_10 ) )) then ()
            else (raise (Goto_while_0_break_0_exc ())));
             'U__L:
             begin
             'U__L: ();
              (if
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 200 12 33#
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 191 12 33#
              (Bool.notb 
               (Unsafe_int32.(<>) 
                (acc  !__anonstruct_Edge_3_existent_0_edges_33
-                (shift_  (acc  __anonstruct_Graph_4_edges_g_16 g_8 )
+                (shift_  (acc  __anonstruct_Graph_4_edges_g_16 g_10 )
                  (Unsafe_int32.to_int  !i_0 ) ) )
-               (#"graph_c.jc" 524 37 49# "expl:Integer cast"
+               (#"graph_c.jc" 521 37 49# "expl:Integer cast"
                (Unsafe_int32.of_int (0))) ) ))
              then
               begin
               (let _jessie_49 = f_2 in
-              (let _jessie_50 = (acc  __anonstruct_Graph_4_edges_g_16 g_8 )
+              (let _jessie_50 = (acc  __anonstruct_Graph_4_edges_g_16 g_10 )
               in
               (let _jessie_51 = (Unsafe_int32.to_int  !i_0 ) in
               (let _jessie_52 = (shift_  _jessie_50 _jessie_51 ) in
               (upd  __anonstruct_Edge_3_from_edges_33 _jessie_52 _jessie_49 )))));
                begin
                (let _jessie_44 = t_2 in
-               (let _jessie_45 = (acc  __anonstruct_Graph_4_edges_g_16 g_8 )
+               (let _jessie_45 = (acc  __anonstruct_Graph_4_edges_g_16 g_10 )
                in
                (let _jessie_46 = (Unsafe_int32.to_int  !i_0 ) in
                (let _jessie_47 = (shift_  _jessie_45 _jessie_46 ) in
                (upd  __anonstruct_Edge_3_to_edges_33 _jessie_47 _jessie_44 )))));
                 begin
                 (let _jessie_39 =
-                (#"graph_c.jc" 527 92 104# "expl:Integer cast"
+                (#"graph_c.jc" 524 92 104# "expl:Integer cast"
                 (Unsafe_int32.of_int (1))) in
-                (let _jessie_40 = (acc  __anonstruct_Graph_4_edges_g_16 g_8 )
-                in
+                (let _jessie_40 =
+                (acc  __anonstruct_Graph_4_edges_g_16 g_10 ) in
                 (let _jessie_41 = (Unsafe_int32.to_int  !i_0 ) in
                 (let _jessie_42 = (shift_  _jessie_40 _jessie_41 ) in
                 (upd  __anonstruct_Edge_3_existent_0_edges_33 _jessie_42
                  _jessie_39 )))));
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                 "expl:Assertion in line 204"
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                 "expl:Assertion in line 204"
-                 ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                  "expl:Assertion in line 204"
-                  (edges_saved g_8 (0) (Int32.to_int !i_0)
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                 "expl:Assertion in line 195"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                 "expl:Assertion in line 195"
+                 ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                  "expl:Assertion in line 195"
+                  (edges_saved g_10 (0) (Int32.to_int !i_0)
                   __anonstruct_Graph_4_edges_g_16
                   __anonstruct_Graph_4_edges_g_16
                   !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -4542,10 +4538,10 @@ module Function_add_edge_behaviors
                   !__anonstruct_Edge_3_from_edges_33 (at
                   !__anonstruct_Edge_3_from_edges_33 'Init)))
                  /\
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 204 23 116#
-                 "expl:Assertion in line 204"
-                 (edges_saved g_8 (Int.(+) (Int32.to_int !i_0) (1))
-                 (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 195 23 116#
+                 "expl:Assertion in line 195"
+                 (edges_saved g_10 (Int.(+) (Int32.to_int !i_0) (1))
+                 (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
                  __anonstruct_Graph_4_edges_g_16
                  __anonstruct_Graph_4_edges_g_16
                  !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -4556,9 +4552,9 @@ module Function_add_edge_behaviors
                  !__anonstruct_Edge_3_from_edges_33 'Init)))))) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 207 23 39#
-                 "expl:Assertion in line 207"
-                 (edge_valid g_8 (Int32.to_int !i_0)
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 198 23 39#
+                 "expl:Assertion in line 198"
+                 (edge_valid g_10 (Int32.to_int !i_0)
                  __anonstruct_Graph_4_edges_g_16
                  __anonstruct_Graph_4_vsize_g_16
                  __anonstruct_Graph_4_vertices_g_16
@@ -4568,10 +4564,10 @@ module Function_add_edge_behaviors
                  __anonstruct_Vertex_2_existent_vertices_32)) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 208 23 52#
-                 "expl:Assertion in line 208"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 199 23 52#
+                 "expl:Assertion in line 199"
                  ((=)
-                 (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                 (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                  (Int32.to_int !i_0) (Int.(+) (Int32.to_int !i_0) (1))
                  __anonstruct_Graph_4_edges_g_16
                  !__anonstruct_Edge_3_existent_0_edges_33
@@ -4579,12 +4575,12 @@ module Function_add_edge_behaviors
                  !__anonstruct_Edge_3_from_edges_33) (1))) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 209 23 83#
-                 "expl:Assertion in line 209"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 200 23 83#
+                 "expl:Assertion in line 200"
                  (forall f2_4 : int.
                   (forall t2_4 : int.
                    ((=)
-                   (count g_8 f2_4 t2_4 (Int32.to_int !i_0)
+                   (count g_10 f2_4 t2_4 (Int32.to_int !i_0)
                    (Int.(+) (Int32.to_int !i_0) (1))
                    __anonstruct_Graph_4_edges_g_16 (at
                    !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
@@ -4593,14 +4589,14 @@ module Function_add_edge_behaviors
                  end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 210 23 103#
-                 "expl:Assertion in line 210"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 201 23 103#
+                 "expl:Assertion in line 201"
                  (forall f2_5 : int.
                   (forall t2_5 : int.
                    (((not ((=) f2_5 (Int32.to_int f_2))) \/
                     (not ((=) t2_5 (Int32.to_int t_2)))) ->
                     ((=)
-                    (count g_8 f2_5 t2_5 (Int32.to_int !i_0)
+                    (count g_10 f2_5 t2_5 (Int32.to_int !i_0)
                     (Int.(+) (Int32.to_int !i_0) (1))
                     __anonstruct_Graph_4_edges_g_16
                     !__anonstruct_Edge_3_existent_0_edges_33
@@ -4608,11 +4604,11 @@ module Function_add_edge_behaviors
                     !__anonstruct_Edge_3_from_edges_33) (0)))))) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 211 23 177#
-                 "expl:Assertion in line 211"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 202 23 173#
+                 "expl:Assertion in line 202"
                  (forall f2_6 : int.
                   (forall t2_6 : int.
-                   ((count_saved_p g_8 f2_6 t2_6 (0) (Int32.to_int !i_0)
+                   ((count_saved g_10 f2_6 t2_6 (0) (Int32.to_int !i_0)
                     __anonstruct_Graph_4_edges_g_16
                     __anonstruct_Graph_4_edges_g_16
                     !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -4622,10 +4618,10 @@ module Function_add_edge_behaviors
                     !__anonstruct_Edge_3_from_edges_33 (at
                     !__anonstruct_Edge_3_from_edges_33 'Init))
                    /\
-                   (count_saved_p g_8 f2_6 t2_6
+                   (count_saved g_10 f2_6 t2_6
                    (Int.(+) (Int32.to_int !i_0) (1))
                    (Int32.to_int
-                   (select __anonstruct_Graph_4_esize_g_16 g_8))
+                   (select __anonstruct_Graph_4_esize_g_16 g_10))
                    __anonstruct_Graph_4_edges_g_16
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33 (at
@@ -4636,13 +4632,13 @@ module Function_add_edge_behaviors
                    !__anonstruct_Edge_3_from_edges_33 'Init)))))) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 215 23 117#
-                 "expl:Assertion in line 215"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 206 23 115#
+                 "expl:Assertion in line 206"
                  (forall f2_7 : int.
                   (forall t2_7 : int.
                    (((not ((=) f2_7 (Int32.to_int f_2))) \/
                     (not ((=) t2_7 (Int32.to_int t_2)))) ->
-                    (count_saved_p g_8 f2_7 t2_7 (Int32.to_int !i_0)
+                    (count_saved g_10 f2_7 t2_7 (Int32.to_int !i_0)
                     (Int.(+) (Int32.to_int !i_0) (1))
                     __anonstruct_Graph_4_edges_g_16
                     __anonstruct_Graph_4_edges_g_16
@@ -4654,62 +4650,42 @@ module Function_add_edge_behaviors
                     !__anonstruct_Edge_3_from_edges_33 'Init)))))) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 216 23 158#
-                 "expl:Assertion in line 216"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 207 23 158#
+                 "expl:Assertion in line 207"
                  (forall f2_8 : int.
                   (forall t2_8 : int.
                    ((=)
-                   (all_count g_8 f2_8 t2_8 __anonstruct_Graph_4_esize_g_16
+                   (all_count g_10 f2_8 t2_8 __anonstruct_Graph_4_esize_g_16
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33
                    !__anonstruct_Edge_3_to_edges_33
                    !__anonstruct_Edge_3_from_edges_33)
                    (Int.(+)
                    (Int.(+)
-                   (count g_8 f2_8 t2_8 (0) (Int32.to_int !i_0)
+                   (count g_10 f2_8 t2_8 (0) (Int32.to_int !i_0)
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33
                    !__anonstruct_Edge_3_to_edges_33
                    !__anonstruct_Edge_3_from_edges_33)
-                   (count g_8 f2_8 t2_8 (Int32.to_int !i_0)
+                   (count g_10 f2_8 t2_8 (Int32.to_int !i_0)
                    (Int.(+) (Int32.to_int !i_0) (1))
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33
                    !__anonstruct_Edge_3_to_edges_33
                    !__anonstruct_Edge_3_from_edges_33))
-                   (count g_8 f2_8 t2_8 (Int.(+) (Int32.to_int !i_0) (1))
+                   (count g_10 f2_8 t2_8 (Int.(+) (Int32.to_int !i_0) (1))
                    (Int32.to_int
-                   (select __anonstruct_Graph_4_esize_g_16 g_8))
+                   (select __anonstruct_Graph_4_esize_g_16 g_10))
                    __anonstruct_Graph_4_edges_g_16
                    !__anonstruct_Edge_3_existent_0_edges_33
                    !__anonstruct_Edge_3_to_edges_33
                    !__anonstruct_Edge_3_from_edges_33)))))) }); () end;
                  begin
                  (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 217 23 121#
-                 "expl:Assertion in line 217"
-                 (forall f2_9 : int.
-                  (forall t2_9 : int.
-                   (((not ((=) f2_9 (Int32.to_int f_2))) \/
-                    (not ((=) t2_9 (Int32.to_int t_2)))) ->
-                    ((=)
-                    (all_count g_8 f2_9 t2_9 __anonstruct_Graph_4_esize_g_16
-                    __anonstruct_Graph_4_edges_g_16
-                    !__anonstruct_Edge_3_existent_0_edges_33
-                    !__anonstruct_Edge_3_to_edges_33
-                    !__anonstruct_Edge_3_from_edges_33)
-                    (all_count g_8 f2_9 t2_9 __anonstruct_Graph_4_esize_g_16
-                    __anonstruct_Graph_4_edges_g_16 (at
-                    !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
-                    !__anonstruct_Edge_3_to_edges_33 'Init) (at
-                    !__anonstruct_Edge_3_from_edges_33 'Init))))))) }); ()
-                 end;
-                 begin
-                 (assert {
-                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 218 23 146#
-                 "expl:Assertion in line 218"
+                 (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 209 23 146#
+                 "expl:Assertion in line 209"
                  ((=)
-                 (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                 (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                  __anonstruct_Graph_4_esize_g_16
                  __anonstruct_Graph_4_edges_g_16 (at
                  !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
@@ -4717,20 +4693,20 @@ module Function_add_edge_behaviors
                  !__anonstruct_Edge_3_from_edges_33 'Init))
                  (Int.(+)
                  (Int.(+)
-                 (count g_8 (Int32.to_int f_2) (Int32.to_int t_2) (0)
+                 (count g_10 (Int32.to_int f_2) (Int32.to_int t_2) (0)
                  (Int32.to_int !i_0) __anonstruct_Graph_4_edges_g_16 (at
                  !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                  !__anonstruct_Edge_3_to_edges_33 'Init) (at
                  !__anonstruct_Edge_3_from_edges_33 'Init))
-                 (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                 (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                  (Int32.to_int !i_0) (Int.(+) (Int32.to_int !i_0) (1))
                  __anonstruct_Graph_4_edges_g_16 (at
                  !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                  !__anonstruct_Edge_3_to_edges_33 'Init) (at
                  !__anonstruct_Edge_3_from_edges_33 'Init)))
-                 (count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                 (count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                  (Int.(+) (Int32.to_int !i_0) (1))
-                 (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_8))
+                 (Int32.to_int (select __anonstruct_Graph_4_esize_g_16 g_10))
                  __anonstruct_Graph_4_edges_g_16 (at
                  !__anonstruct_Edge_3_existent_0_edges_33 'Init) (at
                  !__anonstruct_Edge_3_to_edges_33 'Init) (at
@@ -4738,10 +4714,10 @@ module Function_add_edge_behaviors
                  (raise (Return_label_exc ())) end end end else ());
              begin
              (assert {
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 221 19 54#
-             "expl:Assertion in line 221"
-             (edges_saved g_8 (0)
-             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_8))
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 212 19 54#
+             "expl:Assertion in line 212"
+             (edges_saved g_10 (0)
+             (Int32.to_int (select !__anonstruct_Graph_4_ecnt_g_16 g_10))
              __anonstruct_Graph_4_edges_g_16 __anonstruct_Graph_4_edges_g_16
              !__anonstruct_Edge_3_existent_0_edges_33 (at
              !__anonstruct_Edge_3_existent_0_edges_33 'U__L)
@@ -4751,24 +4727,24 @@ module Function_add_edge_behaviors
              !__anonstruct_Edge_3_from_edges_33 'U__L))) }); () end;
              begin
              (assert {
-             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 222 19 96#
-             "expl:Assertion in line 222"
-             (forall f2_10 : int.
-              (forall t2_10 : int.
+             (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 213 19 96#
+             "expl:Assertion in line 213"
+             (forall f2_9 : int.
+              (forall t2_9 : int.
                ((=)
-               (all_count g_8 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
+               (all_count g_10 f2_9 t2_9 __anonstruct_Graph_4_esize_g_16
                __anonstruct_Graph_4_edges_g_16 (at
                !__anonstruct_Edge_3_existent_0_edges_33 'U__L) (at
                !__anonstruct_Edge_3_to_edges_33 'U__L) (at
                !__anonstruct_Edge_3_from_edges_33 'U__L))
-               (all_count g_8 f2_10 t2_10 __anonstruct_Graph_4_esize_g_16
+               (all_count g_10 f2_9 t2_9 __anonstruct_Graph_4_esize_g_16
                __anonstruct_Graph_4_edges_g_16
                !__anonstruct_Edge_3_existent_0_edges_33
                !__anonstruct_Edge_3_to_edges_33
                !__anonstruct_Edge_3_from_edges_33))))) }); () end end;
             (i_0 :=
              (Unsafe_int32.(+)  !i_0
-              (#"graph_c.jc" 723 60 72# "expl:Integer cast"
+              (#"graph_c.jc" 702 60 72# "expl:Integer cast"
               (Unsafe_int32.of_int (1))) )) end;
             (raise (Loop_continue_exc ())) end with Loop_continue_exc
            _jessie_7 -> () end end end; (raise (Goto_while_0_break_0_exc ()))
@@ -4776,9 +4752,9 @@ module Function_add_edge_behaviors
        'While_0_break_0: 'While_0_break_0: () end;
       begin
       (assert {
-      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 224 15 22#
-      "expl:Assertion in line 224"
-      (full g_8 __anonstruct_Graph_4_esize_g_16
+      (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 215 15 22#
+      "expl:Assertion in line 215"
+      (full g_10 __anonstruct_Graph_4_esize_g_16
       __anonstruct_Graph_4_edges_g_16
       !__anonstruct_Edge_3_existent_0_edges_33)) }); () end;
       (raise (Return_label_exc ())) end with Return_label_exc _jessie_5 ->
@@ -11134,8 +11110,8 @@ module Function_count_0
   
   val count_0
   (g_0_0 : (pointer __anonstruct_Graph_4)) 
-   (f_0 : Int32.t) 
-    (t_0 : Int32.t) 
+   (f_0_0 : Int32.t) 
+    (t_0_0 : Int32.t) 
      (__anonstruct_Vertex_2_vertices_30_alloc_table : (alloc_table
       __anonstruct_Vertex_2)) 
       (__anonstruct_Graph_4_g_0_15_alloc_table : (alloc_table
@@ -11164,11 +11140,11 @@ module Function_count_0
                   __anonstruct_Vertex_2 Int32.t)) : Int32.t
                   requires { true }
                   ensures {
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 131 12 41#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 122 12 41#
                     "expl:Ensures clause"
                     ((=) (Int32.to_int result)
-                    (all_count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
-                    __anonstruct_Graph_4_esize_g_0_15
+                    (all_count g_0_0 (Int32.to_int f_0_0)
+                    (Int32.to_int t_0_0) __anonstruct_Graph_4_esize_g_0_15
                     __anonstruct_Graph_4_edges_g_0_15
                     __anonstruct_Edge_3_existent_0_edges_31
                     __anonstruct_Edge_3_to_edges_31
@@ -11208,8 +11184,8 @@ module Function_count_0_safe
   
   val count_0
   (g_0_0 : (pointer __anonstruct_Graph_4)) 
-   (f_0 : Int32.t) 
-    (t_0 : Int32.t) 
+   (f_0_0 : Int32.t) 
+    (t_0_0 : Int32.t) 
      (__anonstruct_Vertex_2_vertices_30_alloc_table : (alloc_table
       __anonstruct_Vertex_2)) 
       (__anonstruct_Graph_4_g_0_15_alloc_table : (alloc_table
@@ -11238,26 +11214,26 @@ module Function_count_0_safe
                   __anonstruct_Vertex_2 Int32.t)) : Int32.t
                   requires {
                     ("expl:Internal"
-                    (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 126 13 22#
+                    (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 117 13 22#
                      "expl:Requires clause"
-                     (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                     ((#"graph_c.jc" 182 12 740# "expl:Requires clause"
+                     (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                     ((#"graph_c.jc" 180 12 740# "expl:Requires clause"
                       ((<=)
                       (offset_min __anonstruct_Graph_4_g_0_15_alloc_table
                       g_0_0) (0)))
                      /\
-                     (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                     ((#"graph_c.jc" 182 12 740# "expl:Requires clause"
+                     (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                     ((#"graph_c.jc" 180 12 740# "expl:Requires clause"
                       ((>=)
                       (offset_max __anonstruct_Graph_4_g_0_15_alloc_table
                       g_0_0) (0)))
                      /\
-                     (#"graph_c.jc" 182 12 740# "expl:Requires clause"
+                     (#"graph_c.jc" 180 12 740# "expl:Requires clause"
                      ((=) true true)))))))
                     /\
-                    (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 126 26 40#
+                    (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 117 26 40#
                      "expl:Requires clause"
                      (graph_valid g_0_0
                      __anonstruct_Vertex_2_vertices_30_alloc_table
@@ -11272,42 +11248,42 @@ module Function_count_0_safe
                      __anonstruct_Edge_3_from_edges_31
                      __anonstruct_Vertex_2_existent_vertices_30))
                     /\
-                    (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 127 13 28#
+                    (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 118 13 28#
                      "expl:Requires clause"
-                     (is_vertex g_0_0 (Int32.to_int f_0)
+                     (is_vertex g_0_0 (Int32.to_int f_0_0)
                      __anonstruct_Graph_4_vsize_g_0_15))
                     /\
-                    (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 128 13 28#
+                    (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 119 13 28#
                      "expl:Requires clause"
-                     (is_vertex g_0_0 (Int32.to_int t_0)
+                     (is_vertex g_0_0 (Int32.to_int t_0_0)
                      __anonstruct_Graph_4_vsize_g_0_15))
                     /\
-                    (#"graph_c.jc" 182 12 740# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 129 13 41#
+                    (#"graph_c.jc" 180 12 740# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 120 13 41#
                      "expl:Requires clause"
                      (Int32.(=)
                      (select __anonstruct_Vertex_2_existent_vertices_30
                      (shift
                      (select __anonstruct_Graph_4_vertices_g_0_15 g_0_0)
-                     (Int32.to_int f_0))) (#"graph_c.jc" 191 29 41#
+                     (Int32.to_int f_0_0))) (#"graph_c.jc" 189 29 41#
                      "expl:Integer cast" (Int32.of_int (1)))))
                     /\
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 130 13 41#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 121 13 41#
                     "expl:Requires clause"
                     (Int32.(=)
                     (select __anonstruct_Vertex_2_existent_vertices_30
                     (shift
                     (select __anonstruct_Graph_4_vertices_g_0_15 g_0_0)
-                    (Int32.to_int t_0))) (#"graph_c.jc" 193 30 42#
+                    (Int32.to_int t_0_0))) (#"graph_c.jc" 191 30 42#
                     "expl:Integer cast" (Int32.of_int (1)))))))))))))))) }
                   ensures {
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 131 12 41#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 122 12 41#
                     "expl:Ensures clause"
                     ((=) (Int32.to_int result)
-                    (all_count g_0_0 (Int32.to_int f_0) (Int32.to_int t_0)
-                    __anonstruct_Graph_4_esize_g_0_15
+                    (all_count g_0_0 (Int32.to_int f_0_0)
+                    (Int32.to_int t_0_0) __anonstruct_Graph_4_esize_g_0_15
                     __anonstruct_Graph_4_edges_g_0_15
                     __anonstruct_Edge_3_existent_0_edges_31
                     __anonstruct_Edge_3_to_edges_31
@@ -11344,7 +11320,7 @@ module Function_add_edge
   use why3.Bool.Bool 
   
   val add_edge
-  (g_8 : (pointer __anonstruct_Graph_4)) 
+  (g_10 : (pointer __anonstruct_Graph_4)) 
    (f_2 : Int32.t) 
     (t_2 : Int32.t) 
      (__anonstruct_Graph_4_ecnt_g_16 : ref (memory __anonstruct_Graph_4
@@ -11383,13 +11359,13 @@ module Function_add_edge
                   __anonstruct_Edge_3_to_edges_33,
                   __anonstruct_Graph_4_ecnt_g_16 }
                   ensures {
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                     "expl:Ensures clause"
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                     "expl:Ensures clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                      "expl:Ensures clause"
-                     (graph_valid g_8
+                     (graph_valid g_10
                      __anonstruct_Vertex_2_vertices_32_alloc_table
                      __anonstruct_Edge_3_edges_33_alloc_table
                      __anonstruct_Graph_4_esize_g_16
@@ -11402,39 +11378,39 @@ module Function_add_edge
                      !__anonstruct_Edge_3_from_edges_33
                      __anonstruct_Vertex_2_existent_vertices_32))
                     /\
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                     "expl:Ensures clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 10 59#
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 152 10 59#
                      "expl:Ensures clause"
                      ((=)
-                     (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                     (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                      __anonstruct_Graph_4_esize_g_16
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33
                      !__anonstruct_Edge_3_to_edges_33
                      !__anonstruct_Edge_3_from_edges_33)
                      (Int.(+)
-                     (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                     (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                      __anonstruct_Graph_4_esize_g_16
                      __anonstruct_Graph_4_edges_g_16 (old
                      !__anonstruct_Edge_3_existent_0_edges_33) (old
                      !__anonstruct_Edge_3_to_edges_33) (old
                      !__anonstruct_Edge_3_from_edges_33)) (1))))
                     /\
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 10 108#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 153 10 108#
                     "expl:Ensures clause"
-                    (forall f2_12 : int.
-                     (forall t2_12 : int.
-                      (((not ((=) f2_12 (Int32.to_int f_2))) \/
-                       (not ((=) t2_12 (Int32.to_int t_2)))) ->
+                    (forall f2_11 : int.
+                     (forall t2_11 : int.
+                      (((not ((=) f2_11 (Int32.to_int f_2))) \/
+                       (not ((=) t2_11 (Int32.to_int t_2)))) ->
                        ((=)
-                       (all_count g_8 f2_12 t2_12
+                       (all_count g_10 f2_11 t2_11
                        __anonstruct_Graph_4_esize_g_16
                        __anonstruct_Graph_4_edges_g_16
                        !__anonstruct_Edge_3_existent_0_edges_33
                        !__anonstruct_Edge_3_to_edges_33
                        !__anonstruct_Edge_3_from_edges_33)
-                       (all_count g_8 f2_12 t2_12
+                       (all_count g_10 f2_11 t2_11
                        __anonstruct_Graph_4_esize_g_16
                        __anonstruct_Graph_4_edges_g_16 (old
                        !__anonstruct_Edge_3_existent_0_edges_33) (old
@@ -11476,7 +11452,7 @@ module Function_add_edge_safe
   use why3.Bool.Bool 
   
   val add_edge
-  (g_8 : (pointer __anonstruct_Graph_4)) 
+  (g_10 : (pointer __anonstruct_Graph_4)) 
    (f_2 : Int32.t) 
     (t_2 : Int32.t) 
      (__anonstruct_Graph_4_ecnt_g_16 : ref (memory __anonstruct_Graph_4
@@ -11507,28 +11483,28 @@ module Function_add_edge_safe
                   __anonstruct_Vertex_2 Int32.t)) : unit
                   requires {
                     ("expl:Internal"
-                    (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 154 11 20#
+                    (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 11 20#
                      "expl:Requires clause"
-                     (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                     ((#"graph_c.jc" 300 12 792# "expl:Requires clause"
+                     (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                     ((#"graph_c.jc" 298 12 751# "expl:Requires clause"
                       ((<=)
-                      (offset_min __anonstruct_Graph_4_g_16_alloc_table g_8)
+                      (offset_min __anonstruct_Graph_4_g_16_alloc_table g_10)
                       (0)))
                      /\
-                     (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                     ((#"graph_c.jc" 300 12 792# "expl:Requires clause"
+                     (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                     ((#"graph_c.jc" 298 12 751# "expl:Requires clause"
                       ((>=)
-                      (offset_max __anonstruct_Graph_4_g_16_alloc_table g_8)
+                      (offset_max __anonstruct_Graph_4_g_16_alloc_table g_10)
                       (0)))
                      /\
-                     (#"graph_c.jc" 300 12 792# "expl:Requires clause"
+                     (#"graph_c.jc" 298 12 751# "expl:Requires clause"
                      ((=) true true)))))))
                     /\
-                    (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 154 24 38#
+                    (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 145 24 38#
                      "expl:Requires clause"
-                     (graph_valid g_8
+                     (graph_valid g_10
                      __anonstruct_Vertex_2_vertices_32_alloc_table
                      __anonstruct_Edge_3_edges_33_alloc_table
                      __anonstruct_Graph_4_esize_g_16
@@ -11541,40 +11517,42 @@ module Function_add_edge_safe
                      !__anonstruct_Edge_3_from_edges_33
                      __anonstruct_Vertex_2_existent_vertices_32))
                     /\
-                    (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 155 11 26#
+                    (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 146 11 26#
                      "expl:Requires clause"
-                     (is_vertex g_8 (Int32.to_int f_2)
+                     (is_vertex g_10 (Int32.to_int f_2)
                      __anonstruct_Graph_4_vsize_g_16))
                     /\
-                    (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 156 11 26#
+                    (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 147 11 26#
                      "expl:Requires clause"
-                     (is_vertex g_8 (Int32.to_int t_2)
+                     (is_vertex g_10 (Int32.to_int t_2)
                      __anonstruct_Graph_4_vsize_g_16))
                     /\
-                    (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 157 11 39#
+                    (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 148 11 34#
                      "expl:Requires clause"
-                     (Int32.(=)
+                     (not
+                     ((=)
+                     (Int32.to_int
                      (select __anonstruct_Vertex_2_existent_vertices_32
-                     (shift (select __anonstruct_Graph_4_vertices_g_16 g_8)
-                     (Int32.to_int f_2))) (#"graph_c.jc" 309 30 42#
-                     "expl:Integer cast" (Int32.of_int (1)))))
+                     (shift (select __anonstruct_Graph_4_vertices_g_16 g_10)
+                     (Int32.to_int f_2)))) (0))))
                     /\
-                    (#"graph_c.jc" 300 12 792# "expl:Requires clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 158 11 39#
+                    (#"graph_c.jc" 298 12 751# "expl:Requires clause"
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 149 11 34#
                      "expl:Requires clause"
-                     (Int32.(=)
+                     (not
+                     ((=)
+                     (Int32.to_int
                      (select __anonstruct_Vertex_2_existent_vertices_32
-                     (shift (select __anonstruct_Graph_4_vertices_g_16 g_8)
-                     (Int32.to_int t_2))) (#"graph_c.jc" 311 32 44#
-                     "expl:Integer cast" (Int32.of_int (1)))))
+                     (shift (select __anonstruct_Graph_4_vertices_g_16 g_10)
+                     (Int32.to_int t_2)))) (0))))
                     /\
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 159 11 19#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 150 11 19#
                     "expl:Requires clause"
                     (not
-                    (full g_8 __anonstruct_Graph_4_esize_g_16
+                    (full g_10 __anonstruct_Graph_4_esize_g_16
                     __anonstruct_Graph_4_edges_g_16
                     !__anonstruct_Edge_3_existent_0_edges_33))))))))))))))))
                     }
@@ -11587,13 +11565,13 @@ module Function_add_edge_safe
                   __anonstruct_Edge_3_to_edges_33,
                   __anonstruct_Graph_4_ecnt_g_16 }
                   ensures {
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                     "expl:Ensures clause"
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                     "expl:Ensures clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                      "expl:Ensures clause"
-                     (graph_valid g_8
+                     (graph_valid g_10
                      __anonstruct_Vertex_2_vertices_32_alloc_table
                      __anonstruct_Edge_3_edges_33_alloc_table
                      __anonstruct_Graph_4_esize_g_16
@@ -11606,39 +11584,39 @@ module Function_add_edge_safe
                      !__anonstruct_Edge_3_from_edges_33
                      __anonstruct_Vertex_2_existent_vertices_32))
                     /\
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 160 10 24#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 151 10 24#
                     "expl:Ensures clause"
-                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 161 10 59#
+                    ((#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 152 10 59#
                      "expl:Ensures clause"
                      ((=)
-                     (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                     (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                      __anonstruct_Graph_4_esize_g_16
                      __anonstruct_Graph_4_edges_g_16
                      !__anonstruct_Edge_3_existent_0_edges_33
                      !__anonstruct_Edge_3_to_edges_33
                      !__anonstruct_Edge_3_from_edges_33)
                      (Int.(+)
-                     (all_count g_8 (Int32.to_int f_2) (Int32.to_int t_2)
+                     (all_count g_10 (Int32.to_int f_2) (Int32.to_int t_2)
                      __anonstruct_Graph_4_esize_g_16
                      __anonstruct_Graph_4_edges_g_16 (old
                      !__anonstruct_Edge_3_existent_0_edges_33) (old
                      !__anonstruct_Edge_3_to_edges_33) (old
                      !__anonstruct_Edge_3_from_edges_33)) (1))))
                     /\
-                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 162 10 108#
+                    (#"/home/vladimir/MSU/kornyhin/labs/task3/graph.c" 153 10 108#
                     "expl:Ensures clause"
-                    (forall f2_12 : int.
-                     (forall t2_12 : int.
-                      (((not ((=) f2_12 (Int32.to_int f_2))) \/
-                       (not ((=) t2_12 (Int32.to_int t_2)))) ->
+                    (forall f2_11 : int.
+                     (forall t2_11 : int.
+                      (((not ((=) f2_11 (Int32.to_int f_2))) \/
+                       (not ((=) t2_11 (Int32.to_int t_2)))) ->
                        ((=)
-                       (all_count g_8 f2_12 t2_12
+                       (all_count g_10 f2_11 t2_11
                        __anonstruct_Graph_4_esize_g_16
                        __anonstruct_Graph_4_edges_g_16
                        !__anonstruct_Edge_3_existent_0_edges_33
                        !__anonstruct_Edge_3_to_edges_33
                        !__anonstruct_Edge_3_from_edges_33)
-                       (all_count g_8 f2_12 t2_12
+                       (all_count g_10 f2_11 t2_11
                        __anonstruct_Graph_4_esize_g_16
                        __anonstruct_Graph_4_edges_g_16 (old
                        !__anonstruct_Edge_3_existent_0_edges_33) (old

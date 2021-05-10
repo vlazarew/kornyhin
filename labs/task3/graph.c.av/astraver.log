@@ -16,35 +16,35 @@ Typing axiomatic EdgesCount
 Typing lemma/axiom count_zero
 Typing lemma/axiom count_one
 Typing lemma/axiom count_split
-Typing lemma/axiom count_saved
-Typing lemma/axiom count_existent
-occurrences table for axiom count_existent in axiomatic EdgesCount:
+Typing lemma/axiom count_saved_ax
+Typing lemma/axiom count_extend
+occurrences table for axiom count_extend in axiomatic EdgesCount:
   152: 
   153: 
   151: 
   149: L ;
   150: 
   
-occurrences table for axiom count_saved in axiomatic EdgesCount:
-  152: L1, L2 ;
+occurrences table for axiom count_saved_ax in axiomatic EdgesCount:
+  152: 
   153: 
-  151: 
+  151: L1, L2 ;
   149: 
   150: 
   
 occurrences table for axiom count_split in axiomatic EdgesCount:
   152: 
-  153: 
-  151: L ;
+  153: L ;
+  151: 
   149: 
   150: 
   
 occurrences table for axiom count_one in axiomatic EdgesCount:
-  152: 
+  152: L ;
   153: 
   151: 
   149: 
-  150: L ;
+  150: 
   
 occurrences table for axiom count_zero in axiomatic EdgesCount:
   152: 
@@ -71,26 +71,26 @@ Component 3:
  graph_valid calls: edges_valid
 
 Component 4:
- edge_saved calls: 
-
-Component 5:
- edges_saved calls: edge_saved
-
-Component 6:
  range_existent calls: 
 
-Component 7:
+Component 5:
  full calls: range_existent
 
-Component 8:
- count_saved_p calls: count, count
+Component 6:
+ edge_saved calls: 
 
+Component 7:
+ edges_saved calls: edge_saved
+
+Component 8:
  count_split_p calls: count, count,
 count
 
  count_one_p calls: count
 
- count calls: count, count_one_p, count_split_p, count_saved_p, edges_saved,
+ count_saved calls: count, count
+
+ count calls: count, count_one_p, count_split_p, count_saved, edges_saved,
 count
 
 Component 9:
@@ -184,28 +184,11 @@ Effects for logic function graph_valid:
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: fixpoint reached
-Effects for logic function edge_saved:
+Effects for logic function range_existent:
  alloc_table: 
  tag_table: 
- memories: (g_3_6 : mem-field "edges") at (L1, L2),
-           (edges_21 : mem-field "existent_0") at (L1, L2),
-           (edges_21 : mem-field "to") at (L1, L2),
-           (edges_21 : mem-field "from") at (L1, L2)
- raw memories: 
- precise memories: 
- globals: 
- locals: k_4 at (Here), g_3 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function edges_saved:
- alloc_table: 
- tag_table: 
- memories: (g_4_7 : mem-field "edges") at (L1, L2),
-           (edges_50 : mem-field "existent_0") at (L1, L2),
-           (edges_50 : mem-field "to") at (L1, L2),
-           (edges_50 : mem-field "from") at (L1, L2)
+ memories: (g_4_7 : mem-field "edges") at (L),
+           (edges_21 : mem-field "existent_0") at (L)
  raw memories: 
  precise memories: 
  globals: 
@@ -214,11 +197,42 @@ Effects for logic function edges_saved:
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: fixpoint reached
-Effects for logic function range_existent:
+Effects for logic function full:
  alloc_table: 
  tag_table: 
- memories: (g_6_9 : mem-field "edges") at (L),
-           (edges_22 : mem-field "existent_0") at (L)
+ memories: (g_3_6 : mem-field "esize") at (L),
+           (g_3_6 : mem-field "edges") at (L),
+           (edges_50 : mem-field "existent_0") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: g_3 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function edge_saved:
+ alloc_table: 
+ tag_table: 
+ memories: (g_5_8 : mem-field "edges") at (L1, L2),
+           (edges_22 : mem-field "existent_0") at (L1, L2),
+           (edges_22 : mem-field "to") at (L1, L2),
+           (edges_22 : mem-field "from") at (L1, L2)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: k_5 at (Here), g_5 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function edges_saved:
+ alloc_table: 
+ tag_table: 
+ memories: (g_6_9 : mem-field "edges") at (L1, L2),
+           (edges_54 : mem-field "existent_0") at (L1, L2),
+           (edges_54 : mem-field "to") at (L1, L2),
+           (edges_54 : mem-field "from") at (L1, L2)
  raw memories: 
  precise memories: 
  globals: 
@@ -226,39 +240,12 @@ Effects for logic function range_existent:
 
 Effects: doing one iteration
 Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function full:
- alloc_table: 
- tag_table: 
- memories: (g_5_8 : mem-field "esize") at (L),
-           (g_5_8 : mem-field "edges") at (L),
-           (edges_54 : mem-field "existent_0") at (L)
- raw memories: 
- precise memories: 
- globals: 
- locals: g_5 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: fixpoint reached
-Effects for logic function count_saved_p:
- alloc_table: 
- tag_table: 
- memories: (g_7_10 : mem-field "edges") at (L1, L2),
-           (edges_24 : mem-field "existent_0") at (L1, L2),
-           (edges_24 : mem-field "to") at (L1, L2),
-           (edges_24 : mem-field "from") at (L1, L2)
- raw memories: 
- precise memories: 
- globals: 
- locals: n_8 at (Here), m_7 at (Here), t_5 at (Here), f_5 at (Here),
-         g_13 at (Here)
-
 Effects for logic function count_split_p:
  alloc_table: 
  tag_table: 
@@ -269,8 +256,8 @@ Effects for logic function count_split_p:
  raw memories: 
  precise memories: 
  globals: 
- locals: k_7 at (Here), n_6 at (Here), m_5 at (Here), t_3 at (Here),
-         f_3 at (Here), g_11 at (Here)
+ locals: k_7 at (Here), n_7 at (Here), m_6 at (Here), t_5 at (Here),
+         f_5 at (Here), g_13 at (Here)
 
 Effects for logic function count_one_p:
  alloc_table: 
@@ -282,7 +269,20 @@ Effects for logic function count_one_p:
  raw memories: 
  precise memories: 
  globals: 
- locals: m_3 at (Here), t_1 at (Here), f_1 at (Here), g_9 at (Here)
+ locals: m_4 at (Here), t_3 at (Here), f_3 at (Here), g_11 at (Here)
+
+Effects for logic function count_saved:
+ alloc_table: 
+ tag_table: 
+ memories: (g_7_10 : mem-field "edges") at (L1, L2),
+           (edges_24 : mem-field "existent_0") at (L1, L2),
+           (edges_24 : mem-field "to") at (L1, L2),
+           (edges_24 : mem-field "from") at (L1, L2)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: n_5 at (Here), m_2 at (Here), t_1 at (Here), f_1 at (Here),
+         g_9 at (Here)
 
 Effects for logic function count:
  alloc_table: 
@@ -302,15 +302,15 @@ Effects: fixpoint reached
 Effects for logic function all_count:
  alloc_table: 
  tag_table: 
- memories: (g_16_14 : mem-field "esize") at (L),
-           (g_16_14 : mem-field "edges") at (L),
+ memories: (g_8_11 : mem-field "esize") at (L),
+           (g_8_11 : mem-field "edges") at (L),
            (edges_84 : mem-field "existent_0") at (L),
            (edges_84 : mem-field "to") at (L),
            (edges_84 : mem-field "from") at (L)
  raw memories: 
  precise memories: 
  globals: 
- locals: t_8 at (Here), f_8 at (Here), g_16 at (Here)
+ locals: t_0 at (Here), f_0 at (Here), g_8 at (Here)
 
 Effects: doing one iteration...
 Effects: doing one iteration...
@@ -1387,15 +1387,15 @@ Logic function is_vertex
 Logic function edge_valid
 Logic function edges_valid
 Logic function graph_valid
-Logic function edge_saved
-Logic function edges_saved
 Logic function full
 Logic function range_existent
+Logic function edge_saved
+Logic function edges_saved
 Logic function count
+Logic function all_count
+Logic function count_saved
 Logic function count_one_p
 Logic function count_split_p
-Logic function count_saved_p
-Logic function all_count
 Translate axiomatic declarations
 Axiomatic EdgesCount
 Axiomatic Padding
