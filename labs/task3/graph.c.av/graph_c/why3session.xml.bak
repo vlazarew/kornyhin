@@ -5,191 +5,861 @@
 <prover id="0" name="Alt-Ergo" version="2.4.0" timelimit="1" steplimit="0" memlimit="2000"/>
 <prover id="2" name="CVC4" version="1.6" timelimit="1" steplimit="0" memlimit="2000"/>
 <file name="../graph_c.mlw" expanded="true">
-<theory name="Function_count_0_safety" sum="c814a0d34741fa63825e58184858a4d0">
+<theory name="Function_count_0_safety" sum="c5809044d22a01c79bb33833da8efe2c">
  <goal name="WP_parameter count_0" expl="Function count, safety">
- <proof prover="2"><result status="valid" time="0.10" steps="31581"/></proof>
+ <proof prover="2"><result status="valid" time="0.12" steps="29799"/></proof>
  </goal>
 </theory>
-<theory name="Function_count_0_behaviors" sum="52bbfdfd8921b4df00a01393d5631d10">
- <goal name="WP_parameter count_ensures_default" expl="Function count, default behavior">
+<theory name="Function_count_0_behaviors" sum="ed06d694bd5edcd66f8aaef816519ef8" expanded="true">
+ <goal name="WP_parameter count_ensures_default" expl="Function count, default behavior" expanded="true">
  <proof prover="0"><result status="timeout" time="1.00"/></proof>
- <proof prover="2"><result status="unknown" time="0.99" steps="154556"/></proof>
- <transf name="split_goal_wp">
+ <proof prover="2"><result status="unknown" time="0.98" steps="169823"/></proof>
+ <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter count_ensures_default.1" expl="loop invariant init">
-  <proof prover="2"><result status="valid" time="0.07" steps="20508"/></proof>
+  <proof prover="2"><result status="valid" time="0.08" steps="20669"/></proof>
   </goal>
-  <goal name="WP_parameter count_ensures_default.2" expl="Assertion in line 133">
-  <proof prover="2"><result status="valid" time="0.08" steps="23478"/></proof>
+  <goal name="WP_parameter count_ensures_default.2" expl="Assertion in line 133" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.98" steps="203445"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter count_ensures_default.2.1" expl="Assertion in line 133" expanded="true">
+   <transf name="inline_all" expanded="true">
+    <goal name="WP_parameter count_ensures_default.2.1.1" expl="Assertion in line 133">
+    <proof prover="2"><result status="valid" time="0.12" steps="21880"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.3" expl="Assertion in line 134">
-  <proof prover="2"><result status="valid" time="0.10" steps="24788"/></proof>
+  <goal name="WP_parameter count_ensures_default.3" expl="loop invariant preservation" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.04" steps="151476"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter count_ensures_default.3.1" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.10" steps="20825"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.3.2" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="20928"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.3.3" expl="Function count, default behavior" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="0.97" steps="150895"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter count_ensures_default.3.3.1" expl="Function count, default behavior" expanded="true">
+    <transf name="inline_all" expanded="true">
+     <goal name="WP_parameter count_ensures_default.3.3.1.1" expl="Function count, default behavior">
+     <proof prover="0"><result status="valid" time="0.14" steps="1001"/></proof>
+     <proof prover="2"><result status="unknown" time="0.96" steps="128803"/></proof>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.3.4" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="21758"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.3.5" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.10" steps="21758"/></proof>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.4" expl="loop invariant preservation">
-  <proof prover="0"><result status="valid" time="0.22" steps="1880"/></proof>
-  <proof prover="2"><result status="unknown" time="0.98" steps="106933"/></proof>
+  <goal name="WP_parameter count_ensures_default.4" expl="Assertion in line 133" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.00" steps="120747"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter count_ensures_default.4.1" expl="Assertion in line 133" expanded="true">
+   <transf name="inline_all" expanded="true">
+    <goal name="WP_parameter count_ensures_default.4.1.1" expl="Assertion in line 133">
+    <proof prover="2"><result status="valid" time="0.12" steps="22109"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.5" expl="Assertion in line 133">
-  <proof prover="2"><result status="valid" time="0.13" steps="23825"/></proof>
+  <goal name="WP_parameter count_ensures_default.5" expl="loop invariant preservation" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.19" steps="173870"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter count_ensures_default.5.1" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.05" steps="16112"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.5.2" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="20431"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.5.3" expl="Function count, default behavior" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="1.24" steps="173604"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter count_ensures_default.5.3.1" expl="Function count, default behavior" expanded="true">
+    <transf name="inline_all" expanded="true">
+     <goal name="WP_parameter count_ensures_default.5.3.1.1" expl="Function count, default behavior">
+     <proof prover="0"><result status="valid" time="0.87" steps="4828"/></proof>
+     <proof prover="2"><result status="unknown" time="0.97" steps="79305"/></proof>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.5.4" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.10" steps="20988"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.5.5" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="20988"/></proof>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.6" expl="Assertion in line 134">
-  <proof prover="2"><result status="valid" time="0.12" steps="25145"/></proof>
+  <goal name="WP_parameter count_ensures_default.6" expl="Assertion in line 133" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.92" steps="176292"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter count_ensures_default.6.1" expl="Assertion in line 133" expanded="true">
+   <transf name="inline_all" expanded="true">
+    <goal name="WP_parameter count_ensures_default.6.1.1" expl="Assertion in line 133">
+    <proof prover="2"><result status="valid" time="0.11" steps="21599"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.7" expl="loop invariant preservation">
-  <proof prover="0"><result status="valid" time="0.25" steps="2063"/></proof>
-  <proof prover="2"><result status="unknown" time="1.02" steps="97260"/></proof>
+  <goal name="WP_parameter count_ensures_default.7" expl="loop invariant preservation" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.02" steps="157451"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter count_ensures_default.7.1" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.06" steps="16077"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.7.2" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="20160"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.7.3" expl="Function count, default behavior" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="1.01" steps="157234"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter count_ensures_default.7.3.1" expl="Function count, default behavior" expanded="true">
+    <transf name="inline_all" expanded="true">
+     <goal name="WP_parameter count_ensures_default.7.3.1.1" expl="Function count, default behavior" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.88" steps="70302"/></proof>
+     <transf name="eliminate_if" expanded="true">
+      <goal name="WP_parameter count_ensures_default.7.3.1.1.1" expl="Function count, default behavior" expanded="true">
+      <transf name="remove_triggers" expanded="true">
+       <goal name="WP_parameter count_ensures_default.7.3.1.1.1.1" expl="Function count, default behavior">
+       <proof prover="0"><result status="valid" time="0.05" steps="352"/></proof>
+       <proof prover="2"><result status="unknown" time="0.96" steps="80323"/></proof>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.7.4" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="20689"/></proof>
+   </goal>
+   <goal name="WP_parameter count_ensures_default.7.5" expl="Function count, default behavior">
+   <proof prover="2"><result status="valid" time="0.09" steps="20689"/></proof>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.8" expl="Assertion in line 133">
-  <proof prover="2"><result status="valid" time="0.11" steps="22874"/></proof>
+  <goal name="WP_parameter count_ensures_default.8" expl="Assertion in line 133" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.01" steps="111788"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter count_ensures_default.8.1" expl="Assertion in line 133" expanded="true">
+   <transf name="inline_all" expanded="true">
+    <goal name="WP_parameter count_ensures_default.8.1.1" expl="Assertion in line 133">
+    <proof prover="2"><result status="valid" time="0.12" steps="21271"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter count_ensures_default.9" expl="Assertion in line 134">
-  <proof prover="2"><result status="valid" time="0.11" steps="24133"/></proof>
+  <goal name="WP_parameter count_ensures_default.9" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.08" steps="753"/></proof>
+  <proof prover="2"><result status="unknown" time="0.93" steps="84463"/></proof>
   </goal>
-  <goal name="WP_parameter count_ensures_default.10" expl="loop invariant preservation">
-  <proof prover="0"><result status="valid" time="0.45" steps="3870"/></proof>
-  <proof prover="2"><result status="unknown" time="0.93" steps="101787"/></proof>
-  </goal>
-  <goal name="WP_parameter count_ensures_default.11" expl="Assertion in line 133">
-  <proof prover="2"><result status="valid" time="0.11" steps="22953"/></proof>
-  </goal>
-  <goal name="WP_parameter count_ensures_default.12" expl="Assertion in line 134">
-  <proof prover="2"><result status="valid" time="0.11" steps="24198"/></proof>
-  </goal>
-  <goal name="WP_parameter count_ensures_default.13" expl="loop invariant preservation">
-  <proof prover="2"><result status="valid" time="0.80" steps="90953"/></proof>
-  </goal>
-  <goal name="WP_parameter count_ensures_default.14" expl="Ensures clause (Postcondition)">
-  <proof prover="2"><result status="valid" time="0.21" steps="34822"/></proof>
+  <goal name="WP_parameter count_ensures_default.10" expl="Ensures clause (Postcondition)" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.79" steps="113234"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter count_ensures_default.10.1" expl="Ensures clause (Postcondition)" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter count_ensures_default.10.1.1" expl="Ensures clause (Postcondition)" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="1.85" steps="118612"/></proof>
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter count_ensures_default.10.1.1.1" expl="Ensures clause (Postcondition)" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="1.88" steps="118612"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter count_ensures_default.10.1.1.1.1" expl="Ensures clause (Postcondition)">
+      <proof prover="2"><result status="valid" time="0.18" steps="28214"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Function_add_edge_safety" sum="f4e552682711079e42b62acbfc8b9338">
+<theory name="Function_add_edge_safety" sum="88c753c06f7ec8d9af5f3933221cb48f">
  <goal name="WP_parameter add_edge" expl="Function add_edge, safety">
- <proof prover="2"><result status="valid" time="0.13" steps="41449"/></proof>
+ <proof prover="2"><result status="valid" time="0.14" steps="33959"/></proof>
  </goal>
 </theory>
-<theory name="Function_add_edge_behaviors" sum="b980c2861135a00594c09727635a0f52" expanded="true">
+<theory name="Function_add_edge_behaviors" sum="10016856e7dc3c42171113b9614f45b5" expanded="true">
  <goal name="WP_parameter add_edge_ensures_default" expl="Function add_edge, default behavior" expanded="true">
  <proof prover="0"><result status="timeout" time="1.00"/></proof>
- <proof prover="2"><result status="unknown" time="0.97" steps="146832"/></proof>
+ <proof prover="2"><result status="unknown" time="0.97" steps="142475"/></proof>
  <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter add_edge_ensures_default.1" expl="Assertion in line 157">
-  <proof prover="2"><result status="valid" time="0.12" steps="22272"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.2" expl="Assertion in line 160">
-  <proof prover="2"><result status="valid" time="0.06" steps="17903"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.3" expl="Assertion in line 161">
-  <proof prover="0"><result status="valid" time="0.07" steps="475"/></proof>
-  <proof prover="2"><result status="unknown" time="1.74" steps="113005"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.4" expl="Assertion in line 162">
-  <proof prover="2"><result status="valid" time="0.10" steps="22716"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.5" expl="Assertion in line 163">
-  <proof prover="0"><result status="valid" time="0.17" steps="1804"/></proof>
-  <proof prover="2"><result status="unknown" time="1.70" steps="114107"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.6" expl="Assertion in line 164">
-  <proof prover="2"><result status="valid" time="0.08" steps="19436"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.7" expl="Assertion in line 168">
-  <proof prover="2"><result status="valid" time="0.10" steps="22149"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.8" expl="Assertion in line 170">
-  <proof prover="2"><result status="valid" time="0.23" steps="36060"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.9" expl="Assertion in line 171">
-  <proof prover="2"><result status="valid" time="0.22" steps="38239"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.10" expl="Ensures clause (Postcondition)">
+  <goal name="WP_parameter add_edge_ensures_default.1" expl="Assertion in line 156" expanded="true">
   <proof prover="0"><result status="timeout" time="1.00"/></proof>
-  <proof prover="2"><result status="unknown" time="0.95" steps="99694"/></proof>
-  <transf name="split_goal_wp">
-   <goal name="WP_parameter add_edge_ensures_default.10.1" expl="Ensures clause">
-   <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="0.99" steps="103846"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.10.1.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.10.1.1.1" expl="Ensures clause">
+  <proof prover="2"><result status="unknown" time="1.76" steps="114186"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.1.1" expl="Assertion in line 156" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.1.1.1" expl="Assertion in line 156" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="1.20" steps="156462"/></proof>
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.1.1.1.1" expl="Assertion in line 156" expanded="true">
      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="0.94" steps="122933"/></proof>
-     <transf name="split_goal_wp">
+     <proof prover="2"><result status="unknown" time="0.94" steps="131037"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.1.1.1.1.1" expl="Assertion in line 156" expanded="true">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="2"><result status="unknown" time="1.47" steps="219769"/></proof>
+      <transf name="eliminate_if" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.1.1.1.1.1.1" expl="Assertion in line 156" expanded="true">
+       <transf name="remove_triggers" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.1.1.1.1.1.1.1" expl="Assertion in line 156">
+        <proof prover="0"><result status="valid" time="0.06" steps="440"/></proof>
+        <proof prover="2"><result status="unknown" time="1.53" steps="88102"/></proof>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.2" expl="Assertion in line 158" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.97" steps="136241"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.2.1" expl="Assertion in line 158" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.2.1.1" expl="Assertion in line 158" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="0.97" steps="135358"/></proof>
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.2.1.1.1" expl="Assertion in line 158" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.94" steps="130938"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.2.1.1.1.1" expl="Assertion in line 158">
+      <proof prover="0"><result status="valid" time="0.43" steps="2270"/></proof>
+      <proof prover="2"><result status="unknown" time="0.96" steps="82709"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.3" expl="Assertion in line 159" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.06" steps="127728"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.3.1" expl="Assertion in line 159" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.3.1.1" expl="Assertion in line 159" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="0.93" steps="83348"/></proof>
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.3.1.1.1" expl="Assertion in line 159" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.95" steps="83096"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.3.1.1.1.1" expl="Assertion in line 159">
+      <proof prover="2"><result status="valid" time="0.77" steps="95323"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.4" expl="Ensures clause (Postcondition)" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.99" steps="108769"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.4.1" expl="Ensures clause" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="0.95" steps="104321"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.4.1.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.4.1.1.1" expl="Ensures clause" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="1.00" steps="97712"/></proof>
+     <transf name="split_goal_wp" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.1" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.08" steps="18925"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.2" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.10" steps="18946"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.3" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.10" steps="18954"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.4" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.12" steps="22531"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.5" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.10" steps="19003"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.6" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="19010"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.7" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.06" steps="15723"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.8" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.05" steps="15723"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.9" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.10" steps="18978"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.10" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18985"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.11" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.06" steps="15723"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.12" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.06" steps="15723"/></proof>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13" expl="Function add_edge, default behavior" expanded="true">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="2"><result status="unknown" time="0.95" steps="104817"/></proof>
+      <transf name="inline_goal" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1" expl="Function add_edge, default behavior" expanded="true">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="2"><result status="unknown" time="0.97" steps="94762"/></proof>
+       <transf name="introduce_premises" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1" expl="Function add_edge, default behavior" expanded="true">
+        <transf name="inline_goal" expanded="true">
+         <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="2"><result status="unknown" time="0.98" steps="90082"/></proof>
+         <transf name="split_goal_wp" expanded="true">
+          <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="2"><result status="unknown" time="0.94" steps="115614"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="2"><result status="unknown" time="1.02" steps="101880"/></proof>
+            <transf name="split_goal_wp" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="0.98" steps="99443"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.91" steps="98868"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+               <proof prover="0"><result status="timeout" time="1.00"/></proof>
+               <proof prover="2"><result status="unknown" time="0.95" steps="99443"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.06" steps="20072"/></proof>
+                </goal>
+               </transf>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+             <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.2" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="0.92" steps="118557"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.91" steps="118042"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
+               <proof prover="0"><result status="timeout" time="1.00"/></proof>
+               <proof prover="2"><result status="unknown" time="1.05" steps="119412"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.08" steps="20086"/></proof>
+                </goal>
+               </transf>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+          <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2" expl="Function add_edge, default behavior" expanded="true">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="2"><result status="unknown" time="0.96" steps="124049"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="2"><result status="unknown" time="0.98" steps="102680"/></proof>
+            <transf name="split_goal_wp" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="1.01" steps="102534"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.97" steps="99442"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+               <proof prover="0"><result status="timeout" time="1.00"/></proof>
+               <proof prover="2"><result status="unknown" time="1.01" steps="102534"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.11" steps="20074"/></proof>
+                </goal>
+               </transf>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+             <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.2" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="1.05" steps="119408"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.92" steps="117563"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
+               <proof prover="0"><result status="timeout" time="1.00"/></proof>
+               <proof prover="2"><result status="unknown" time="0.90" steps="117773"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.2.1.1.2.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.11" steps="20088"/></proof>
+                </goal>
+               </transf>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+          <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.3" expl="Function add_edge, default behavior" expanded="true">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="2"><result status="unknown" time="0.95" steps="88341"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.3.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.3.1.1" expl="Function add_edge, default behavior" expanded="true">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="2"><result status="unknown" time="0.94" steps="87835"/></proof>
+            <transf name="inline_goal" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.3.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="0.95" steps="86982"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.3.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.90" steps="86053"/></proof>
+              <transf name="inline_all" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.3.1.1.1.1.1" expl="Function add_edge, default behavior">
+               <proof prover="2"><result status="valid" time="0.10" steps="20410"/></proof>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+          <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.4" expl="Function add_edge, default behavior" expanded="true">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="2"><result status="unknown" time="0.95" steps="89208"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.4.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.4.1.1" expl="Function add_edge, default behavior" expanded="true">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="2"><result status="unknown" time="0.97" steps="88323"/></proof>
+            <transf name="inline_goal" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.4.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="0.95" steps="87035"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.4.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.91" steps="85573"/></proof>
+              <transf name="inline_all" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.13.1.1.1.4.1.1.1.1.1" expl="Function add_edge, default behavior">
+               <proof prover="2"><result status="valid" time="0.11" steps="20421"/></proof>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+      <goal name="WP_parameter add_edge_ensures_default.4.1.1.1.14" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.14" steps="24798"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter add_edge_ensures_default.4.2" expl="Ensures clause" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="0.94" steps="108700"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.4.2.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.4.2.1.1" expl="Ensures clause" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="1.07" steps="96049"/></proof>
+     <transf name="inline_goal" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.4.2.1.1.1" expl="Ensures clause" expanded="true">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="2"><result status="unknown" time="1.03" steps="96049"/></proof>
+      <transf name="inline_all" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.4.2.1.1.1.1" expl="Ensures clause" expanded="true">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="2"><result status="unknown" time="0.99" steps="127792"/></proof>
+       <transf name="eliminate_if" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.4.2.1.1.1.1.1" expl="Ensures clause" expanded="true">
+        <transf name="remove_triggers" expanded="true">
+         <goal name="WP_parameter add_edge_ensures_default.4.2.1.1.1.1.1.1" expl="Ensures clause">
+         <proof prover="0" timelimit="5" memlimit="4000"><result status="valid" time="1.52" steps="10002"/></proof>
+         <proof prover="2" timelimit="5" memlimit="4000"><result status="unknown" time="4.90" steps="241868"/></proof>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter add_edge_ensures_default.4.3" expl="Ensures clause" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="1.09" steps="128978"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.4.3.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.4.3.1.1" expl="Ensures clause" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="1.35" steps="184436"/></proof>
+     <transf name="inline_goal" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.4.3.1.1.1" expl="Ensures clause" expanded="true">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="2"><result status="unknown" time="1.35" steps="184436"/></proof>
+      <transf name="inline_all" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.4.3.1.1.1.1" expl="Ensures clause" expanded="true">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="2"><result status="unknown" time="0.98" steps="115261"/></proof>
+       <transf name="eliminate_if" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.4.3.1.1.1.1.1" expl="Ensures clause" expanded="true">
+        <transf name="remove_triggers" expanded="true">
+         <goal name="WP_parameter add_edge_ensures_default.4.3.1.1.1.1.1.1" expl="Ensures clause">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="2" timelimit="5" memlimit="4000"><result status="valid" time="5.55" steps="317898"/></proof>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.5" expl="loop invariant init">
+  <proof prover="2"><result status="valid" time="0.11" steps="21099"/></proof>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.6" expl="Assertion in line 176" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.98" steps="128418"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.6.1" expl="Assertion in line 176" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="1.12" steps="150332"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.6.1.1" expl="Assertion in line 176" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.6.1.1.1" expl="Assertion in line 176" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.90" steps="124115"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.6.1.1.1.1" expl="Assertion in line 176">
+      <proof prover="2"><result status="valid" time="0.15" steps="23235"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter add_edge_ensures_default.6.2" expl="Assertion in line 176" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="1.00" steps="133593"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.6.2.1" expl="Assertion in line 176" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.6.2.1.1" expl="Assertion in line 176" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="1.18" steps="152899"/></proof>
+     <transf name="inline_goal" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.6.2.1.1.1" expl="Assertion in line 176" expanded="true">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="2"><result status="unknown" time="1.19" steps="152899"/></proof>
+      <transf name="inline_all" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.6.2.1.1.1.1" expl="Assertion in line 176">
+       <proof prover="2"><result status="valid" time="0.13" steps="23235"/></proof>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.7" expl="Assertion in line 177" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="1.75" steps="117003"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.7.1" expl="Assertion in line 177" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.7.1.1" expl="Assertion in line 177" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="1.13" steps="150463"/></proof>
+    <transf name="inline_all" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.7.1.1.1" expl="Assertion in line 177" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.93" steps="136950"/></proof>
+     <transf name="eliminate_if" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.7.1.1.1.1" expl="Assertion in line 177" expanded="true">
+      <transf name="remove_triggers" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.7.1.1.1.1.1" expl="Assertion in line 177">
+       <proof prover="0"><result status="valid" time="0.05" steps="273"/></proof>
+       <proof prover="2"><result status="unknown" time="0.97" steps="79723"/></proof>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.8" expl="Assertion in line 179" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.95" steps="159146"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.8.1" expl="Assertion in line 179" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.8.1.1" expl="Assertion in line 179" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="0.93" steps="108967"/></proof>
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.8.1.1.1" expl="Assertion in line 179" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.93" steps="105703"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.8.1.1.1.1" expl="Assertion in line 179">
+      <proof prover="0"><result status="valid" time="0.20" steps="1010"/></proof>
+      <proof prover="2"><result status="unknown" time="0.96" steps="76437"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.9" expl="Assertion in line 180" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.90" steps="108550"/></proof>
+  <transf name="introduce_premises" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.9.1" expl="Assertion in line 180" expanded="true">
+   <transf name="inline_goal" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.9.1.1" expl="Assertion in line 180" expanded="true">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="2"><result status="unknown" time="0.93" steps="103022"/></proof>
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.9.1.1.1" expl="Assertion in line 180" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="0.95" steps="101944"/></proof>
+     <transf name="inline_all" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.9.1.1.1.1" expl="Assertion in line 180">
+      <proof prover="2"><result status="valid" time="0.84" steps="93741"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter add_edge_ensures_default.10" expl="Ensures clause (Postcondition)" expanded="true">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="2"><result status="unknown" time="0.93" steps="89903"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.10.1" expl="Ensures clause" expanded="true">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="2"><result status="unknown" time="1.13" steps="119379"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.10.1.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.10.1.1.1" expl="Ensures clause" expanded="true">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="2"><result status="unknown" time="1.02" steps="119538"/></proof>
+     <transf name="split_goal_wp" expanded="true">
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.1" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="20133"/></proof>
+      <proof prover="2"><result status="valid" time="0.10" steps="20033"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.2" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="20154"/></proof>
+      <proof prover="2"><result status="valid" time="0.09" steps="20050"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.3" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.11" steps="20182"/></proof>
+      <proof prover="2"><result status="valid" time="0.11" steps="20044"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.4" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.14" steps="25246"/></proof>
+      <proof prover="2"><result status="valid" time="0.08" steps="20028"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.5" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="20211"/></proof>
+      <proof prover="2"><result status="valid" time="0.10" steps="20143"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.6" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="20218"/></proof>
+      <proof prover="2"><result status="valid" time="0.10" steps="20150"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.7" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="15960"/></proof>
+      <proof prover="2"><result status="valid" time="0.06" steps="16302"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.8" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.04" steps="15960"/></proof>
+      <proof prover="2"><result status="valid" time="0.05" steps="16302"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.9" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.11" steps="20186"/></proof>
+      <proof prover="2"><result status="valid" time="0.10" steps="20118"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.10" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="20193"/></proof>
+      <proof prover="2"><result status="valid" time="0.11" steps="20125"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.11" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="15960"/></proof>
+      <proof prover="2"><result status="valid" time="0.06" steps="16302"/></proof>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.12" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.04" steps="15960"/></proof>
+      <proof prover="2"><result status="valid" time="0.05" steps="16302"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13" expl="Function add_edge, default behavior">
+      <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13" expl="Function add_edge, default behavior" expanded="true">
       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="0.98" steps="87301"/></proof>
-      <transf name="inline_goal">
-       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="unknown" time="1.02" steps="115215"/></proof>
+      <transf name="inline_goal" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1" expl="Function add_edge, default behavior" expanded="true">
        <proof prover="0"><result status="timeout" time="1.00"/></proof>
-       <proof prover="2"><result status="unknown" time="0.98" steps="91021"/></proof>
-       <transf name="introduce_premises">
-        <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1" expl="Function add_edge, default behavior">
-        <transf name="inline_goal">
-         <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1" expl="Function add_edge, default behavior">
+       <proof prover="2"><result status="unknown" time="0.95" steps="78782"/></proof>
+       <transf name="introduce_premises" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1" expl="Function add_edge, default behavior" expanded="true">
+        <transf name="inline_goal" expanded="true">
+         <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1" expl="Function add_edge, default behavior" expanded="true">
          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-         <proof prover="2"><result status="unknown" time="1.01" steps="104119"/></proof>
-         <transf name="split_goal_wp">
-          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1" expl="Function add_edge, default behavior">
+         <proof prover="2"><result status="unknown" time="0.97" steps="90293"/></proof>
+         <transf name="split_goal_wp" expanded="true">
+          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.99" steps="91426"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="0.94" steps="85533"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.94" steps="81912"/></proof>
-            <transf name="split_goal_wp">
-             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="0.96" steps="85890"/></proof>
+            <transf name="split_goal_wp" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.91" steps="82739"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.97" steps="85432"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.96" steps="83894"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+              <proof prover="2"><result status="unknown" time="0.93" steps="81578"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
                <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.94" steps="82772"/></proof>
-               <transf name="inline_all">
+               <proof prover="2"><result status="unknown" time="0.91" steps="79796"/></proof>
+               <transf name="inline_all" expanded="true">
                 <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.13" steps="22289"/></proof>
+                <proof prover="2"><result status="valid" time="0.11" steps="20447"/></proof>
                 </goal>
                </transf>
                </goal>
@@ -197,20 +867,20 @@
               </goal>
              </transf>
              </goal>
-             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2" expl="Function add_edge, default behavior">
+             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.97" steps="84970"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.97" steps="86139"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.95" steps="82467"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2.1.1" expl="Function add_edge, default behavior">
+              <proof prover="2"><result status="unknown" time="0.95" steps="81583"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
                <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.92" steps="82259"/></proof>
-               <transf name="inline_all">
+               <proof prover="2"><result status="unknown" time="0.96" steps="83189"/></proof>
+               <transf name="inline_all" expanded="true">
                 <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.14" steps="22303"/></proof>
+                <proof prover="2"><result status="valid" time="0.11" steps="20472"/></proof>
                 </goal>
                </transf>
                </goal>
@@ -224,30 +894,30 @@
            </goal>
           </transf>
           </goal>
-          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2" expl="Function add_edge, default behavior">
+          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.99" steps="91372"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="0.98" steps="86037"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.94" steps="82506"/></proof>
-            <transf name="split_goal_wp">
-             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="0.98" steps="85622"/></proof>
+            <transf name="split_goal_wp" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.92" steps="82948"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.97" steps="84606"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.96" steps="83984"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1.1.1" expl="Function add_edge, default behavior">
+              <proof prover="2"><result status="unknown" time="0.89" steps="79897"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
                <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.95" steps="82795"/></proof>
-               <transf name="inline_all">
+               <proof prover="2"><result status="unknown" time="0.95" steps="84573"/></proof>
+               <transf name="inline_all" expanded="true">
                 <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.12" steps="22291"/></proof>
+                <proof prover="2"><result status="valid" time="0.10" steps="20447"/></proof>
                 </goal>
                </transf>
                </goal>
@@ -255,20 +925,20 @@
               </goal>
              </transf>
              </goal>
-             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2" expl="Function add_edge, default behavior">
+             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.96" steps="85298"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.98" steps="86639"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.94" steps="82548"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2.1.1" expl="Function add_edge, default behavior">
+              <proof prover="2"><result status="unknown" time="0.92" steps="80856"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
                <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.95" steps="82648"/></proof>
-               <transf name="inline_all">
+               <proof prover="2"><result status="unknown" time="0.93" steps="82566"/></proof>
+               <transf name="inline_all" expanded="true">
                 <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.2.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.13" steps="22305"/></proof>
+                <proof prover="2"><result status="valid" time="0.11" steps="20472"/></proof>
                 </goal>
                </transf>
                </goal>
@@ -282,26 +952,26 @@
            </goal>
           </transf>
           </goal>
-          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3" expl="Function add_edge, default behavior">
+          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.99" steps="88826"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="0.94" steps="88919"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.98" steps="87738"/></proof>
-            <transf name="inline_goal">
-             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="0.95" steps="88759"/></proof>
+            <transf name="inline_goal" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.92" steps="85368"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.92" steps="88130"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.94" steps="84800"/></proof>
-              <transf name="inline_all">
+              <proof prover="2"><result status="unknown" time="0.96" steps="86597"/></proof>
+              <transf name="inline_all" expanded="true">
                <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.3.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="2"><result status="valid" time="0.14" steps="22623"/></proof>
+               <proof prover="2"><result status="valid" time="0.11" steps="20786"/></proof>
                </goal>
               </transf>
               </goal>
@@ -313,26 +983,26 @@
            </goal>
           </transf>
           </goal>
-          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4" expl="Function add_edge, default behavior">
+          <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.98" steps="88844"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="0.94" steps="90130"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.91" steps="85370"/></proof>
-            <transf name="inline_goal">
-             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="0.97" steps="89353"/></proof>
+            <transf name="inline_goal" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.96" steps="86621"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.96" steps="88964"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.94" steps="85953"/></proof>
-              <transf name="inline_all">
+              <proof prover="2"><result status="unknown" time="0.96" steps="87544"/></proof>
+              <transf name="inline_all" expanded="true">
                <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.13.1.1.1.4.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="2"><result status="valid" time="0.13" steps="22636"/></proof>
+               <proof prover="2"><result status="valid" time="0.11" steps="20795"/></proof>
                </goal>
               </transf>
               </goal>
@@ -353,7 +1023,7 @@
       </transf>
       </goal>
       <goal name="WP_parameter add_edge_ensures_default.10.1.1.1.14" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.15" steps="27430"/></proof>
+      <proof prover="2"><result status="valid" time="0.09" steps="18109"/></proof>
       </goal>
      </transf>
      </goal>
@@ -361,22 +1031,33 @@
     </goal>
    </transf>
    </goal>
-   <goal name="WP_parameter add_edge_ensures_default.10.2" expl="Ensures clause">
+   <goal name="WP_parameter add_edge_ensures_default.10.2" expl="Ensures clause" expanded="true">
    <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="1.18" steps="157046"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.10.2.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.10.2.1.1" expl="Ensures clause">
+   <proof prover="2"><result status="unknown" time="0.99" steps="110047"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.10.2.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.10.2.1.1" expl="Ensures clause" expanded="true">
      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="0.99" steps="117812"/></proof>
-     <transf name="inline_goal">
-      <goal name="WP_parameter add_edge_ensures_default.10.2.1.1.1" expl="Ensures clause">
+     <proof prover="2"><result status="unknown" time="0.95" steps="91940"/></proof>
+     <transf name="inline_goal" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.10.2.1.1.1" expl="Ensures clause" expanded="true">
       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="0.96" steps="117328"/></proof>
-      <transf name="inline_all">
-       <goal name="WP_parameter add_edge_ensures_default.10.2.1.1.1.1" expl="Ensures clause">
-       <proof prover="2"><result status="valid" time="0.06" steps="17039"/></proof>
+      <proof prover="2"><result status="unknown" time="0.97" steps="90729"/></proof>
+      <transf name="inline_all" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.10.2.1.1.1.1" expl="Ensures clause" expanded="true">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="2"><result status="unknown" time="1.15" steps="138525"/></proof>
+       <transf name="eliminate_if" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.10.2.1.1.1.1.1" expl="Ensures clause" expanded="true">
+        <transf name="remove_triggers" expanded="true">
+         <goal name="WP_parameter add_edge_ensures_default.10.2.1.1.1.1.1.1" expl="Ensures clause">
+         <proof prover="0"><result status="valid" time="0.13" steps="812"/></proof>
+         <proof prover="2"><result status="unknown" time="1.00" steps="75663"/></proof>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
        </goal>
       </transf>
       </goal>
@@ -386,29 +1067,29 @@
     </goal>
    </transf>
    </goal>
-   <goal name="WP_parameter add_edge_ensures_default.10.3" expl="Ensures clause">
+   <goal name="WP_parameter add_edge_ensures_default.10.3" expl="Ensures clause" expanded="true">
    <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="1.13" steps="158443"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.10.3.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.10.3.1.1" expl="Ensures clause">
+   <proof prover="2"><result status="unknown" time="0.96" steps="106626"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.10.3.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.10.3.1.1" expl="Ensures clause" expanded="true">
      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="1.03" steps="125616"/></proof>
-     <transf name="inline_goal">
-      <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1" expl="Ensures clause">
+     <proof prover="2"><result status="unknown" time="1.12" steps="134547"/></proof>
+     <transf name="inline_goal" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1" expl="Ensures clause" expanded="true">
       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="0.95" steps="108353"/></proof>
-      <transf name="inline_all">
-       <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1.1" expl="Ensures clause">
+      <proof prover="2"><result status="unknown" time="0.93" steps="105418"/></proof>
+      <transf name="inline_all" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1.1" expl="Ensures clause" expanded="true">
        <proof prover="0"><result status="timeout" time="1.00"/></proof>
-       <proof prover="2"><result status="unknown" time="1.00" steps="125537"/></proof>
-       <transf name="eliminate_if">
-        <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1.1.1" expl="Ensures clause">
-        <transf name="remove_triggers">
+       <proof prover="2"><result status="unknown" time="0.97" steps="86187"/></proof>
+       <transf name="eliminate_if" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1.1.1" expl="Ensures clause" expanded="true">
+        <transf name="remove_triggers" expanded="true">
          <goal name="WP_parameter add_edge_ensures_default.10.3.1.1.1.1.1.1" expl="Ensures clause">
-         <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
-         <proof prover="2" timelimit="5" memlimit="4000"><result status="unknown" time="4.89" steps="247228"/></proof>
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="2" timelimit="5" memlimit="4000"><result status="valid" time="3.30" steps="164974"/></proof>
          </goal>
         </transf>
         </goal>
@@ -424,117 +1105,97 @@
    </goal>
   </transf>
   </goal>
-  <goal name="WP_parameter add_edge_ensures_default.11" expl="Assertion in line 176">
-  <proof prover="2"><result status="valid" time="0.09" steps="19815"/></proof>
+  <goal name="WP_parameter add_edge_ensures_default.11" expl="loop invariant preservation">
+  <proof prover="2"><result status="valid" time="0.12" steps="24391"/></proof>
   </goal>
-  <goal name="WP_parameter add_edge_ensures_default.12" expl="loop invariant init">
-  <proof prover="2"><result status="valid" time="0.09" steps="20839"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.13" expl="Assertion in line 193">
-  <proof prover="2"><result status="valid" time="0.07" steps="18467"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.14" expl="Assertion in line 194">
-  <proof prover="0"><result status="valid" time="0.06" steps="586"/></proof>
-  <proof prover="2"><result status="unknown" time="1.62" steps="113752"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.15" expl="Assertion in line 196">
-  <proof prover="0"><result status="valid" time="0.14" steps="1169"/></proof>
-  <proof prover="2"><result status="unknown" time="1.61" steps="114671"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.16" expl="Assertion in line 202">
-  <proof prover="2"><result status="valid" time="0.20" steps="34549"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.17" expl="Assertion in line 204">
-  <proof prover="2"><result status="valid" time="0.23" steps="38090"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.18" expl="Ensures clause (Postcondition)">
+  <goal name="WP_parameter add_edge_ensures_default.12" expl="Ensures clause (Postcondition)" expanded="true">
   <proof prover="0"><result status="timeout" time="1.00"/></proof>
-  <proof prover="2"><result status="unknown" time="0.93" steps="95015"/></proof>
-  <transf name="split_goal_wp">
-   <goal name="WP_parameter add_edge_ensures_default.18.1" expl="Ensures clause">
+  <proof prover="2"><result status="unknown" time="1.00" steps="147067"/></proof>
+  <transf name="split_goal_wp" expanded="true">
+   <goal name="WP_parameter add_edge_ensures_default.12.1" expl="Ensures clause" expanded="true">
    <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="0.99" steps="93963"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.18.1.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.18.1.1.1" expl="Ensures clause">
+   <proof prover="2"><result status="unknown" time="0.98" steps="137775"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.12.1.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.12.1.1.1" expl="Ensures clause" expanded="true">
      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="0.98" steps="85741"/></proof>
-     <transf name="split_goal_wp">
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.1" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="19902"/></proof>
+     <proof prover="2"><result status="unknown" time="0.95" steps="121747"/></proof>
+     <transf name="split_goal_wp" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.1" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18596"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.2" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.11" steps="19919"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.2" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18613"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.3" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="19913"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.3" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18607"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.4" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="19897"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.4" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18591"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.5" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="20012"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.5" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18706"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.6" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.11" steps="20019"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.6" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.10" steps="18714"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.7" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="16009"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.7" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.06" steps="15790"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.8" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.06" steps="16009"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.8" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.06" steps="15790"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.9" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="19987"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.9" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.08" steps="18686"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.10" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="19994"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.10" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.09" steps="18694"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.11" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.06" steps="16009"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.11" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.05" steps="15790"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.12" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="16009"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.12" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.05" steps="15790"/></proof>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13" expl="Function add_edge, default behavior">
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13" expl="Function add_edge, default behavior" expanded="true">
       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="0.96" steps="102211"/></proof>
-      <transf name="inline_goal">
-       <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="unknown" time="0.92" steps="163863"/></proof>
+      <transf name="inline_goal" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1" expl="Function add_edge, default behavior" expanded="true">
        <proof prover="0"><result status="timeout" time="1.00"/></proof>
-       <proof prover="2"><result status="unknown" time="0.99" steps="88662"/></proof>
-       <transf name="introduce_premises">
-        <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1" expl="Function add_edge, default behavior">
-        <transf name="inline_goal">
-         <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1" expl="Function add_edge, default behavior">
+       <proof prover="2"><result status="unknown" time="0.99" steps="118957"/></proof>
+       <transf name="introduce_premises" expanded="true">
+        <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1" expl="Function add_edge, default behavior" expanded="true">
+        <transf name="inline_goal" expanded="true">
+         <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1" expl="Function add_edge, default behavior" expanded="true">
          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-         <proof prover="2"><result status="unknown" time="0.99" steps="94944"/></proof>
-         <transf name="split_goal_wp">
-          <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1" expl="Function add_edge, default behavior">
+         <proof prover="2"><result status="unknown" time="0.99" steps="113415"/></proof>
+         <transf name="split_goal_wp" expanded="true">
+          <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.93" steps="82653"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="1.96" steps="129282"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.96" steps="82767"/></proof>
-            <transf name="split_goal_wp">
-             <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="0.93" steps="119896"/></proof>
+            <transf name="split_goal_wp" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.95" steps="82493"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.93" steps="119748"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.96" steps="81810"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+              <proof prover="2"><result status="unknown" time="0.89" steps="115968"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
                <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.94" steps="79771"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.19" steps="30221"/></proof>
+               <proof prover="2"><result status="unknown" time="0.96" steps="119748"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.11" steps="20497"/></proof>
                 </goal>
                </transf>
                </goal>
@@ -542,78 +1203,20 @@
               </goal>
              </transf>
              </goal>
-             <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.2" expl="Function add_edge, default behavior">
+             <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.2" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.99" steps="83135"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.2.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="1.96" steps="129238"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.96" steps="79357"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.2.1.1" expl="Function add_edge, default behavior">
+              <proof prover="2"><result status="unknown" time="0.91" steps="118523"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
                <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.97" steps="79707"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.16" steps="30246"/></proof>
-                </goal>
-               </transf>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-            </transf>
-            </goal>
-           </transf>
-           </goal>
-          </transf>
-          </goal>
-          <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2" expl="Function add_edge, default behavior">
-          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.97" steps="83088"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1" expl="Function add_edge, default behavior">
-            <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.96" steps="82643"/></proof>
-            <transf name="split_goal_wp">
-             <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.96" steps="82083"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.1.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.92" steps="79782"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.96" steps="81167"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.18" steps="30219"/></proof>
-                </goal>
-               </transf>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-             <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.2" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.94" steps="79971"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.2.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.94" steps="79942"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.2.1.1" expl="Function add_edge, default behavior">
-               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.98" steps="81685"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.2.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.18" steps="30244"/></proof>
+               <proof prover="2"><result status="unknown" time="0.94" steps="119799"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.11" steps="20506"/></proof>
                 </goal>
                </transf>
                </goal>
@@ -627,26 +1230,53 @@
            </goal>
           </transf>
           </goal>
-          <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.3" expl="Function add_edge, default behavior">
+          <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.97" steps="82601"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.3.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.3.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="1.93" steps="129144"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.92" steps="82015"/></proof>
-            <transf name="inline_goal">
-             <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.3.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="1.93" steps="129197"/></proof>
+            <transf name="split_goal_wp" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.94" steps="82225"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.3.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.92" steps="115830"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.93" steps="81529"/></proof>
-              <transf name="inline_all">
-               <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.3.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="2"><result status="valid" time="0.18" steps="30674"/></proof>
+              <proof prover="2"><result status="unknown" time="0.96" steps="118334"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+               <proof prover="0"><result status="timeout" time="1.00"/></proof>
+               <proof prover="2"><result status="unknown" time="0.95" steps="118334"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.1.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.06" steps="20497"/></proof>
+                </goal>
+               </transf>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+             <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.2" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="0.95" steps="119599"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.2.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.96" steps="119599"/></proof>
+              <transf name="inline_goal" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.2.1.1" expl="Function add_edge, default behavior" expanded="true">
+               <proof prover="0"><result status="timeout" time="1.00"/></proof>
+               <proof prover="2"><result status="unknown" time="0.98" steps="119653"/></proof>
+               <transf name="inline_all" expanded="true">
+                <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.2.1.1.2.1.1.1" expl="Function add_edge, default behavior">
+                <proof prover="2"><result status="valid" time="0.06" steps="20506"/></proof>
+                </goal>
+               </transf>
                </goal>
               </transf>
               </goal>
@@ -658,26 +1288,57 @@
            </goal>
           </transf>
           </goal>
-          <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.4" expl="Function add_edge, default behavior">
+          <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.3" expl="Function add_edge, default behavior" expanded="true">
           <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.97" steps="83743"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.4.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.4.1.1" expl="Function add_edge, default behavior">
+          <proof prover="2"><result status="unknown" time="0.97" steps="102891"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.3.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.3.1.1" expl="Function add_edge, default behavior" expanded="true">
             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.96" steps="83459"/></proof>
-            <transf name="inline_goal">
-             <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.4.1.1.1" expl="Function add_edge, default behavior">
+            <proof prover="2"><result status="unknown" time="0.93" steps="101781"/></proof>
+            <transf name="inline_goal" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.3.1.1.1" expl="Function add_edge, default behavior" expanded="true">
              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.96" steps="82895"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.4.1.1.1.1" expl="Function add_edge, default behavior">
+             <proof prover="2"><result status="unknown" time="0.97" steps="103015"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.3.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.95" steps="82157"/></proof>
-              <transf name="inline_all">
-               <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.13.1.1.1.4.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="2"><result status="valid" time="0.19" steps="30670"/></proof>
+              <proof prover="2"><result status="unknown" time="0.99" steps="101781"/></proof>
+              <transf name="inline_all" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.3.1.1.1.1.1" expl="Function add_edge, default behavior">
+               <proof prover="2"><result status="valid" time="0.11" steps="21554"/></proof>
+               </goal>
+              </transf>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+          <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.4" expl="Function add_edge, default behavior" expanded="true">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="2"><result status="unknown" time="0.97" steps="102848"/></proof>
+          <transf name="introduce_premises" expanded="true">
+           <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.4.1" expl="Function add_edge, default behavior" expanded="true">
+           <transf name="inline_goal" expanded="true">
+            <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.4.1.1" expl="Function add_edge, default behavior" expanded="true">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="2"><result status="unknown" time="0.95" steps="101604"/></proof>
+            <transf name="inline_goal" expanded="true">
+             <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.4.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+             <proof prover="0"><result status="timeout" time="1.00"/></proof>
+             <proof prover="2"><result status="unknown" time="0.96" steps="101862"/></proof>
+             <transf name="inline_goal" expanded="true">
+              <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.4.1.1.1.1" expl="Function add_edge, default behavior" expanded="true">
+              <proof prover="0"><result status="timeout" time="1.00"/></proof>
+              <proof prover="2"><result status="unknown" time="0.93" steps="99434"/></proof>
+              <transf name="inline_all" expanded="true">
+               <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.13.1.1.1.4.1.1.1.1.1" expl="Function add_edge, default behavior">
+               <proof prover="2"><result status="valid" time="0.12" steps="21554"/></proof>
                </goal>
               </transf>
               </goal>
@@ -697,8 +1358,8 @@
        </goal>
       </transf>
       </goal>
-      <goal name="WP_parameter add_edge_ensures_default.18.1.1.1.14" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.07" steps="17777"/></proof>
+      <goal name="WP_parameter add_edge_ensures_default.12.1.1.1.14" expl="Function add_edge, default behavior">
+      <proof prover="2"><result status="valid" time="0.08" steps="17278"/></proof>
       </goal>
      </transf>
      </goal>
@@ -706,33 +1367,22 @@
     </goal>
    </transf>
    </goal>
-   <goal name="WP_parameter add_edge_ensures_default.18.2" expl="Ensures clause">
+   <goal name="WP_parameter add_edge_ensures_default.12.2" expl="Ensures clause" expanded="true">
    <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="0.95" steps="112808"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.18.2.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.18.2.1.1" expl="Ensures clause">
+   <proof prover="2"><result status="unknown" time="1.94" steps="122490"/></proof>
+   <transf name="introduce_premises" expanded="true">
+    <goal name="WP_parameter add_edge_ensures_default.12.2.1" expl="Ensures clause" expanded="true">
+    <transf name="inline_goal" expanded="true">
+     <goal name="WP_parameter add_edge_ensures_default.12.2.1.1" expl="Ensures clause" expanded="true">
      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="0.96" steps="106504"/></proof>
-     <transf name="inline_goal">
-      <goal name="WP_parameter add_edge_ensures_default.18.2.1.1.1" expl="Ensures clause">
+     <proof prover="2"><result status="unknown" time="0.91" steps="123486"/></proof>
+     <transf name="inline_goal" expanded="true">
+      <goal name="WP_parameter add_edge_ensures_default.12.2.1.1.1" expl="Ensures clause" expanded="true">
       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="0.96" steps="95558"/></proof>
-      <transf name="inline_all">
-       <goal name="WP_parameter add_edge_ensures_default.18.2.1.1.1.1" expl="Ensures clause">
-       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-       <proof prover="2"><result status="unknown" time="0.99" steps="76839"/></proof>
-       <transf name="eliminate_if">
-        <goal name="WP_parameter add_edge_ensures_default.18.2.1.1.1.1.1" expl="Ensures clause">
-        <transf name="remove_triggers">
-         <goal name="WP_parameter add_edge_ensures_default.18.2.1.1.1.1.1.1" expl="Ensures clause">
-         <proof prover="0"><result status="timeout" time="1.00"/></proof>
-         <proof prover="2" timelimit="5" memlimit="4000"><result status="valid" time="1.75" steps="117467"/></proof>
-         </goal>
-        </transf>
-        </goal>
-       </transf>
+      <proof prover="2"><result status="unknown" time="0.95" steps="125066"/></proof>
+      <transf name="inline_all" expanded="true">
+       <goal name="WP_parameter add_edge_ensures_default.12.2.1.1.1.1" expl="Ensures clause">
+       <proof prover="2"><result status="valid" time="0.09" steps="17338"/></proof>
        </goal>
       </transf>
       </goal>
@@ -742,336 +1392,8 @@
     </goal>
    </transf>
    </goal>
-   <goal name="WP_parameter add_edge_ensures_default.18.3" expl="Ensures clause">
-   <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="1.00" steps="93922"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.18.3.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.18.3.1.1" expl="Ensures clause">
-     <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="1.00" steps="88210"/></proof>
-     <transf name="inline_goal">
-      <goal name="WP_parameter add_edge_ensures_default.18.3.1.1.1" expl="Ensures clause">
-      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="0.97" steps="88210"/></proof>
-      <transf name="inline_all">
-       <goal name="WP_parameter add_edge_ensures_default.18.3.1.1.1.1" expl="Ensures clause">
-       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-       <proof prover="2"><result status="unknown" time="1.00" steps="86367"/></proof>
-       <transf name="eliminate_if">
-        <goal name="WP_parameter add_edge_ensures_default.18.3.1.1.1.1.1" expl="Ensures clause">
-        <transf name="remove_triggers">
-         <goal name="WP_parameter add_edge_ensures_default.18.3.1.1.1.1.1.1" expl="Ensures clause">
-         <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
-         <proof prover="2" timelimit="5" memlimit="4000"><result status="unknown" time="4.92" steps="231763"/></proof>
-         </goal>
-        </transf>
-        </goal>
-       </transf>
-       </goal>
-      </transf>
-      </goal>
-     </transf>
-     </goal>
-    </transf>
-    </goal>
-   </transf>
-   </goal>
-  </transf>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.19" expl="loop invariant preservation">
-  <proof prover="2"><result status="valid" time="0.11" steps="24307"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.20" expl="Assertion in line 210">
-  <proof prover="2"><result status="valid" time="0.09" steps="19221"/></proof>
-  </goal>
-  <goal name="WP_parameter add_edge_ensures_default.21" expl="Ensures clause (Postcondition)">
-  <proof prover="0"><result status="timeout" time="1.00"/></proof>
-  <proof prover="2"><result status="unknown" time="0.95" steps="148169"/></proof>
-  <transf name="split_goal_wp">
-   <goal name="WP_parameter add_edge_ensures_default.21.1" expl="Ensures clause">
-   <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="unknown" time="0.98" steps="171166"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.21.1.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.21.1.1.1" expl="Ensures clause">
-     <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="1.01" steps="122509"/></proof>
-     <transf name="split_goal_wp">
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.1" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.08" steps="18418"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.2" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="18435"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.3" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="18429"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.4" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.08" steps="18413"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.5" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="18528"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.6" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.10" steps="18536"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.7" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="15600"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.8" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="15600"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.9" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.09" steps="18508"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.10" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.07" steps="18516"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.11" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="15600"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.12" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.05" steps="15600"/></proof>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13" expl="Function add_edge, default behavior">
-      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="1.16" steps="176499"/></proof>
-      <transf name="inline_goal">
-       <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1" expl="Function add_edge, default behavior">
-       <proof prover="0"><result status="timeout" time="1.00"/></proof>
-       <proof prover="2"><result status="unknown" time="0.99" steps="175577"/></proof>
-       <transf name="introduce_premises">
-        <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1" expl="Function add_edge, default behavior">
-        <transf name="inline_goal">
-         <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1" expl="Function add_edge, default behavior">
-         <proof prover="0"><result status="timeout" time="1.00"/></proof>
-         <proof prover="2"><result status="unknown" time="0.96" steps="132354"/></proof>
-         <transf name="split_goal_wp">
-          <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1" expl="Function add_edge, default behavior">
-          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="1.85" steps="122916"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-            <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.97" steps="117382"/></proof>
-            <transf name="split_goal_wp">
-             <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.95" steps="117231"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.96" steps="117231"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.94" steps="117835"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.11" steps="20554"/></proof>
-                </goal>
-               </transf>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-             <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.2" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="1.82" steps="122905"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.2.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.93" steps="115435"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.2.1.1" expl="Function add_edge, default behavior">
-               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.98" steps="117315"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.07" steps="20563"/></proof>
-                </goal>
-               </transf>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-            </transf>
-            </goal>
-           </transf>
-           </goal>
-          </transf>
-          </goal>
-          <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2" expl="Function add_edge, default behavior">
-          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="1.88" steps="122784"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1" expl="Function add_edge, default behavior">
-            <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.91" steps="115268"/></proof>
-            <transf name="split_goal_wp">
-             <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.97" steps="117099"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.1.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.96" steps="117099"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="0.93" steps="117099"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.1.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.07" steps="20554"/></proof>
-                </goal>
-               </transf>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-             <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.2" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.95" steps="117175"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.2.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.98" steps="117175"/></proof>
-              <transf name="inline_goal">
-               <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.2.1.1" expl="Function add_edge, default behavior">
-               <proof prover="0"><result status="timeout" time="1.00"/></proof>
-               <proof prover="2"><result status="unknown" time="1.84" steps="122765"/></proof>
-               <transf name="inline_all">
-                <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.2.1.1.2.1.1.1" expl="Function add_edge, default behavior">
-                <proof prover="2"><result status="valid" time="0.06" steps="20563"/></proof>
-                </goal>
-               </transf>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-            </transf>
-            </goal>
-           </transf>
-           </goal>
-          </transf>
-          </goal>
-          <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.3" expl="Function add_edge, default behavior">
-          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.93" steps="142544"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.3.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.3.1.1" expl="Function add_edge, default behavior">
-            <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.94" steps="151486"/></proof>
-            <transf name="inline_goal">
-             <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.3.1.1.1" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.94" steps="148204"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.3.1.1.1.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="0.87" steps="122179"/></proof>
-              <transf name="inline_all">
-               <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.3.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="2"><result status="valid" time="0.11" steps="21610"/></proof>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-            </transf>
-            </goal>
-           </transf>
-           </goal>
-          </transf>
-          </goal>
-          <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.4" expl="Function add_edge, default behavior">
-          <proof prover="0"><result status="timeout" time="1.00"/></proof>
-          <proof prover="2"><result status="unknown" time="0.93" steps="148742"/></proof>
-          <transf name="introduce_premises">
-           <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.4.1" expl="Function add_edge, default behavior">
-           <transf name="inline_goal">
-            <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.4.1.1" expl="Function add_edge, default behavior">
-            <proof prover="0"><result status="timeout" time="1.00"/></proof>
-            <proof prover="2"><result status="unknown" time="0.99" steps="161470"/></proof>
-            <transf name="inline_goal">
-             <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.4.1.1.1" expl="Function add_edge, default behavior">
-             <proof prover="0"><result status="timeout" time="1.00"/></proof>
-             <proof prover="2"><result status="unknown" time="0.92" steps="152234"/></proof>
-             <transf name="inline_goal">
-              <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.4.1.1.1.1" expl="Function add_edge, default behavior">
-              <proof prover="0"><result status="timeout" time="1.00"/></proof>
-              <proof prover="2"><result status="unknown" time="1.00" steps="160988"/></proof>
-              <transf name="inline_all">
-               <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.13.1.1.1.4.1.1.1.1.1" expl="Function add_edge, default behavior">
-               <proof prover="2"><result status="valid" time="0.11" steps="21610"/></proof>
-               </goal>
-              </transf>
-              </goal>
-             </transf>
-             </goal>
-            </transf>
-            </goal>
-           </transf>
-           </goal>
-          </transf>
-          </goal>
-         </transf>
-         </goal>
-        </transf>
-        </goal>
-       </transf>
-       </goal>
-      </transf>
-      </goal>
-      <goal name="WP_parameter add_edge_ensures_default.21.1.1.1.14" expl="Function add_edge, default behavior">
-      <proof prover="2"><result status="valid" time="0.08" steps="17069"/></proof>
-      </goal>
-     </transf>
-     </goal>
-    </transf>
-    </goal>
-   </transf>
-   </goal>
-   <goal name="WP_parameter add_edge_ensures_default.21.2" expl="Ensures clause">
-   <proof prover="0"><result status="timeout" time="1.00"/></proof>
-   <proof prover="2"><result status="timeout" time="1.00"/></proof>
-   <transf name="introduce_premises">
-    <goal name="WP_parameter add_edge_ensures_default.21.2.1" expl="Ensures clause">
-    <transf name="inline_goal">
-     <goal name="WP_parameter add_edge_ensures_default.21.2.1.1" expl="Ensures clause">
-     <proof prover="0"><result status="timeout" time="1.00"/></proof>
-     <proof prover="2"><result status="unknown" time="0.98" steps="137716"/></proof>
-     <transf name="inline_goal">
-      <goal name="WP_parameter add_edge_ensures_default.21.2.1.1.1" expl="Ensures clause">
-      <proof prover="0"><result status="timeout" time="1.00"/></proof>
-      <proof prover="2"><result status="unknown" time="1.01" steps="138677"/></proof>
-      <transf name="inline_all">
-       <goal name="WP_parameter add_edge_ensures_default.21.2.1.1.1.1" expl="Ensures clause">
-       <proof prover="2"><result status="valid" time="0.09" steps="17654"/></proof>
-       </goal>
-      </transf>
-      </goal>
-     </transf>
-     </goal>
-    </transf>
-    </goal>
-   </transf>
-   </goal>
-   <goal name="WP_parameter add_edge_ensures_default.21.3" expl="Ensures clause">
-   <proof prover="2"><result status="valid" time="0.07" steps="18115"/></proof>
+   <goal name="WP_parameter add_edge_ensures_default.12.3" expl="Ensures clause">
+   <proof prover="2"><result status="valid" time="0.07" steps="18270"/></proof>
    </goal>
   </transf>
   </goal>

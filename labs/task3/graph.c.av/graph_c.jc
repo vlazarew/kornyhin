@@ -177,20 +177,20 @@ axiomatic EdgesCount {
 }
 
 int32 count(__anonstruct_Graph_4[..] g_0, int32 f_0, int32 t_0)
-  requires ((_C_39 : ((_C_40 : \at((((\offset_min(\at(g_0,Here)) <=
+  requires ((_C_38 : ((_C_39 : \at((((\offset_min(\at(g_0,Here)) <=
                                        \at(0,Here)) &&
                                       (\offset_max(\at(g_0,Here)) >=
                                         \at(0,Here))) &&
                                      true),Here)) &&
-                       (_C_41 : graph_valid{Here}(g_0)))) &&
-             ((_C_42 : is_vertex{Here}(g_0, (f_0 :> integer))) &&
-               ((_C_43 : is_vertex{Here}(g_0, (t_0 :> integer))) &&
-                 ((_C_44 : ((g_0.vertices + (f_0 :> integer)).existent ==
-                             (1 :> int32))) &&
-                   (_C_45 : ((g_0.vertices + (t_0 :> integer)).existent ==
-                              (1 :> int32)))))));
+                       (_C_40 : graph_valid{Here}(g_0)))) &&
+             ((_C_41 : is_vertex{Here}(g_0, (f_0 :> integer))) &&
+               ((_C_42 : is_vertex{Here}(g_0, (t_0 :> integer))) &&
+                 ((_C_43 : (! ((g_0.vertices + (f_0 :> integer)).existent ==
+                                0))) &&
+                   (_C_44 : (! ((g_0.vertices + (t_0 :> integer)).existent ==
+                                 0)))))));
 behavior default:
-  ensures (_C_38 : ((\result :> integer) ==
+  ensures (_C_37 : ((\result :> integer) ==
                      all_count{Here}(\at(g_0,Old), (\at(f_0,Old) :> integer),
                                      (\at(t_0,Old) :> integer))));
 {  
@@ -204,16 +204,16 @@ behavior default:
          (LoopEntry : 
          loop 
          behavior default:
-           invariant (_C_13 : ((_C_14 : ((0 :> int32) <= i)) &&
-                                (_C_15 : (i <= g_0.ecnt))));
+           invariant (_C_13 : ((_C_14 : ((0 :> int32) <= c)) &&
+                                (_C_15 : (c <= i))));
          behavior default:
-           invariant (_C_10 : ((_C_11 : ((0 :> int32) <= c)) &&
-                                (_C_12 : (c <= i))));
+           invariant (_C_12 : ((c :> integer) ==
+                                count{Here}(g_0, (f_0 :> integer),
+                                            (t_0 :> integer), 0,
+                                            (i :> integer))));
          behavior default:
-           invariant (_C_9 : ((c :> integer) ==
-                               count{Here}(g_0, (f_0 :> integer),
-                                           (t_0 :> integer), 0,
-                                           (i :> integer))));
+           invariant (_C_9 : ((_C_10 : ((0 :> int32) <= i)) &&
+                               (_C_11 : (i <= g_0.ecnt))));
          variant (_C_8 : ((g_0.ecnt :> integer) - (i :> integer)));
          while (true)
          {  
@@ -258,33 +258,9 @@ behavior default:
                                                                    ((i :> integer) +
                                                                     1)))))));
                      ()
-                  };
-                  
-                  {  
-                     (assert for default: (_C_34 : (astraver : (count{Here}(
-                                                                 g_0,
-                                                                 (f_0 :> integer),
-                                                                 (t_0 :> integer),
-                                                                 0,
-                                                                 (g_0.esize :> integer)) ==
-                                                                 (count{Here}(
-                                                                   g_0,
-                                                                   (f_0 :> integer),
-                                                                   (t_0 :> integer),
-                                                                   0,
-                                                                   ((i :> integer) +
-                                                                    1)) +
-                                                                   count{Here}(
-                                                                   g_0,
-                                                                   (f_0 :> integer),
-                                                                   (t_0 :> integer),
-                                                                   ((i :> integer) +
-                                                                    1),
-                                                                   (g_0.esize :> integer)))))));
-                     ()
                   }
                };
-               (_C_37 : (i = (_C_36 : ((_C_35 : (i + (1 :> int32))) :> int32))))
+               (_C_36 : (i = (_C_35 : ((_C_34 : (i + (1 :> int32))) :> int32))))
             }
          });
          (while_0_break : ())
@@ -295,127 +271,52 @@ behavior default:
 }
 
 unit add_edge(__anonstruct_Graph_4[..] g, int32 f, int32 t)
-  requires ((_C_126 : ((_C_127 : \at((((\offset_min(\at(g,Here)) <=
+  requires ((_C_109 : ((_C_110 : \at((((\offset_min(\at(g,Here)) <=
                                          \at(0,Here)) &&
                                         (\offset_max(\at(g,Here)) >=
                                           \at(0,Here))) &&
                                        true),Here)) &&
-                        (_C_128 : graph_valid{Here}(g)))) &&
-             ((_C_129 : is_vertex{Here}(g, (f :> integer))) &&
-               ((_C_130 : is_vertex{Here}(g, (t :> integer))) &&
-                 ((_C_131 : (! ((g.vertices + (f :> integer)).existent == 0))) &&
-                   ((_C_132 : (! ((g.vertices + (t :> integer)).existent ==
+                        (_C_111 : graph_valid{Here}(g)))) &&
+             ((_C_112 : is_vertex{Here}(g, (f :> integer))) &&
+               ((_C_113 : is_vertex{Here}(g, (t :> integer))) &&
+                 ((_C_114 : (! ((g.vertices + (f :> integer)).existent == 0))) &&
+                   ((_C_115 : (! ((g.vertices + (t :> integer)).existent ==
                                    0))) &&
-                     (_C_133 : (! full{Here}(g))))))));
+                     (_C_116 : (! full{Here}(g))))))));
 behavior default:
-  ensures (_C_121 : ((_C_122 : graph_valid{Here}(\at(g,Old))) &&
-                      ((_C_124 : (all_count{Here}(\at(g,Old),
+  ensures (_C_104 : ((_C_105 : graph_valid{Here}(\at(g,Old))) &&
+                      ((_C_107 : (all_count{Here}(\at(g,Old),
                                                   (\at(f,Old) :> integer),
                                                   (\at(t,Old) :> integer)) ==
                                    (all_count{Old}(\at(g,Old),
                                                    (\at(f,Old) :> integer),
                                                    (\at(t,Old) :> integer)) +
                                      1))) &&
-                        (_C_125 : (\forall integer f2_11;
-                                    (\forall integer t2_11;
-                                      (((! (f2_11 == (\at(f,Old) :> integer))) ||
-                                         (! (t2_11 ==
-                                              (\at(t,Old) :> integer)))) ==>
-                                        (all_count{Here}(\at(g,Old), f2_11,
-                                                         t2_11) ==
-                                          all_count{Old}(\at(g,Old), f2_11,
-                                                         t2_11)))))))));
+                        (_C_108 : (\forall integer f2_4;
+                                    (\forall integer t2_4;
+                                      (((! (f2_4 == (\at(f,Old) :> integer))) ||
+                                         (! (t2_4 == (\at(t,Old) :> integer)))) ==>
+                                        (all_count{Here}(\at(g,Old), f2_4,
+                                                         t2_4) ==
+                                          all_count{Old}(\at(g,Old), f2_4,
+                                                         t2_4)))))))));
 {  
    (var int32 i_0);
    
-   {  (if (_C_78 : ((_C_77 : g.ecnt) < (_C_76 : g.esize))) then 
-      {  (_C_50 : ((_C_49 : (_C_48 : ((_C_47 : g.edges) + (_C_46 : g.ecnt))).from) = f));
-         (_C_55 : ((_C_54 : (_C_53 : ((_C_52 : g.edges) + (_C_51 : g.ecnt))).to) = t));
-         (_C_60 : ((_C_59 : (_C_58 : ((_C_57 : g.edges) + (_C_56 : g.ecnt))).existent_0) = (1 :> int32)));
+   {  (if (_C_70 : ((_C_69 : g.ecnt) < (_C_68 : g.esize))) then 
+      {  (_C_49 : ((_C_48 : (_C_47 : ((_C_46 : g.edges) + (_C_45 : g.ecnt))).from) = f));
+         (_C_54 : ((_C_53 : (_C_52 : ((_C_51 : g.edges) + (_C_50 : g.ecnt))).to) = t));
+         (_C_59 : ((_C_58 : (_C_57 : ((_C_56 : g.edges) + (_C_55 : g.ecnt))).existent_0) = (1 :> int32)));
          
          {  
-            (assert for default: (_C_61 : (astraver : (edges_saved{Pre,
-                                                        Here}(g, 0,
-                                                              (g.ecnt :> integer)) &&
-                                                        edges_saved{Pre,
-                                                        Here}(g,
-                                                              ((g.ecnt :> integer) +
-                                                                1),
-                                                              (g.esize :> integer))))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_62 : (astraver : edge_valid{Here}(
-                                          g, (g.ecnt :> integer)))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_63 : (astraver : (count{Here}(g,
-                                                                   (f :> integer),
-                                                                   (t :> integer),
-                                                                   (g.ecnt :> integer),
-                                                                   ((g.ecnt :> integer) +
-                                                                    1)) ==
-                                                        1))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_64 : (astraver : (\forall integer f2;
+            (assert for default: (_C_60 : (astraver : (\forall integer f2;
                                                         (\forall integer t2;
-                                                          (count{Pre}(
-                                                            g, f2, t2,
-                                                            (g.ecnt :> integer),
-                                                            ((g.ecnt :> integer) +
-                                                              1)) ==
-                                                            0))))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_65 : (astraver : (\forall integer f2_0;
-                                                        (\forall integer t2_0;
-                                                          (((! (f2_0 ==
+                                                          (((! (f2 ==
                                                                  (f :> integer))) ||
-                                                             (! (t2_0 ==
-                                                                  (t :> integer)))) ==>
-                                                            (count{Here}(
-                                                              g, f2_0, t2_0,
-                                                              (g.ecnt :> integer),
-                                                              ((g.ecnt :> integer) +
-                                                                1)) ==
-                                                              0)))))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_66 : (astraver : (\forall integer f2_1;
-                                                        (\forall integer t2_1;
-                                                          (count_saved{Pre,
-                                                            Here}(g, f2_1,
-                                                                  t2_1, 0,
-                                                                  (g.ecnt :> integer)) &&
-                                                            count_saved{Pre,
-                                                            Here}(g, f2_1,
-                                                                  t2_1,
-                                                                  ((g.ecnt :> integer) +
-                                                                    1),
-                                                                  (g.esize :> integer))))))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_67 : (astraver : (\forall integer f2_2;
-                                                        (\forall integer t2_2;
-                                                          (((! (f2_2 ==
-                                                                 (f :> integer))) ||
-                                                             (! (t2_2 ==
+                                                             (! (t2 ==
                                                                   (t :> integer)))) ==>
                                                             count_saved{Pre,
-                                                            Here}(g, f2_2,
-                                                                  t2_2,
+                                                            Here}(g, f2, t2,
                                                                   (g.ecnt :> integer),
                                                                   ((g.ecnt :> integer) +
                                                                     1))))))));
@@ -423,22 +324,7 @@ behavior default:
          };
          
          {  
-            (assert for default: (_C_68 : (astraver : (\forall integer f2_3;
-                                                        (\forall integer t2_3;
-                                                          (all_count{Here}(
-                                                            g, f2_3, t2_3) ==
-                                                            (all_count{Pre}(
-                                                              g, f2_3, t2_3) +
-                                                              count{Here}(
-                                                              g, f2_3, t2_3,
-                                                              (g.ecnt :> integer),
-                                                              ((g.ecnt :> integer) +
-                                                                1)))))))));
-            ()
-         };
-         
-         {  
-            (assert for default: (_C_69 : (astraver : (all_count{Here}(
+            (assert for default: (_C_61 : (astraver : (all_count{Here}(
                                                         g, (f :> integer),
                                                         (t :> integer)) ==
                                                         ((count{Here}(
@@ -461,7 +347,7 @@ behavior default:
          };
          
          {  
-            (assert for default: (_C_70 : (astraver : (all_count{Pre}(
+            (assert for default: (_C_62 : (astraver : (all_count{Pre}(
                                                         g, (f :> integer),
                                                         (t :> integer)) ==
                                                         ((count{Pre}(
@@ -482,123 +368,53 @@ behavior default:
                                                           (g.esize :> integer)))))));
             ()
          };
-         (_C_75 : ((_C_74 : g.ecnt) = (_C_73 : ((_C_72 : ((_C_71 : g.ecnt) +
+         (_C_67 : ((_C_66 : g.ecnt) = (_C_65 : ((_C_64 : ((_C_63 : g.ecnt) +
                                                            (1 :> int32))) :> int32))));
          
          (goto return_label)
       } else ());
       
-      {  
-         (assert for default: (_C_79 : (astraver : (g.esize == g.ecnt))));
-         ()
-      };
-      
-      {  (_C_80 : (i_0 = (0 :> int32)));
+      {  (_C_71 : (i_0 = (0 :> int32)));
          (LoopEntry : 
          loop 
          behavior default:
-           invariant (_C_85 : ((_C_86 : ((0 :> int32) <= i_0)) &&
-                                (_C_87 : (i_0 <= g.ecnt))));
+           invariant (_C_76 : ((_C_77 : ((0 :> int32) <= i_0)) &&
+                                (_C_78 : (i_0 <= g.ecnt))));
          behavior default:
-           invariant (_C_84 : edges_saved{Pre,
+           invariant (_C_75 : range_existent{Here}(g, 0, (i_0 :> integer)));
+         behavior default:
+           invariant (_C_74 : (\forall integer f2_3;
+                                (\forall integer t2_3;
+                                  (all_count{Pre}(g, f2_3, t2_3) ==
+                                    all_count{Here}(g, f2_3, t2_3)))));
+         behavior default:
+           invariant (_C_73 : edges_saved{Pre,
                      Here}(g, 0, (g.ecnt :> integer)));
-         behavior default:
-           invariant (_C_83 : (\forall integer f2_10;
-                                (\forall integer t2_10;
-                                  (all_count{Pre}(g, f2_10, t2_10) ==
-                                    all_count{Here}(g, f2_10, t2_10)))));
-         behavior default:
-           invariant (_C_82 : range_existent{Here}(g, 0, (i_0 :> integer)));
-         variant (_C_81 : ((g.ecnt :> integer) - (i_0 :> integer)));
+         variant (_C_72 : ((g.ecnt :> integer) - (i_0 :> integer)));
          while (true)
          {  
-            {  (LoopCurrent : (if (_C_89 : (i_0 < (_C_88 : g.ecnt))) then () else 
+            {  (LoopCurrent : (if (_C_80 : (i_0 < (_C_79 : g.ecnt))) then () else 
                               (goto while_0_break_0)));
                
-               {  (_L : ());
-                  (if (_C_114 : (! (((_C_113 : (_C_112 : ((_C_111 : g.edges) +
-                                                           i_0)).existent_0) :> int32) !=
+               {  (if (_C_100 : (! (((_C_99 : (_C_98 : ((_C_97 : g.edges) +
+                                                         i_0)).existent_0) :> int32) !=
                                      (0 :> int32)))) then 
-                  {  (_C_93 : ((_C_92 : (_C_91 : ((_C_90 : g.edges) + i_0)).from) = f));
-                     (_C_97 : ((_C_96 : (_C_95 : ((_C_94 : g.edges) + i_0)).to) = t));
-                     (_C_101 : ((_C_100 : (_C_99 : ((_C_98 : g.edges) + i_0)).existent_0) = (1 :> int32)));
+                  {  (_C_84 : ((_C_83 : (_C_82 : ((_C_81 : g.edges) + i_0)).from) = f));
+                     (_C_88 : ((_C_87 : (_C_86 : ((_C_85 : g.edges) + i_0)).to) = t));
+                     (_C_92 : ((_C_91 : (_C_90 : ((_C_89 : g.edges) + i_0)).existent_0) = (1 :> int32)));
                      
                      {  
-                        (assert for default: (_C_102 : (astraver : (edges_saved{Pre,
-                                                                    Here}(
-                                                                    g, 0,
-                                                                    (i_0 :> integer)) &&
-                                                                    edges_saved{Pre,
-                                                                    Here}(
-                                                                    g,
-                                                                    ((i_0 :> integer) +
-                                                                    1),
-                                                                    (g.esize :> integer))))));
-                        ()
-                     };
-                     
-                     {  
-                        (assert for default: (_C_103 : (astraver : edge_valid{Here}(
-                                                       g, (i_0 :> integer)))));
-                        ()
-                     };
-                     
-                     {  
-                        (assert for default: (_C_104 : (astraver : (count{Here}(
-                                                                    g,
-                                                                    (f :> integer),
-                                                                    (t :> integer),
-                                                                    (i_0 :> integer),
-                                                                    ((i_0 :> integer) +
-                                                                    1)) ==
-                                                                    1))));
-                        ()
-                     };
-                     
-                     {  
-                        (assert for default: (_C_105 : (astraver : (\forall integer f2_4;
-                                                                    (\forall integer t2_4;
-                                                                    (count{Pre}(
-                                                                    g, f2_4,
-                                                                    t2_4,
-                                                                    (i_0 :> integer),
-                                                                    ((i_0 :> integer) +
-                                                                    1)) ==
-                                                                    0))))));
-                        ()
-                     };
-                     
-                     {  
-                        (assert for default: (_C_106 : (astraver : (\forall integer f2_5;
-                                                                    (\forall integer t2_5;
-                                                                    (((! 
-                                                                    (f2_5 ==
-                                                                    (f :> integer))) ||
-                                                                    (! 
-                                                                    (t2_5 ==
-                                                                    (t :> integer)))) ==>
-                                                                    (count{Here}(
-                                                                    g, f2_5,
-                                                                    t2_5,
-                                                                    (i_0 :> integer),
-                                                                    ((i_0 :> integer) +
-                                                                    1)) ==
-                                                                    0)))))));
-                        ()
-                     };
-                     
-                     {  
-                        (assert for default: (_C_107 : (astraver : (\forall integer f2_6;
-                                                                    (\forall integer t2_6;
+                        (assert for default: (_C_93 : (astraver : (\forall integer f2_0;
+                                                                    (\forall integer t2_0;
                                                                     (count_saved{Pre,
                                                                     Here}(
-                                                                    g, f2_6,
-                                                                    t2_6, 0,
+                                                                    g, f2_0,
+                                                                    t2_0, 0,
                                                                     (i_0 :> integer)) &&
                                                                     count_saved{Pre,
                                                                     Here}(
-                                                                    g, f2_6,
-                                                                    t2_6,
+                                                                    g, f2_0,
+                                                                    t2_0,
                                                                     ((i_0 :> integer) +
                                                                     1),
                                                                     (g.esize :> integer))))))));
@@ -606,18 +422,18 @@ behavior default:
                      };
                      
                      {  
-                        (assert for default: (_C_108 : (astraver : (\forall integer f2_7;
-                                                                    (\forall integer t2_7;
+                        (assert for default: (_C_94 : (astraver : (\forall integer f2_1;
+                                                                    (\forall integer t2_1;
                                                                     (((! 
-                                                                    (f2_7 ==
+                                                                    (f2_1 ==
                                                                     (f :> integer))) ||
                                                                     (! 
-                                                                    (t2_7 ==
+                                                                    (t2_1 ==
                                                                     (t :> integer)))) ==>
                                                                     count_saved{Pre,
                                                                     Here}(
-                                                                    g, f2_7,
-                                                                    t2_7,
+                                                                    g, f2_1,
+                                                                    t2_1,
                                                                     (i_0 :> integer),
                                                                     ((i_0 :> integer) +
                                                                     1))))))));
@@ -625,24 +441,24 @@ behavior default:
                      };
                      
                      {  
-                        (assert for default: (_C_109 : (astraver : (\forall integer f2_8;
-                                                                    (\forall integer t2_8;
+                        (assert for default: (_C_95 : (astraver : (\forall integer f2_2;
+                                                                    (\forall integer t2_2;
                                                                     (all_count{Here}(
-                                                                    g, f2_8,
-                                                                    t2_8) ==
+                                                                    g, f2_2,
+                                                                    t2_2) ==
                                                                     ((count{Here}(
-                                                                    g, f2_8,
-                                                                    t2_8, 0,
+                                                                    g, f2_2,
+                                                                    t2_2, 0,
                                                                     (i_0 :> integer)) +
                                                                     count{Here}(
-                                                                    g, f2_8,
-                                                                    t2_8,
+                                                                    g, f2_2,
+                                                                    t2_2,
                                                                     (i_0 :> integer),
                                                                     ((i_0 :> integer) +
                                                                     1))) +
                                                                     count{Here}(
-                                                                    g, f2_8,
-                                                                    t2_8,
+                                                                    g, f2_2,
+                                                                    t2_2,
                                                                     ((i_0 :> integer) +
                                                                     1),
                                                                     (g.esize :> integer)))))))));
@@ -650,7 +466,7 @@ behavior default:
                      };
                      
                      {  
-                        (assert for default: (_C_110 : (astraver : (all_count{Pre}(
+                        (assert for default: (_C_96 : (astraver : (all_count{Pre}(
                                                                     g,
                                                                     (f :> integer),
                                                                     (t :> integer)) ==
@@ -678,36 +494,12 @@ behavior default:
                      };
                      
                      (goto return_label)
-                  } else ());
-                  
-                  {  
-                     (assert for default: (_C_115 : (astraver : edges_saved{_L,
-                                                    Here}(g, 0,
-                                                          (g.ecnt :> integer)))));
-                     ()
-                  };
-                  
-                  {  
-                     (assert for default: (_C_116 : (astraver : (\forall integer f2_9;
-                                                                  (\forall integer t2_9;
-                                                                    (all_count{_L}(
-                                                                    g, f2_9,
-                                                                    t2_9) ==
-                                                                    all_count{Here}(
-                                                                    g, f2_9,
-                                                                    t2_9)))))));
-                     ()
-                  }
+                  } else ())
                };
-               (_C_119 : (i_0 = (_C_118 : ((_C_117 : (i_0 + (1 :> int32))) :> int32))))
+               (_C_103 : (i_0 = (_C_102 : ((_C_101 : (i_0 + (1 :> int32))) :> int32))))
             }
          });
          (while_0_break_0 : ())
-      };
-      
-      {  
-         (assert for default: (_C_120 : (astraver : full{Here}(g))));
-         ()
       };
       (return_label : 
       (return ()))

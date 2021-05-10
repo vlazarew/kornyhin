@@ -53,8 +53,7 @@ typedef struct {
 } Graph;
 
 /*@
-    predicate is_vertex(Graph *g, integer v) =
-        0 <= v < g->vsize;
+    predicate is_vertex(Graph *g, integer v) = 0 <= v < g->vsize;
 
     predicate edge_valid(Graph *g, integer k) =
         g->edges[k].existent ==>
@@ -63,8 +62,7 @@ typedef struct {
         g->vertices[g->edges[k].from].existent &&
         g->vertices[g->edges[k].to].existent;
 
-    predicate edges_valid(Graph *g, integer n) =
-        \forall integer k; 0 <= k < n ==> edge_valid(g, k);
+    predicate edges_valid(Graph *g, integer n) = \forall integer k; 0 <= k < n ==> edge_valid(g, k);
 
     predicate graph_valid(Graph *g) =
         g->vsize > 0 &&
@@ -88,11 +86,9 @@ axiomatic EdgesCount {
     logic integer count{L}(Graph *g, integer f, integer t, integer m, integer n);
     
     logic integer all_count(Graph *g, integer f, integer t) = count(g, f, t, 0, g->esize);
-    predicate count_saved{L1, L2}(Graph *g, integer f, integer t, integer m, integer n) =
-        count{L1}(g, f, t, m, n) == count{L2}(g, f, t, m, n);
+    predicate count_saved{L1, L2}(Graph *g, integer f, integer t, integer m, integer n) = count{L1}(g, f, t, m, n) == count{L2}(g, f, t, m, n);
 
-    axiom count_zero: \forall Graph *g, integer f, t, m, n; m >= n ==>
-        count(g, f, t, m, n) == 0;
+    axiom count_zero: \forall Graph *g, integer f, t, m, n; m >= n ==> count(g, f, t, m, n) == 0;
 
     predicate count_one_p{L}(Graph *g, integer f, integer t, integer m) =
         count(g, f, t, m, m + 1) == (g->edges[m].existent && g->edges[m].from == f && g->edges[m].to == t ? 1 : 0);
@@ -102,8 +98,7 @@ axiomatic EdgesCount {
     predicate count_split_p{L}(Graph *g, integer f, integer t, integer m, integer n, integer k) =
         count(g, f, t, m, k) == count(g, f, t, m, n) + count(g, f, t, n, k);
 
-    axiom count_split{L}: \forall Graph *g, integer f, t, m, n, k; m <= n <= k ==>
-        count_split_p(g, f, t, m, n, k);
+    axiom count_split{L}: \forall Graph *g, integer f, t, m, n, k; m <= n <= k ==> count_split_p(g, f, t, m, n, k);
 
     axiom count_saved_ax{L1, L2}: \forall Graph *g, integer f, t, m, n;
         edges_saved{L1, L2}(g, m, n) ==> count_saved{L1, L2}(g, f, t, m, n);
@@ -117,8 +112,8 @@ axiomatic EdgesCount {
     requires \valid(g) && graph_valid(g);
     requires is_vertex(g, f);
     requires is_vertex(g, t);
-    requires g->vertices[f].existent == 1;
-    requires g->vertices[t].existent == 1;
+    requires g->vertices[f].existent;
+    requires g->vertices[t].existent;
     ensures \result == all_count(g, f, t);*/
 // */
 int
@@ -126,9 +121,9 @@ count(Graph *g, int f, int t)
 {
     int c = 0;
     /*@
-        loop invariant 0 <= i <= g->ecnt;
         loop invariant 0 <= c <= i;
         loop invariant c == count(g, f, t, 0, i);
+        loop invariant 0 <= i <= g->ecnt;      
         loop variant g->ecnt - i;
     */
     for (int i = 0; i < g->ecnt; ++i) {
@@ -136,7 +131,6 @@ count(Graph *g, int f, int t)
             ++ c;
         }
         /*@ assert count(g, f, t, 0, i + 1) == count(g, f, t, 0, i) + count(g, f, t, i, i + 1);*/
-        /*@ assert count(g, f, t, 0, g->esize) == count(g, f, t, 0, i + 1) + count(g, f, t, i + 1, g->esize);*/
     }
     return c;
 }
@@ -159,59 +153,33 @@ add_edge(Graph *g, int f, int t)
         g->edges[g->ecnt].from = f;
         g->edges[g->ecnt].to = t;
         g->edges[g->ecnt].existent = 1;
-        /*@ assert edges_saved{Pre, Here}(g, 0, g->ecnt) &&
-            edges_saved{Pre, Here}(g, g->ecnt + 1, g->esize);
-        */
-        /*@ assert edge_valid(g, g->ecnt);*/
-        /*@ assert count(g, f, t, g->ecnt, g->ecnt + 1) == 1;*/
-        /*@ assert \forall integer f2, t2; count{Pre}(g, f2, t2, g->ecnt, g->ecnt + 1) == 0;*/
-        /*@ assert \forall integer f2, t2; (f2 != f || t2 != t) ==> count(g, f2, t2, g->ecnt, g->ecnt + 1) == 0;*/
-        /*@ assert \forall integer f2, t2; 
-            count_saved{Pre, Here}(g, f2, t2, 0, g->ecnt) &&
-            count_saved{Pre, Here}(g, f2, t2, g->ecnt + 1, g->esize);
-        */
         /*@ assert \forall integer f2, t2; (f2 != f || t2 != t) ==> count_saved{Pre, Here}(g, f2, t2, g->ecnt, g->ecnt + 1);*/
-        /*@ assert \forall integer f2, t2; all_count(g, f2, t2) == all_count{Pre}(g, f2, t2) + count(g, f2, t2, g->ecnt, g->ecnt + 1);*/
+
         /*@ assert all_count(g, f, t) == count(g, f, t, 0, g->ecnt) + count(g, f, t, g->ecnt, g->ecnt + 1) + count(g, f, t, g->ecnt + 1, g->esize);*/
         /*@ assert all_count{Pre}(g, f, t) == count{Pre}(g, f, t, 0, g->ecnt) + count{Pre}(g, f, t, g->ecnt, g->ecnt + 1) + count{Pre}(g, f, t, g->ecnt + 1, g->esize);*/
         ++ g->ecnt;
         return;
     }
 
-    /*@ assert g->esize == g->ecnt;*/
     /*@
         loop invariant 0 <= i <= g->ecnt;
-        loop invariant edges_saved{Pre, Here}(g, 0, g->ecnt);
-        loop invariant \forall integer f2, t2; all_count{Pre}(g, f2, t2) == all_count{Here}(g, f2, t2);
         loop invariant range_existent(g, 0, i);
+        loop invariant \forall integer f2, t2; all_count{Pre}(g, f2, t2) == all_count{Here}(g, f2, t2);
+        loop invariant edges_saved{Pre, Here}(g, 0, g->ecnt);        
         loop variant g->ecnt - i;
     */
     for (int i = 0; i < g->ecnt; ++i) {
-        /*@ ghost L:;*/
         if (!g->edges[i].existent) {
             g->edges[i].from = f;
             g->edges[i].to = t;
             g->edges[i].existent = 1;
-            /*@ assert edges_saved{Pre, Here}(g, 0, i) &&
-                edges_saved{Pre, Here}(g, i + 1, g->esize);
-            */
-            /*@ assert edge_valid(g, i);*/
-            /*@ assert count(g, f, t, i, i + 1) == 1;*/
-            /*@ assert \forall integer f2, t2; count{Pre}(g, f2, t2, i, i + 1) == 0;*/
-            /*@ assert \forall integer f2, t2; (f2 != f || t2 != t) ==> count(g, f2, t2, i, i + 1) == 0;*/
-            /*@ assert \forall integer f2, t2; 
-                count_saved{Pre, Here}(g, f2, t2, 0, i) &&
-                count_saved{Pre, Here}(g, f2, t2, i + 1, g->esize);
-            */
+            /*@ assert \forall integer f2, t2; count_saved{Pre, Here}(g, f2, t2, 0, i) && count_saved{Pre, Here}(g, f2, t2, i + 1, g->esize);*/
             /*@ assert \forall integer f2, t2; (f2 != f || t2 != t) ==> count_saved{Pre, Here}(g, f2, t2, i, i + 1);*/
+
             /*@ assert \forall integer f2, t2; all_count(g, f2, t2) == count(g, f2, t2, 0, i) + count(g, f2, t2, i, i + 1) + count(g, f2, t2, i + 1, g->esize);*/
-            // assert \forall integer f2, t2; (f2 != f || t2 != t) ==> all_count(g, f2, t2) == all_count{Pre}(g, f2, t2);
             /*@ assert all_count{Pre}(g, f, t) == count{Pre}(g, f, t, 0, i) + count{Pre}(g, f, t, i, i + 1) + count{Pre}(g, f, t, i + 1, g->esize);*/
             return;
         }
-        /*@ assert edges_saved{L, Here}(g, 0, g->ecnt);*/
-        /*@ assert \forall integer f2, t2; all_count{L}(g, f2, t2) == all_count{Here}(g, f2, t2);*/
     }
-    /*@ assert full(g);*/
 }
 // 

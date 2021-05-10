@@ -331,8 +331,7 @@ Effects for function count:
                    (edges_31 : mem-field "to") at (Here),
                    (edges_31 : mem-field "from") at (Here),
                    (vertices_30 : mem-field "existent") at (Here)
-         raw memories: (g_0_15 : mem-field "esize") at (Here),
-                       (g_0_15 : mem-field "ecnt") at (Here),
+         raw memories: (g_0_15 : mem-field "ecnt") at (Here),
                        (g_0_15 : mem-field "edges") at (Here),
                        (g_0_15 : mem-field "vertices") at (Here),
                        (edges_31 : mem-field "existent_0") at (Here),
@@ -363,14 +362,14 @@ Effects for function add_edge:
                       (g_16 : alloc-root "__anonstruct_Graph_4") at (Here),
                       (edges_33 : alloc-root "__anonstruct_Edge_3") at (Here)
          tag_table: (edges_33 : __anonstruct_Edge_3) at (Here)
-         memories: (g_16 : mem-field "esize") at (Here, Pre, Old, _L),
+         memories: (g_16 : mem-field "esize") at (Here, Pre, Old),
                    (g_16 : mem-field "ecnt") at (Here),
-                   (g_16 : mem-field "edges") at (Here, Pre, Old, _L),
+                   (g_16 : mem-field "edges") at (Here, Pre, Old),
                    (g_16 : mem-field "vsize") at (Here),
                    (g_16 : mem-field "vertices") at (Here),
-                   (edges_33 : mem-field "existent_0") at (Here, Pre, Old,
-                   _L), (edges_33 : mem-field "to") at (Here, Pre, Old, _L),
-                   (edges_33 : mem-field "from") at (Here, Pre, Old, _L),
+                   (edges_33 : mem-field "existent_0") at (Here, Pre, Old),
+                   (edges_33 : mem-field "to") at (Here, Pre, Old),
+                   (edges_33 : mem-field "from") at (Here, Pre, Old),
                    (vertices_32 : mem-field "existent") at (Here)
          raw memories: (g_16 : mem-field "esize") at (Here),
                        (g_16 : mem-field "ecnt") at (Here),
