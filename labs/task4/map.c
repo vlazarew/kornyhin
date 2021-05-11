@@ -63,6 +63,9 @@ axiomatic ItemsCount{
     ensures     \result == 0 <==> map->capacity == size && map->count == 0;
     ensures     size < 0 <==> \result == -1;
     ensures     size >= 0 && \valid(map) <==> \result == 0;
+
+    allocates map->items;
+    frees \nothing;
  */
 int initializeMap(Map *map, int size) {
 //    Проверка на дурака (зачем выделять память под ничего)
@@ -104,6 +107,8 @@ void finalizeMap(Map *map) {
  */
 /*@
     requires \valid(key);
+    ensures \result >= 0;
+    ensures key == \old(key);
 */
 int hash(Key *key) {
     int result = key->a * 33 + key->b;
@@ -113,6 +118,10 @@ int hash(Key *key) {
 /*@
     requires    \valid(map) && map_valid(map);
     requires    0 <= index <= map->capacity;
+    ensures     map == \old(map);
+    ensures     hashValue == \old(hashValue);
+    ensures     index == \old(index);
+    ensures     -map->capacity <= \result <= map->capacity;
 */
 int getCalculatedIndex(Map *map, int hashValue, int index) { return (hashValue + index) % map->capacity; }
 
@@ -178,6 +187,14 @@ int addElement(Map *map, Key *key, Value *value) {
     ensures     \valid(\old(value)) ==> 
                     (\forall integer i; map->items[i].key.a == key->a && map->items[i].key.b == key->b && \result == 1 ==> 
                         value->c == \old(map->items[i].value.c) && value->d == \old(map->items[i].value.d));
+    ensures     key == \old(key);
+
+    allocates \nothing;
+    frees \nothing;
+
+    assigns map->count;
+    assigns map->items[0..map->capacity - 1];    
+    assigns *value;
  */
 int removeElement(Map *map, Key *key, Value *value) {
     int hashValue = hash(key);
@@ -233,6 +250,11 @@ int removeElement(Map *map, Key *key, Value *value) {
     ensures     \valid(\old(value)) ==> 
                     (\forall integer i; map->items[i].key.a == key->a && map->items[i].key.b == key->b && \result == 1 ==> 
                         value->c == \old(map->items[i].value.c) && value->d == \old(map->items[i].value.d));
+    ensures key == \old(key);
+
+    assigns *value;
+    allocates \nothing;
+    frees \nothing;
  */
 int getElement(Map *map, Key *key, Value *value) {
     int hashValue = hash(key);
