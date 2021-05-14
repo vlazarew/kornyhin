@@ -1,0 +1,78 @@
+module JavaModel
+
+use import core.Pointer
+use import core.Alloc_table
+use import core.Memory
+use import core.Eq_pointer_safe
+use import int.Int
+use import map.Map
+use import ref.Ref
+
+
+type account
+type tag 't
+
+constant account_t:tag account
+constant credit_t:tag account
+
+predicate sub_tag (t1:tag account) (t2:tag account)
+axiom sub_tag_ax1: sub_tag credit_t account_t
+axiom sub_tag_ax2: sub_tag credit_t credit_t
+axiom sub_tag_ax3: sub_tag account_t account_t
+axiom sub_tag_ax4: not sub_tag account_t credit_t
+
+predicate CreditAccount_is_correct
+	(acc: account)
+	(credit_mem: memory (pointer account) int)
+	(balance_mem: memory (pointer account) int)
+=
+	get credit_mem acc >= 0 /\ get balance_mem acc >= -(get credit_mem acc)
+
+val withdraw_credit
+	(table: alloc_table account)
+	(mem: ref (memory account account))
+	(tag_table: map (pointer account) (tag account))
+	(acc: pointer account)
+	(value: int):unit
+
+val withdraw_account
+	(table: alloc_table account)
+	(mem: ref (memory account account))
+	(tag_table: map (pointer account) (tag account))
+	(acc: pointer account)
+	(value: int):unit
+
+val deposit_credit
+	(table: alloc_table account)
+	(mem: ref (memory account account))
+	(tag_table: map (pointer account) (tag account))
+	(acc: pointer account)
+	(value: int):unit
+
+val deposit_account
+	(table: alloc_table account)
+	(mem: ref (memory account account))
+	(tag_table: map (pointer account) (tag account))
+	(acc: pointer account)
+	(value: int):unit
+
+
+let move
+	(from_acc to_acc:pointer account)
+	(value: int)
+	(table: alloc_table account)
+	(mem: ref (memory account account))
+	(tag_table: map (pointer account) (tag account)):unit
+= 
+	if not eq_pointer table table from_acc to_acc then begin
+		if sub_tag (get tag_table from_acc) credit_t then
+			withdraw_credit table mem tag_table from_acc value
+		else
+			withdraw_account table mem tag_table from_acc value;
+
+		if sub_tag (get tag_table to_acc) credit_t then
+			deposit_credit table mem tag_table to_acc value
+		else
+			deposit_account table mem tag_table to_acc value
+	end;
+end

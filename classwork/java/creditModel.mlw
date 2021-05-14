@@ -1,0 +1,107 @@
+module JavaModel
+
+use import core.Pointer
+use import core.Alloc_table
+use import core.Memory
+use import core.Eq_pointer_safe
+use import core.Upd_safe
+use import core.Acc_safe
+use import int.Int
+use import map.Map
+use import ref.Ref
+
+(* use accountModel.Account *)
+
+
+type account
+type tag 't
+
+constant account_t:tag account
+constant credit_t:tag account
+
+predicate creditAccount_is_correct  (acc: pointer account)
+                                    (credit_mem: memory account int)
+                                    (balance_mem: memory account int)
+=
+    select credit_mem acc >= 0 /\ select balance_mem acc >= -(select credit_mem acc)
+                            
+
+predicate sub_tag (t1:tag account) (t2:tag account)
+axiom sub_tag_ax1: sub_tag credit_t account_t
+axiom sub_tag_ax2: sub_tag credit_t credit_t
+axiom sub_tag_ax3: sub_tag account_t account_t
+axiom sub_tag_ax4: not sub_tag account_t credit_t
+
+
+let creditAccount   (credit: int) 
+                    (this: pointer account)
+                    (account_table: alloc_table account)
+                    (* (credit_table: alloc_table int) *)
+                    (* (balance_table: alloc_table int) *)
+                    (credit_mem: ref (memory account int))
+                    (balance_mem: ref (memory account int))
+                    : unit
+
+    requires    {valid account_table this}
+    requires    {credit >= 0}
+    ensures     {creditAccount_is_correct this !credit_mem !balance_mem}
+    ensures     {select !balance_mem    this = 0}
+    ensures     {select !credit_mem     this = credit}
+=
+(* Надо вызвать конструктор базового класса *)
+    upd account_table credit_mem this credit
+
+
+
+let getCredit       (this: pointer account)
+                    (account_table: alloc_table account)
+                    (credit_mem: memory account int)
+                    (balance_mem: memory account int)
+                    : int
+
+    requires    {valid account_table this}
+    requires    {creditAccount_is_correct this credit_mem balance_mem}
+    ensures     {result = select credit_mem this}
+=
+    acc account_table credit_mem this
+
+
+let getBalance      (this: pointer account)
+                    (account_table: alloc_table account)
+                    (credit_mem: memory account int)
+                    (balance_mem: memory account int)
+                    : int 
+
+    requires    {valid account_table this}
+    requires    {creditAccount_is_correct this credit_mem balance_mem}
+    ensures     {result = select balance_mem this}     
+
+=
+    acc account_table balance_mem this
+
+
+
+exception NotEnoughBalance
+let withdraw        (this: pointer account)
+                    (value: int)       
+                    (credit_mem: memory account int)
+                    (balance_mem: ref (memory account int))
+                    (account_table: alloc_table account): unit
+
+    requires    {valid account_table this}
+    requires    {creditAccount_is_correct this credit_mem balance_mem}
+    requires    {value > 0}
+    assigns     {getBalance this account_table credit_mem !balance_mem}
+    ensures     {creditAccount_is_correct this credit_mem balance_mem}
+    ensures     {old(getBalance this account_table credit_mem !balance_mem) >= value - (getCredit this account_table credit_mem !balance_mem)
+                 /\ getBalance this account_table credit_mem !balance_mem = old(getBalance this account_table credit_mem !balance_mem) - value}
+=
+    let balance = getBalance this account_table credit_mem !balance_mem in
+        if (balance >= (value - (getCredit this account_table credit_mem !balance_mem))) then
+            upd account_table balance_mem this (balance - value)
+        else
+            raise NotEnoughBalance
+
+
+
+end
