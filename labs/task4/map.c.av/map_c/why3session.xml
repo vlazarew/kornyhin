@@ -2,139 +2,778 @@
 <!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
 "http://why3.lri.fr/why3session.dtd">
 <why3session shape_version="4">
-<prover id="0" name="Alt-Ergo" version="2.4.0" timelimit="5" steplimit="0" memlimit="1000"/>
-<prover id="1" name="Z3" version="4.8.7" timelimit="5" steplimit="0" memlimit="1000"/>
-<prover id="2" name="Coq" version="8.11.2" timelimit="5" steplimit="0" memlimit="1000"/>
-<prover id="3" name="CVC4" version="1.6" alternative="noBV" timelimit="5" steplimit="0" memlimit="1000"/>
-<prover id="4" name="Alt-Ergo" version="2.4.0" alternative="-EM" timelimit="5" steplimit="0" memlimit="1000"/>
-<prover id="5" name="CVC4" version="1.6" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="0" name="Alt-Ergo" version="2.4.0" timelimit="1" steplimit="0" memlimit="2000"/>
+<prover id="1" name="CVC4" version="1.6" timelimit="1" steplimit="0" memlimit="2000"/>
 <file name="../map_c.mlw" expanded="true">
-<theory name="Function_initializeMap_safety" sum="a3c57097d1e200d88957496bceab860e" expanded="true">
- <goal name="WP_parameter initializeMap" expl="Function initializeMap, safety" expanded="true">
- <proof prover="0"><undone/></proof>
- <proof prover="1" obsolete="true"><undone/></proof>
+<theory name="Function_initializeMap_safety" sum="cb72b2aaf7ab737f1e0a2c93c881a029">
+ <goal name="WP_parameter initializeMap" expl="Function initializeMap, safety">
+ <proof prover="1"><result status="valid" time="0.23" steps="44707"/></proof>
  </goal>
 </theory>
-<theory name="Function_initializeMap_behaviors" sum="a2991b148116c5bbf52d65eb704f5436" expanded="true">
- <goal name="WP_parameter initializeMap_ensures_default" expl="Function initializeMap, default behavior" expanded="true">
- <proof prover="0" obsolete="true"><result status="timeout" time="5.00"/></proof>
- <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter initializeMap_ensures_default.1" expl="Ensures clause (Postcondition)">
-  <proof prover="0" obsolete="true"><result status="timeout" time="5.00"/></proof>
-  <transf name="split_goal_wp">
-   <goal name="WP_parameter initializeMap_ensures_default.1.1" expl="Ensures clause">
-   <proof prover="0"><result status="valid" time="0.02" steps="30"/></proof>
-   <proof prover="1" obsolete="true"><undone/></proof>
-   <proof prover="2" obsolete="true"><unedited/></proof>
-   <proof prover="3" obsolete="true"><undone/></proof>
-   <proof prover="4" obsolete="true"><undone/></proof>
-   <proof prover="5" obsolete="true"><undone/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.1.2" expl="Ensures clause">
-   <proof prover="0"><result status="valid" time="0.02" steps="38"/></proof>
-   <proof prover="1" obsolete="true"><result status="timeout" time="5.00"/></proof>
-   <proof prover="2" obsolete="true"><unedited/></proof>
-   <proof prover="3" obsolete="true"><result status="unknown" time="5.00"/></proof>
-   <proof prover="4" obsolete="true"><undone/></proof>
-   <proof prover="5" obsolete="true"><result status="unknown" time="4.94" steps="984779"/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.1.3" expl="Ensures clause">
-   <proof prover="0"><result status="valid" time="0.02" steps="39"/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.1.4" expl="Ensures clause">
-   <proof prover="0"><result status="valid" time="0.01" steps="35"/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.1.5" expl="Ensures clause">
-   <proof prover="0"><undone/></proof>
-   </goal>
-  </transf>
+<theory name="Function_initializeMap_behaviors" sum="10eca245b9dec8e0bc040191ac8d1449">
+ <goal name="WP_parameter initializeMap_ensures_default" expl="Function initializeMap, default behavior">
+ <proof prover="0"><result status="timeout" time="1.00"/></proof>
+ <proof prover="1"><result status="unknown" time="0.97" steps="129240"/></proof>
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter initializeMap_ensures_default.1" expl="Postcondition">
+  <proof prover="1"><result status="valid" time="0.22" steps="45050"/></proof>
   </goal>
-  <goal name="WP_parameter initializeMap_ensures_default.2" expl="Ensures clause (Postcondition)" expanded="true">
-  <proof prover="0" obsolete="true"><result status="timeout" time="5.00"/></proof>
-  <proof prover="1" obsolete="true"><result status="timeout" time="5.00"/></proof>
-  <proof prover="2" obsolete="true"><unedited/></proof>
-  <proof prover="3" obsolete="true"><result status="timeout" time="5.00"/></proof>
-  <proof prover="4" obsolete="true"><result status="timeout" time="5.00"/></proof>
-  <proof prover="5" obsolete="true"><result status="unknown" time="4.85" steps="845940"/></proof>
-  <transf name="split_goal_wp" expanded="true">
-   <goal name="WP_parameter initializeMap_ensures_default.2.1" expl="Ensures clause">
-   <proof prover="0"><undone/></proof>
-   <proof prover="2" obsolete="true"><unedited/></proof>
-   <proof prover="3" obsolete="true"><undone/></proof>
-   <proof prover="4" obsolete="true"><result status="timeout" time="5.00"/></proof>
-   <proof prover="5" obsolete="true"><result status="unknown" time="4.87" steps="927274"/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.2.2" expl="Ensures clause">
-   <proof prover="0"><undone/></proof>
-   <proof prover="2" obsolete="true"><unedited/></proof>
-   <proof prover="3" obsolete="true"><undone/></proof>
-   <proof prover="4" obsolete="true"><result status="timeout" time="5.00"/></proof>
-   <proof prover="5" obsolete="true"><undone/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.2.3" expl="Ensures clause">
-   <proof prover="0"><undone/></proof>
-   <proof prover="3" obsolete="true"><undone/></proof>
-   <proof prover="4" obsolete="true"><result status="valid" time="0.01" steps="22"/></proof>
-   <proof prover="5" obsolete="true"><result status="valid" time="0.08" steps="27685"/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.2.4" expl="Ensures clause">
-   <proof prover="0"><undone/></proof>
-   <proof prover="3" obsolete="true"><result status="valid" time="0.06"/></proof>
-   <proof prover="4" obsolete="true"><result status="valid" time="0.01" steps="25"/></proof>
-   <proof prover="5" obsolete="true"><result status="valid" time="0.06" steps="27253"/></proof>
-   </goal>
-   <goal name="WP_parameter initializeMap_ensures_default.2.5" expl="Ensures clause">
-   <proof prover="0"><undone/></proof>
-   <proof prover="3" obsolete="true"><result status="valid" time="0.06"/></proof>
-   <proof prover="4" obsolete="true"><result status="valid" time="0.01" steps="25"/></proof>
-   <proof prover="5" obsolete="true"><result status="valid" time="0.07" steps="26937"/></proof>
-   </goal>
-  </transf>
+  <goal name="WP_parameter initializeMap_ensures_default.2" expl="Postcondition">
+  <proof prover="1"><result status="valid" time="0.27" steps="51634"/></proof>
   </goal>
-  <goal name="WP_parameter initializeMap_ensures_default.3" expl="Ensures clause (Postcondition)">
-  <proof prover="0"><undone/></proof>
+  <goal name="WP_parameter initializeMap_ensures_default.3" expl="loop invariant init">
+  <proof prover="1"><result status="valid" time="0.21" steps="43729"/></proof>
+  </goal>
+  <goal name="WP_parameter initializeMap_ensures_default.4" expl="loop invariant preservation">
+  <proof prover="1"><result status="valid" time="0.19" steps="45694"/></proof>
+  </goal>
+  <goal name="WP_parameter initializeMap_ensures_default.5" expl="Postcondition">
+  <proof prover="0"><result status="valid" time="0.59" steps="5720"/></proof>
+  <proof prover="1"><result status="unknown" time="1.05" steps="119461"/></proof>
   </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Function_hash_safety" sum="7d43e95459d3b6a181e0a0fbcde43fb0" expanded="true">
- <goal name="WP_parameter hash" expl="Function hash, safety" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_hash_safety" sum="37d7246c56e9cbffeee46f2ed33c0206">
+ <goal name="WP_parameter hash" expl="Function hash, safety">
+ <proof prover="1"><result status="valid" time="0.53" steps="83787"/></proof>
  </goal>
 </theory>
-<theory name="Function_hash_behaviors" sum="8942631a80c4230ac6180b07f77282b4" expanded="true">
- <goal name="WP_parameter hash_ensures_default" expl="Function hash, default behavior" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_hash_behaviors" sum="1c6aafc96ff556b3f58598c79aa67b68">
+ <goal name="WP_parameter hash_ensures_default" expl="Function hash, default behavior">
+ <proof prover="1"><result status="valid" time="0.52" steps="78108"/></proof>
  </goal>
 </theory>
-<theory name="Function_getCalculatedIndex_safety" sum="de23e0321e69a36e5e8d517cf7f8e992" expanded="true">
- <goal name="WP_parameter getCalculatedIndex" expl="Function getCalculatedIndex, safety" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_getCalculatedIndex_safety" sum="2e58ba83b33024b97d18f716ed71edfd">
+ <goal name="WP_parameter getCalculatedIndex" expl="Function getCalculatedIndex, safety">
+ <proof prover="1"><result status="valid" time="0.10" steps="20135"/></proof>
  </goal>
 </theory>
-<theory name="Function_getCalculatedIndex_behaviors" sum="85bd2ed5258f970165b30c0ad7a33fec" expanded="true">
- <goal name="WP_parameter getCalculatedIndex_ensures_default" expl="Function getCalculatedIndex, default behavior" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_getCalculatedIndex_behaviors" sum="f75a22b6cfd4f016b8edaa5b3dd0181f">
+ <goal name="WP_parameter getCalculatedIndex_ensures_default" expl="Function getCalculatedIndex, default behavior">
+ <proof prover="1"><result status="valid" time="0.08" steps="20328"/></proof>
  </goal>
 </theory>
-<theory name="Function_removeElement_safety" sum="a98144065376386201b2a8e44c01c09a" expanded="true">
- <goal name="WP_parameter removeElement" expl="Function removeElement, safety" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_removeElement_safety" sum="871188ee81d1102b80cbd0401794031b">
+ <goal name="WP_parameter removeElement" expl="Function removeElement, safety">
+ <proof prover="1"><result status="valid" time="0.18" steps="38161"/></proof>
  </goal>
 </theory>
-<theory name="Function_removeElement_behaviors" sum="a871be8571a401583679968f7cf23f6d" expanded="true">
- <goal name="WP_parameter removeElement_ensures_default" expl="Function removeElement, default behavior" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_removeElement_behaviors" sum="333cbc4a46dd7cc737e0e3070671fefc">
+ <goal name="WP_parameter removeElement_ensures_default" expl="Function removeElement, default behavior">
+ <proof prover="0"><result status="timeout" time="1.00"/></proof>
+ <proof prover="1"><result status="unknown" time="0.96" steps="152760"/></proof>
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter removeElement_ensures_default.1" expl="Assertion in line 289">
+  <proof prover="1"><result status="valid" time="0.11" steps="24914"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.2" expl="loop invariant init">
+  <proof prover="1"><result status="valid" time="0.17" steps="31816"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.3" expl="Assertion in line 296">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="1"><result status="unknown" time="0.95" steps="100644"/></proof>
+  <transf name="introduce_premises">
+   <goal name="WP_parameter removeElement_ensures_default.3.1" expl="Assertion in line 296">
+   <transf name="inline_goal">
+    <goal name="WP_parameter removeElement_ensures_default.3.1.1" expl="Assertion in line 296">
+    <proof prover="0"><result status="timeout" time="1.00"/></proof>
+    <proof prover="1"><result status="unknown" time="1.12" steps="106273"/></proof>
+    <transf name="split_goal_wp">
+     <goal name="WP_parameter removeElement_ensures_default.3.1.1.1" expl="Function removeElement, default behavior">
+     <proof prover="1"><result status="valid" time="0.19" steps="35340"/></proof>
+     </goal>
+     <goal name="WP_parameter removeElement_ensures_default.3.1.1.2" expl="Function removeElement, default behavior">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="0.93" steps="112022"/></proof>
+     <transf name="inline_goal">
+      <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.92" steps="96359"/></proof>
+      <transf name="split_goal_wp">
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.98" steps="100289"/></proof>
+       <transf name="introduce_premises">
+        <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1.1" expl="Function removeElement, default behavior">
+        <transf name="inline_goal">
+         <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.99" steps="100326"/></proof>
+         <transf name="inline_goal">
+          <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1.1.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.94" steps="100326"/></proof>
+          <transf name="inline_all">
+           <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0"><result status="timeout" time="1.00"/></proof>
+           <proof prover="1"><result status="unknown" time="1.02" steps="134191"/></proof>
+           <transf name="eliminate_if">
+            <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+            <transf name="remove_triggers">
+             <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.1.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+             <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+             <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.84" steps="236002"/></proof>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.96" steps="108540"/></proof>
+       <transf name="introduce_premises">
+        <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2.1" expl="Function removeElement, default behavior">
+        <transf name="inline_goal">
+         <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.92" steps="94948"/></proof>
+         <transf name="inline_goal">
+          <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2.1.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.88" steps="88734"/></proof>
+          <transf name="inline_all">
+           <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0"><result status="timeout" time="1.00"/></proof>
+           <proof prover="1"><result status="unknown" time="1.05" steps="134301"/></proof>
+           <transf name="eliminate_if">
+            <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2.1.1.1.1.1" expl="Function removeElement, default behavior">
+            <transf name="remove_triggers">
+             <goal name="WP_parameter removeElement_ensures_default.3.1.1.2.1.2.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+             <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+             <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.89" steps="236428"/></proof>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+     <goal name="WP_parameter removeElement_ensures_default.3.1.1.3" expl="Function removeElement, default behavior">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="1.01" steps="111113"/></proof>
+     <transf name="inline_goal">
+      <goal name="WP_parameter removeElement_ensures_default.3.1.1.3.1" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="1.00" steps="97541"/></proof>
+      <transf name="inline_goal">
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.3.1.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="1.05" steps="97541"/></proof>
+       <transf name="inline_all">
+        <goal name="WP_parameter removeElement_ensures_default.3.1.1.3.1.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.95" steps="114743"/></proof>
+        <transf name="eliminate_if">
+         <goal name="WP_parameter removeElement_ensures_default.3.1.1.3.1.1.1.1" expl="Function removeElement, default behavior">
+         <transf name="remove_triggers">
+          <goal name="WP_parameter removeElement_ensures_default.3.1.1.3.1.1.1.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+          <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.93" steps="169930"/></proof>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+     <goal name="WP_parameter removeElement_ensures_default.3.1.1.4" expl="Function removeElement, default behavior">
+     <proof prover="1"><result status="valid" time="0.15" steps="28382"/></proof>
+     </goal>
+     <goal name="WP_parameter removeElement_ensures_default.3.1.1.5" expl="Function removeElement, default behavior">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="0.92" steps="101104"/></proof>
+     <transf name="introduce_premises">
+      <goal name="WP_parameter removeElement_ensures_default.3.1.1.5.1" expl="Function removeElement, default behavior">
+      <transf name="inline_goal">
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.5.1.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.98" steps="111943"/></proof>
+       <transf name="inline_goal">
+        <goal name="WP_parameter removeElement_ensures_default.3.1.1.5.1.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.92" steps="98321"/></proof>
+        <transf name="inline_all">
+         <goal name="WP_parameter removeElement_ensures_default.3.1.1.5.1.1.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="1.01" steps="134646"/></proof>
+         <transf name="eliminate_if">
+          <goal name="WP_parameter removeElement_ensures_default.3.1.1.5.1.1.1.1.1" expl="Function removeElement, default behavior">
+          <transf name="remove_triggers">
+           <goal name="WP_parameter removeElement_ensures_default.3.1.1.5.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+           <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.92" steps="237217"/></proof>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+     <goal name="WP_parameter removeElement_ensures_default.3.1.1.6" expl="Function removeElement, default behavior">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="0.96" steps="94008"/></proof>
+     <transf name="inline_goal">
+      <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.94" steps="90513"/></proof>
+      <transf name="split_goal_wp">
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.90" steps="87729"/></proof>
+       <transf name="inline_goal">
+        <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.92" steps="89740"/></proof>
+        <transf name="inline_all">
+         <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.1.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.76" steps="90920"/></proof>
+         <transf name="eliminate_if">
+          <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.1.1.1.1" expl="Function removeElement, default behavior">
+          <transf name="remove_triggers">
+           <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+           <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.83" steps="446639"/></proof>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.2" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.93" steps="90282"/></proof>
+       <transf name="inline_goal">
+        <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.2.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.90" steps="90282"/></proof>
+        <transf name="inline_all">
+         <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.2.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.91" steps="107378"/></proof>
+         <transf name="eliminate_if">
+          <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.2.1.1.1" expl="Function removeElement, default behavior">
+          <transf name="remove_triggers">
+           <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.2.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+           <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.97" steps="446487"/></proof>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.3" expl="Function removeElement, default behavior">
+       <proof prover="1"><result status="valid" time="0.16" steps="30112"/></proof>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.4" expl="Function removeElement, default behavior">
+       <proof prover="1"><result status="valid" time="0.16" steps="30133"/></proof>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.5" expl="Function removeElement, default behavior">
+       <proof prover="1"><result status="valid" time="0.22" steps="36741"/></proof>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.6" expl="Function removeElement, default behavior">
+       <proof prover="1"><result status="valid" time="0.21" steps="36731"/></proof>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.7" expl="Function removeElement, default behavior">
+       <proof prover="1"><result status="valid" time="0.09" steps="24744"/></proof>
+       </goal>
+       <goal name="WP_parameter removeElement_ensures_default.3.1.1.6.1.8" expl="Function removeElement, default behavior">
+       <proof prover="1"><result status="valid" time="0.08" steps="24744"/></proof>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.4" expl="Assertion in line 300">
+  <proof prover="1"><result status="valid" time="0.12" steps="28288"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.5" expl="Assertion in line 307">
+  <proof prover="1"><result status="valid" time="0.21" steps="40025"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.6" expl="Assertion in line 308">
+  <proof prover="1"><result status="valid" time="0.24" steps="42723"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.7" expl="Assertion in line 312">
+  <proof prover="1"><result status="valid" time="0.21" steps="43743"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.8" expl="Assertion in line 313">
+  <proof prover="1"><result status="valid" time="0.25" steps="44064"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.9" expl="Postcondition">
+  <proof prover="1"><result status="valid" time="0.40" steps="61039"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.10" expl="Postcondition">
+  <proof prover="1"><result status="valid" time="0.38" steps="56861"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.11" expl="loop invariant preservation">
+  <proof prover="1"><result status="valid" time="0.14" steps="31608"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.12" expl="loop invariant preservation">
+  <proof prover="1"><result status="valid" time="0.16" steps="31518"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.13" expl="loop invariant preservation">
+  <proof prover="1"><result status="valid" time="0.15" steps="31418"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.14" expl="Assertion in line 323">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="1"><result status="unknown" time="0.93" steps="97440"/></proof>
+  <transf name="introduce_premises">
+   <goal name="WP_parameter removeElement_ensures_default.14.1" expl="Assertion in line 323">
+   <transf name="inline_goal">
+    <goal name="WP_parameter removeElement_ensures_default.14.1.1" expl="Assertion in line 323">
+    <proof prover="1"><result status="valid" time="0.17" steps="36789"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.15" expl="Assertion in line 324">
+  <proof prover="1"><result status="valid" time="0.14" steps="31748"/></proof>
+  </goal>
+  <goal name="WP_parameter removeElement_ensures_default.16" expl="Postcondition">
+  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="1"><result status="unknown" time="0.95" steps="103405"/></proof>
+  <transf name="split_goal_wp">
+   <goal name="WP_parameter removeElement_ensures_default.16.1" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.08" steps="25205"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.2" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.08" steps="25229"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.3" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25205"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.4" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25229"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.5" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25225"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.6" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25225"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.7" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25225"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.8" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25205"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.9" expl="Assigns clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25205"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.10" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.14" steps="33602"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.11" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.17" steps="33602"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.12" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.07" steps="25664"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.13" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.08" steps="25664"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.14" expl="Ensures clause">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="1"><result status="unknown" time="0.97" steps="101616"/></proof>
+   <transf name="introduce_premises">
+    <goal name="WP_parameter removeElement_ensures_default.16.14.1" expl="Ensures clause">
+    <transf name="inline_goal">
+     <goal name="WP_parameter removeElement_ensures_default.16.14.1.1" expl="Ensures clause">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="0.97" steps="109573"/></proof>
+     <transf name="split_goal_wp">
+      <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.1" expl="Function removeElement, default behavior">
+      <proof prover="1"><result status="valid" time="0.20" steps="36138"/></proof>
+      </goal>
+      <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.88" steps="92144"/></proof>
+      <transf name="inline_goal">
+       <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.96" steps="98895"/></proof>
+       <transf name="split_goal_wp">
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.93" steps="97776"/></proof>
+        <transf name="introduce_premises">
+         <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1.1" expl="Function removeElement, default behavior">
+         <transf name="inline_goal">
+          <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.93" steps="98445"/></proof>
+          <transf name="inline_goal">
+           <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0"><result status="timeout" time="1.00"/></proof>
+           <proof prover="1"><result status="unknown" time="0.90" steps="97859"/></proof>
+           <transf name="inline_all">
+            <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="1"><result status="unknown" time="0.83" steps="99034"/></proof>
+            <transf name="eliminate_if">
+             <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+             <transf name="remove_triggers">
+              <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.1.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+              <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+              <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.86" steps="237246"/></proof>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.95" steps="98905"/></proof>
+        <transf name="introduce_premises">
+         <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2.1" expl="Function removeElement, default behavior">
+         <transf name="inline_goal">
+          <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.91" steps="98838"/></proof>
+          <transf name="inline_goal">
+           <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0"><result status="timeout" time="1.00"/></proof>
+           <proof prover="1"><result status="unknown" time="0.95" steps="101464"/></proof>
+           <transf name="inline_all">
+            <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2.1.1.1.1" expl="Function removeElement, default behavior">
+            <proof prover="0"><result status="timeout" time="1.00"/></proof>
+            <proof prover="1"><result status="unknown" time="0.90" steps="103785"/></proof>
+            <transf name="eliminate_if">
+             <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2.1.1.1.1.1" expl="Function removeElement, default behavior">
+             <transf name="remove_triggers">
+              <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.2.1.2.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+              <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+              <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.85" steps="237755"/></proof>
+              </goal>
+             </transf>
+             </goal>
+            </transf>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+      <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.3" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.95" steps="87542"/></proof>
+      <transf name="inline_goal">
+       <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.3.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.87" steps="84119"/></proof>
+       <transf name="inline_goal">
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.3.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.95" steps="84891"/></proof>
+        <transf name="inline_all">
+         <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.3.1.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.87" steps="105700"/></proof>
+         <transf name="eliminate_if">
+          <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.3.1.1.1.1" expl="Function removeElement, default behavior">
+          <transf name="remove_triggers">
+           <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.3.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+           <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.89" steps="170200"/></proof>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+      <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.4" expl="Function removeElement, default behavior">
+      <proof prover="1"><result status="valid" time="0.14" steps="28799"/></proof>
+      </goal>
+      <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.95" steps="98494"/></proof>
+      <transf name="introduce_premises">
+       <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5.1" expl="Function removeElement, default behavior">
+       <transf name="inline_goal">
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.92" steps="97706"/></proof>
+        <transf name="inline_goal">
+         <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5.1.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.93" steps="98785"/></proof>
+         <transf name="inline_all">
+          <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5.1.1.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.92" steps="109651"/></proof>
+          <transf name="eliminate_if">
+           <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <transf name="remove_triggers">
+            <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.5.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+            <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+            <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.82" steps="237968"/></proof>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+      <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6" expl="Function removeElement, default behavior">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.85" steps="78476"/></proof>
+      <transf name="inline_goal">
+       <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1" expl="Function removeElement, default behavior">
+       <proof prover="0"><result status="timeout" time="1.00"/></proof>
+       <proof prover="1"><result status="unknown" time="0.90" steps="82317"/></proof>
+       <transf name="split_goal_wp">
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.1" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.92" steps="81369"/></proof>
+        <transf name="inline_goal">
+         <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.1.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.88" steps="80792"/></proof>
+         <transf name="inline_all">
+          <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.1.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.90" steps="110462"/></proof>
+          <transf name="eliminate_if">
+           <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.1.1.1.1" expl="Function removeElement, default behavior">
+           <transf name="remove_triggers">
+            <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.1.1.1.1.1" expl="Function removeElement, default behavior">
+            <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+            <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.71" steps="443485"/></proof>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.2" expl="Function removeElement, default behavior">
+        <proof prover="0"><result status="timeout" time="1.00"/></proof>
+        <proof prover="1"><result status="unknown" time="0.91" steps="80809"/></proof>
+        <transf name="inline_goal">
+         <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.2.1" expl="Function removeElement, default behavior">
+         <proof prover="0"><result status="timeout" time="1.00"/></proof>
+         <proof prover="1"><result status="unknown" time="0.91" steps="83538"/></proof>
+         <transf name="inline_all">
+          <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.2.1.1" expl="Function removeElement, default behavior">
+          <proof prover="0"><result status="timeout" time="1.00"/></proof>
+          <proof prover="1"><result status="unknown" time="0.98" steps="116035"/></proof>
+          <transf name="eliminate_if">
+           <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.2.1.1.1" expl="Function removeElement, default behavior">
+           <transf name="remove_triggers">
+            <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.2.1.1.1.1" expl="Function removeElement, default behavior">
+            <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+            <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.83" steps="451730"/></proof>
+            </goal>
+           </transf>
+           </goal>
+          </transf>
+          </goal>
+         </transf>
+         </goal>
+        </transf>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.3" expl="Function removeElement, default behavior">
+        <proof prover="1"><result status="valid" time="0.16" steps="30661"/></proof>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.4" expl="Function removeElement, default behavior">
+        <proof prover="1"><result status="valid" time="0.15" steps="30683"/></proof>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.5" expl="Function removeElement, default behavior">
+        <proof prover="1"><result status="valid" time="0.21" steps="37150"/></proof>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.6" expl="Function removeElement, default behavior">
+        <proof prover="1"><result status="valid" time="0.22" steps="37149"/></proof>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.7" expl="Function removeElement, default behavior">
+        <proof prover="1"><result status="valid" time="0.06" steps="24887"/></proof>
+        </goal>
+        <goal name="WP_parameter removeElement_ensures_default.16.14.1.1.6.1.8" expl="Function removeElement, default behavior">
+        <proof prover="1"><result status="valid" time="0.08" steps="24887"/></proof>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.15" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.16" steps="31779"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.16" expl="Ensures clause">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="1"><result status="unknown" time="0.94" steps="96103"/></proof>
+   <transf name="introduce_premises">
+    <goal name="WP_parameter removeElement_ensures_default.16.16.1" expl="Ensures clause">
+    <transf name="inline_goal">
+     <goal name="WP_parameter removeElement_ensures_default.16.16.1.1" expl="Ensures clause">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="0.98" steps="89775"/></proof>
+     <transf name="inline_all">
+      <goal name="WP_parameter removeElement_ensures_default.16.16.1.1.1" expl="Ensures clause">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.92" steps="103917"/></proof>
+      <transf name="eliminate_if">
+       <goal name="WP_parameter removeElement_ensures_default.16.16.1.1.1.1" expl="Ensures clause">
+       <transf name="remove_triggers">
+        <goal name="WP_parameter removeElement_ensures_default.16.16.1.1.1.1.1" expl="Ensures clause">
+        <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+        <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.92" steps="449494"/></proof>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.17" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.15" steps="31574"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.18" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.08" steps="25231"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.19" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.16" steps="31574"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.20" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.08" steps="25231"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.21" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.13" steps="28403"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.22" expl="Ensures clause">
+   <proof prover="0"><result status="timeout" time="1.00"/></proof>
+   <proof prover="1"><result status="unknown" time="0.95" steps="99000"/></proof>
+   <transf name="introduce_premises">
+    <goal name="WP_parameter removeElement_ensures_default.16.22.1" expl="Ensures clause">
+    <transf name="inline_goal">
+     <goal name="WP_parameter removeElement_ensures_default.16.22.1.1" expl="Ensures clause">
+     <proof prover="0"><result status="timeout" time="1.00"/></proof>
+     <proof prover="1"><result status="unknown" time="0.95" steps="90002"/></proof>
+     <transf name="inline_all">
+      <goal name="WP_parameter removeElement_ensures_default.16.22.1.1.1" expl="Ensures clause">
+      <proof prover="0"><result status="timeout" time="1.00"/></proof>
+      <proof prover="1"><result status="unknown" time="0.91" steps="102244"/></proof>
+      <transf name="eliminate_if">
+       <goal name="WP_parameter removeElement_ensures_default.16.22.1.1.1.1" expl="Ensures clause">
+       <transf name="remove_triggers">
+        <goal name="WP_parameter removeElement_ensures_default.16.22.1.1.1.1.1" expl="Ensures clause">
+        <proof prover="0" timelimit="5" memlimit="4000"><result status="timeout" time="5.00"/></proof>
+        <proof prover="1" timelimit="5" memlimit="4000"><result status="unknown" time="4.85" steps="447436"/></proof>
+        </goal>
+       </transf>
+       </goal>
+      </transf>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.23" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.12" steps="28555"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.24" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.28" steps="43270"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.25" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.24" steps="43120"/></proof>
+   </goal>
+   <goal name="WP_parameter removeElement_ensures_default.16.26" expl="Ensures clause">
+   <proof prover="1"><result status="valid" time="0.08" steps="25216"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
  </goal>
 </theory>
-<theory name="Function_getElement_safety" sum="f9b35baddcb6a818bb9726777a53d163" expanded="true">
- <goal name="WP_parameter getElement" expl="Function getElement, safety" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_getElement_safety" sum="6cc7da8a400e04bdd7be69d3167777d9">
+ <goal name="WP_parameter getElement" expl="Function getElement, safety">
+ <proof prover="1"><result status="valid" time="0.16" steps="32321"/></proof>
  </goal>
 </theory>
-<theory name="Function_getElement_behaviors" sum="33ff323990a6ad58669489e96311da5f" expanded="true">
- <goal name="WP_parameter getElement_ensures_default" expl="Function getElement, default behavior" expanded="true">
- <proof prover="0"><undone/></proof>
+<theory name="Function_getElement_behaviors" sum="c93769a673823a36a105213f20e99955">
+ <goal name="WP_parameter getElement_ensures_default" expl="Function getElement, default behavior">
+ <proof prover="1"><result status="valid" time="0.46" steps="69702"/></proof>
  </goal>
 </theory>
 <theory name="Axiomatic_Padding" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -451,21 +1090,11 @@
 </theory>
 <theory name="Root___anonstruct_Value_6" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Logic_item_saved" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Logic_item_deleted" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Logic_items_saved" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Logic_items_deleted" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Axiomatic_ItemsCount" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Logic_key_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Logic_value_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Logic_item_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Logic_items_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Logic_map_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Exceptions" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -483,11 +1112,39 @@
 </theory>
 <theory name="Unsafe_uint64_of_Unsafe_int32" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Logic_is_map_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Root___anonstruct_Key_5" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Safe_int64_of_Safe_int32" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Unsafe_int64_of_Unsafe_int32" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_keys_unique" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_states_correct" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_map_correct" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Safe_int32_of_Safe_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Unsafe_int32_of_Unsafe_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_into_int_range" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_key_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_value_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Function_hash_safe" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Function_getCalculatedIndex_safe" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_item_exists" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_key_exists" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_is_pair_exists" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Function_hash" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -725,10 +1382,6 @@
 </theory>
 <theory name="Unsafe_bit_int32_of_Unsafe_bit_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Safe_int32_of_Safe_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Unsafe_int32_of_Unsafe_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
 <theory name="Safe_bit_int16_of_Safe_bit_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Unsafe_bit_int16_of_Unsafe_bit_int64" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -945,10 +1598,6 @@
 </theory>
 <theory name="Unsafe_bit_int64_of_Unsafe_bit_int32" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Safe_int64_of_Safe_int32" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Unsafe_int64_of_Unsafe_int32" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
 <theory name="Safe_bit_int64_of_Safe_bit_int16" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Unsafe_bit_int64_of_Unsafe_bit_int16" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -965,9 +1614,13 @@
 </theory>
 <theory name="Unsafe_int32_of_Unsafe_int16" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Logic_is_items_valid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Logic_range_existent" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Logic_full" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Logic_map_stability" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Function_initializeMap" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>

@@ -20,70 +20,96 @@ Typing lemma/axiom count_split
 Typing lemma/axiom count_saved
 Typing lemma/axiom count_existent
 occurrences table for axiom count_existent in axiomatic ItemsCount:
-  152: 
-  151: 
-  150: L ;
+  141: L ;
+  142: 
+  143: 
   
 occurrences table for axiom count_saved in axiomatic ItemsCount:
-  152: 
-  151: L1, L2 ;
-  150: 
+  141: 
+  142: L1, L2 ;
+  143: 
   
 occurrences table for axiom count_split in axiomatic ItemsCount:
-  152: 
-  151: 
-  150: L ;L ;L ;
+  141: L ;L ;L ;
+  142: 
+  143: 
   
 occurrences table for axiom count_one in axiomatic ItemsCount:
-  152: 
-  151: 
-  150: L ;
+  141: L ;
+  142: 
+  143: 
   
 occurrences table for axiom count_zero in axiomatic ItemsCount:
-  152: 
-  151: 
-  150: L ;
+  141: L ;
+  142: 
+  143: 
   
 Computation of call graph
 ***********************************
-Logic call graph: has 11 components
+Logic call graph: has 18 components
 ***********************************
 Component 0:
- key_valid calls: 
+ item_deleted calls: 
 
 Component 1:
- value_valid calls: 
+ items_deleted calls: item_deleted
 
 Component 2:
- item_valid calls: value_valid,
-key_valid
-
-Component 3:
- items_valid calls: item_valid
-
-Component 4:
- map_valid calls: items_valid
-
-Component 5:
- range_existent calls: 
-
-Component 6:
- full calls: range_existent
-
-Component 7:
- item_saved calls: 
-
-Component 8:
- items_saved calls: item_saved
-
-Component 9:
  count_saved_p calls: count, count
 
- count calls: count, count, count, count, count, count_saved_p, items_saved,
+ count calls: count, count, count, count, count, count_saved_p,
+items_deleted,
 count
 
-Component 10:
+Component 3:
  all_count calls: count
+
+Component 4:
+ into_int_range calls: 
+
+Component 5:
+ is_key_valid calls: into_int_range,
+into_int_range
+
+Component 6:
+ is_value_valid calls: 
+
+Component 7:
+ is_item_exists calls: is_value_valid,
+is_key_valid
+
+Component 8:
+ is_key_exists calls: is_item_exists
+
+Component 9:
+ is_items_valid calls: is_item_exists
+
+Component 10:
+ is_pair_exists calls: is_item_exists
+
+Component 11:
+ range_existent calls: 
+
+Component 12:
+ full calls: range_existent
+
+Component 13:
+ is_keys_unique calls: 
+
+Component 14:
+ is_states_correct calls: 
+
+Component 15:
+ is_map_valid calls: 
+
+Component 16:
+ is_map_correct calls: is_map_valid, all_count,
+is_states_correct,
+is_keys_unique
+
+Component 17:
+ map_stability calls: is_item_exists,
+is_item_exists
 
 ******************************
 Call graph: has 5 components
@@ -121,152 +147,38 @@ Computation of effects
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: fixpoint reached
-Effects for logic function key_valid:
+Effects for logic function item_deleted:
  alloc_table: 
  tag_table: 
- memories: (map_2 : mem-field "items") at (L),
-           (items_23 : mem-field "__anonstruct_Key_5_b") at (L),
-           (items_23 : mem-field "__anonstruct_Key_5_a") at (L)
+ memories: (map_15_16 : mem-field "items") at (L1, L2),
+           (items_45 : mem-field "existent") at (L1, L2),
+           (items_45 : mem-field "value_1") at (L1, L2),
+           (items_45 : mem-field "__anonstruct_Key_5_b") at (L1, L2),
+           (items_45 : mem-field "__anonstruct_Key_5_a") at (L1, L2),
+           (items_45 : mem-field "d") at (L1, L2),
+           (items_45 : mem-field "c") at (L1, L2)
  raw memories: 
  precise memories: 
  globals: 
- locals: index at (Here), map at (Here)
+ locals: index_6 at (Here), map_15 at (Here)
 
 Effects: doing one iteration
 Effects: doing one iteration
 Effects: fixpoint reached
-Effects for logic function value_valid:
+Effects for logic function items_deleted:
  alloc_table: 
  tag_table: 
- memories: (map_0_3 : mem-field "items") at (L),
-           (items_24 : mem-field "value_2") at (L),
-           (items_24 : mem-field "d") at (L),
-           (items_24 : mem-field "c") at (L)
+ memories: (map_16_17 : mem-field "items") at (L1, L2),
+           (items_57 : mem-field "existent") at (L1, L2),
+           (items_57 : mem-field "value_1") at (L1, L2),
+           (items_57 : mem-field "__anonstruct_Key_5_b") at (L1, L2),
+           (items_57 : mem-field "__anonstruct_Key_5_a") at (L1, L2),
+           (items_57 : mem-field "d") at (L1, L2),
+           (items_57 : mem-field "c") at (L1, L2)
  raw memories: 
  precise memories: 
  globals: 
- locals: index_0 at (Here), map_0 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function item_valid:
- alloc_table: 
- tag_table: 
- memories: (map_1_4 : mem-field "items") at (L),
-           (items_25 : mem-field "existent") at (L),
-           (items_25 : mem-field "value_2") at (L),
-           (items_25 : mem-field "__anonstruct_Key_5_b") at (L),
-           (items_25 : mem-field "__anonstruct_Key_5_a") at (L),
-           (items_25 : mem-field "d") at (L),
-           (items_25 : mem-field "c") at (L)
- raw memories: 
- precise memories: 
- globals: 
- locals: index_1 at (Here), map_1 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function items_valid:
- alloc_table: 
- tag_table: 
- memories: (map_2_5 : mem-field "count") at (L),
-           (map_2_5 : mem-field "items") at (L),
-           (items_50 : mem-field "existent") at (L),
-           (items_50 : mem-field "value_2") at (L),
-           (items_50 : mem-field "__anonstruct_Key_5_b") at (L),
-           (items_50 : mem-field "__anonstruct_Key_5_a") at (L),
-           (items_50 : mem-field "d") at (L),
-           (items_50 : mem-field "c") at (L)
- raw memories: 
- precise memories: 
- globals: 
- locals: map_2 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function map_valid:
- alloc_table: (items_26 : alloc-root "voidP") at (L),
-              (items_26 : alloc-root "__anonstruct_Value_6") at (L)
- tag_table: 
- memories: (map_3_6 : mem-field "count") at (L),
-           (map_3_6 : mem-field "capacity") at (L),
-           (map_3_6 : mem-field "items") at (L),
-           (items_26 : mem-field "existent") at (L),
-           (items_26 : mem-field "value_2") at (L),
-           (items_26 : mem-field "__anonstruct_Key_5_b") at (L),
-           (items_26 : mem-field "__anonstruct_Key_5_a") at (L),
-           (items_26 : mem-field "d") at (L),
-           (items_26 : mem-field "c") at (L)
- raw memories: 
- precise memories: 
- globals: 
- locals: map_3 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function range_existent:
- alloc_table: 
- tag_table: 
- memories: (map_5_8 : mem-field "items") at (L),
-           (items_27 : mem-field "existent") at (L)
- raw memories: 
- precise memories: 
- globals: 
- locals: n_1 at (Here), m at (Here), map_5 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function full:
- alloc_table: 
- tag_table: 
- memories: (map_4_7 : mem-field "count") at (L),
-           (map_4_7 : mem-field "items") at (L),
-           (items_58 : mem-field "existent") at (L)
- raw memories: 
- precise memories: 
- globals: 
- locals: map_4 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function item_saved:
- alloc_table: 
- tag_table: 
- memories: (map_6_9 : mem-field "items") at (L1, L2),
-           (items_28 : mem-field "existent") at (L1, L2),
-           (items_28 : mem-field "value_2") at (L1, L2),
-           (items_28 : mem-field "__anonstruct_Key_5_b") at (L1, L2),
-           (items_28 : mem-field "__anonstruct_Key_5_a") at (L1, L2),
-           (items_28 : mem-field "d") at (L1, L2),
-           (items_28 : mem-field "c") at (L1, L2)
- raw memories: 
- precise memories: 
- globals: 
- locals: k_2 at (Here), map_6 at (Here)
-
-Effects: doing one iteration
-Effects: doing one iteration
-Effects: fixpoint reached
-Effects for logic function items_saved:
- alloc_table: 
- tag_table: 
- memories: (map_7_10 : mem-field "items") at (L1, L2),
-           (items_62 : mem-field "existent") at (L1, L2),
-           (items_62 : mem-field "value_2") at (L1, L2),
-           (items_62 : mem-field "__anonstruct_Key_5_b") at (L1, L2),
-           (items_62 : mem-field "__anonstruct_Key_5_a") at (L1, L2),
-           (items_62 : mem-field "d") at (L1, L2),
-           (items_62 : mem-field "c") at (L1, L2)
- raw memories: 
- precise memories: 
- globals: 
- locals: n_2 at (Here), m_0 at (Here), map_7 at (Here)
+ locals: end_6 at (Here), begin_5 at (Here), map_16 at (Here)
 
 Effects: doing one iteration
 Effects: doing one iteration
@@ -276,26 +188,26 @@ Effects: fixpoint reached
 Effects for logic function count_saved_p:
  alloc_table: 
  tag_table: 
- memories: (map_8_11 : mem-field "items") at (L1, L2),
-           (items_31 : mem-field "existent") at (L1, L2),
-           (items_31 : mem-field "value_2") at (),
-           (items_31 : mem-field "__anonstruct_Key_5_b") at (),
-           (items_31 : mem-field "__anonstruct_Key_5_a") at (),
-           (items_31 : mem-field "d") at (), (items_31 : mem-field "c") at ()
+ memories: (map_2 : mem-field "items") at (L1, L2),
+           (items_34 : mem-field "existent") at (L1, L2),
+           (items_34 : mem-field "value_1") at (),
+           (items_34 : mem-field "__anonstruct_Key_5_b") at (),
+           (items_34 : mem-field "__anonstruct_Key_5_a") at (),
+           (items_34 : mem-field "d") at (), (items_34 : mem-field "c") at ()
  raw memories: 
  precise memories: 
  globals: 
- locals: end_3 at (Here), begin_2 at (Here), map_12 at (Here)
+ locals: end_3 at (Here), begin_2 at (Here), map_3 at (Here)
 
 Effects for logic function count:
  alloc_table: 
  tag_table: 
- memories: (map_8_11 : mem-field "items") at (L),
-           (items_31 : mem-field "existent") at (L),
-           (items_31 : mem-field "value_2") at (),
-           (items_31 : mem-field "__anonstruct_Key_5_b") at (),
-           (items_31 : mem-field "__anonstruct_Key_5_a") at (),
-           (items_31 : mem-field "d") at (), (items_31 : mem-field "c") at ()
+ memories: (map_2 : mem-field "items") at (L),
+           (items_34 : mem-field "existent") at (L),
+           (items_34 : mem-field "value_1") at (),
+           (items_34 : mem-field "__anonstruct_Key_5_b") at (),
+           (items_34 : mem-field "__anonstruct_Key_5_a") at (),
+           (items_34 : mem-field "d") at (), (items_34 : mem-field "c") at ()
  raw memories: 
  precise memories: 
  globals: 
@@ -307,17 +219,250 @@ Effects: fixpoint reached
 Effects for logic function all_count:
  alloc_table: 
  tag_table: 
- memories: (map_15_13 : mem-field "capacity") at (L),
-           (map_15_13 : mem-field "items") at (L),
-           (items_88 : mem-field "existent") at (L),
-           (items_88 : mem-field "value_2") at (),
-           (items_88 : mem-field "__anonstruct_Key_5_b") at (),
-           (items_88 : mem-field "__anonstruct_Key_5_a") at (),
-           (items_88 : mem-field "d") at (), (items_88 : mem-field "c") at ()
+ memories: (map_6_4 : mem-field "capacity") at (L),
+           (map_6_4 : mem-field "items") at (L),
+           (items_83 : mem-field "existent") at (L),
+           (items_83 : mem-field "value_1") at (),
+           (items_83 : mem-field "__anonstruct_Key_5_b") at (),
+           (items_83 : mem-field "__anonstruct_Key_5_a") at (),
+           (items_83 : mem-field "d") at (), (items_83 : mem-field "c") at ()
  raw memories: 
  precise memories: 
  globals: 
- locals: map_15 at (Here)
+ locals: map_6 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function into_int_range:
+ alloc_table: 
+ tag_table: 
+ memories: 
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: value at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_key_valid:
+ alloc_table: 
+ tag_table: 
+ memories: (map_7_5 : mem-field "items") at (L),
+           (items_39 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_39 : mem-field "__anonstruct_Key_5_a") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: index_1 at (Here), map_7 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_value_valid:
+ alloc_table: 
+ tag_table: 
+ memories: (map_8_6 : mem-field "items") at (L),
+           (items_40 : mem-field "value_1") at (L),
+           (items_40 : mem-field "d") at (L),
+           (items_40 : mem-field "c") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: index_2 at (Here), map_8 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_item_exists:
+ alloc_table: 
+ tag_table: 
+ memories: (map_10_9 : mem-field "items") at (L),
+           (items_42 : mem-field "existent") at (L),
+           (items_42 : mem-field "value_1") at (L),
+           (items_42 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_42 : mem-field "__anonstruct_Key_5_a") at (L),
+           (items_42 : mem-field "d") at (L),
+           (items_42 : mem-field "c") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: index_4 at (Here), map_10 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_key_exists:
+ alloc_table: 
+ tag_table: 
+ memories: (map_9_7 : mem-field "capacity") at (L),
+           (map_9_7 : mem-field "items") at (L),
+           (items_41 : mem-field "existent") at (L),
+           (items_41 : mem-field "value_1") at (L),
+           (items_41 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_41 : mem-field "__anonstruct_Key_5_a") at (L),
+           (items_41 : mem-field "d") at (L),
+           (items_41 : mem-field "c") at (L), (key_8 : mem-field "b") at (L),
+           (key_8 : mem-field "a") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: key at (Here), map_9 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_items_valid:
+ alloc_table: 
+ tag_table: 
+ memories: (map_11_10 : mem-field "count") at (L),
+           (map_11_10 : mem-field "items") at (L),
+           (items_99 : mem-field "existent") at (L),
+           (items_99 : mem-field "value_1") at (L),
+           (items_99 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_99 : mem-field "__anonstruct_Key_5_a") at (L),
+           (items_99 : mem-field "d") at (L),
+           (items_99 : mem-field "c") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_11 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_pair_exists:
+ alloc_table: 
+ tag_table: 
+ memories: (map_12_11 : mem-field "capacity") at (L),
+           (map_12_11 : mem-field "items") at (L),
+           (items_43 : mem-field "existent") at (L),
+           (items_43 : mem-field "value_1") at (L),
+           (items_43 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_43 : mem-field "__anonstruct_Key_5_a") at (L),
+           (items_43 : mem-field "d") at (L),
+           (value_0_13 : mem-field "d") at (L),
+           (items_43 : mem-field "c") at (L),
+           (value_0_13 : mem-field "c") at (L),
+           (key_0_12 : mem-field "b") at (L),
+           (key_0_12 : mem-field "a") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: value_0 at (Here), key_0 at (Here), map_12 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function range_existent:
+ alloc_table: 
+ tag_table: 
+ memories: (map_14_15 : mem-field "items") at (L),
+           (items_44 : mem-field "existent") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: n_1 at (Here), m at (Here), map_14 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function full:
+ alloc_table: 
+ tag_table: 
+ memories: (map_13_14 : mem-field "count") at (L),
+           (map_13_14 : mem-field "items") at (L),
+           (items_107 : mem-field "existent") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_13 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_keys_unique:
+ alloc_table: 
+ tag_table: 
+ memories: (map_17_18 : mem-field "capacity") at (L),
+           (map_17_18 : mem-field "items") at (L),
+           (items_46 : mem-field "existent") at (L),
+           (items_46 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_46 : mem-field "__anonstruct_Key_5_a") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_17 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_states_correct:
+ alloc_table: 
+ tag_table: 
+ memories: (map_18_19 : mem-field "capacity") at (L),
+           (map_18_19 : mem-field "items") at (L),
+           (items_47 : mem-field "existent") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_18 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_map_valid:
+ alloc_table: (items_48 : alloc-root "voidP") at (L),
+              (items_48 : alloc-root "__anonstruct_Value_6") at (L)
+ tag_table: 
+ memories: (map_19_20 : mem-field "count") at (L),
+           (map_19_20 : mem-field "capacity") at (L),
+           (map_19_20 : mem-field "items") at (L),
+           (items_48 : mem-field "value_1") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_19 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function is_map_correct:
+ alloc_table: (items_49 : alloc-root "voidP") at (L),
+              (items_49 : alloc-root "__anonstruct_Value_6") at (L)
+ tag_table: 
+ memories: (map_20_21 : mem-field "count") at (L),
+           (map_20_21 : mem-field "capacity") at (L),
+           (map_20_21 : mem-field "items") at (L),
+           (items_49 : mem-field "existent") at (L),
+           (items_49 : mem-field "value_1") at (L),
+           (items_49 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_49 : mem-field "__anonstruct_Key_5_a") at (L),
+           (items_49 : mem-field "d") at (), (items_49 : mem-field "c") at ()
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_20 at (Here)
+
+Effects: doing one iteration
+Effects: doing one iteration
+Effects: fixpoint reached
+Effects for logic function map_stability:
+ alloc_table: 
+ tag_table: 
+ memories: (map_21_22 : mem-field "capacity") at (L),
+           (map_21_22 : mem-field "items") at (L),
+           (items_50 : mem-field "existent") at (L),
+           (items_50 : mem-field "value_1") at (L),
+           (items_50 : mem-field "__anonstruct_Key_5_b") at (L),
+           (items_50 : mem-field "__anonstruct_Key_5_a") at (L),
+           (items_50 : mem-field "d") at (L),
+           (items_50 : mem-field "c") at (L)
+ raw memories: 
+ precise memories: 
+ globals: 
+ locals: map_21 at (Here)
 
 Effects: doing one iteration...
 all_memories(tag __anonstruct_Item_7):
@@ -349,41 +494,38 @@ all_tags(tag __anonstruct_Item_7):
   Found 2 tags.
 Effects: fixpoint reached
 Effects for function initializeMap:
- reads:  alloc_table: (items_36 : alloc-root "voidP") at (Here),
-                      (items_36 : alloc-root "__anonstruct_Value_6") at (Here),
-                      (map_3_14 : alloc-root "__anonstruct_Map_8") at (Here)
-         tag_table: (items_36 : voidP) at (Here)
-         memories: (map_3_14 : mem-field "count") at (Here),
-                   (map_3_14 : mem-field "capacity") at (Here),
-                   (map_3_14 : mem-field "items") at (Here),
-                   (items_36 : mem-field "existent") at (Here),
-                   (items_36 : mem-field "value_2") at (Here),
-                   (items_36 : mem-field "__anonstruct_Key_5_b") at (Here),
-                   (items_36 : mem-field "__anonstruct_Key_5_a") at (Here),
-                   (items_36 : mem-field "d") at (Here),
-                   (items_36 : mem-field "c") at (Here)
-         raw memories: (map_3_14 : mem-field "count") at (Here),
-                       (map_3_14 : mem-field "capacity") at (Here),
-                       (map_3_14 : mem-field "items") at (Here),
-                       (items_36 : mem-field "existent") at (Here),
-                       (items_36 : mem-field "value_2") at (Here)
+ reads:  alloc_table: (items_51 : alloc-root "voidP") at (Here),
+                      (items_51 : alloc-root "__anonstruct_Value_6") at (Here),
+                      (map_1_23 : alloc-root "__anonstruct_Map_8") at (Here)
+         tag_table: (items_51 : voidP) at (Here)
+         memories: (map_1_23 : mem-field "count") at (Here),
+                   (map_1_23 : mem-field "capacity") at (Here),
+                   (map_1_23 : mem-field "items") at (Here),
+                   (items_51 : mem-field "existent") at (Here),
+                   (items_51 : mem-field "value_1") at (Here)
+         raw memories: (map_1_23 : mem-field "count") at (Here),
+                       (map_1_23 : mem-field "capacity") at (Here),
+                       (map_1_23 : mem-field "items") at (Here),
+                       (items_51 : mem-field "existent") at (Here),
+                       (items_51 : mem-field "value_1") at (Here)
          precise memories: 
          globals: 
          locals: __retres at (Here), i at (Here), \result at (Here),
-                 size at (Here), map_3 at (Here)
+                 size at (Here), map_1 at (Here)
 
- writes:  alloc_table: (items_36 : alloc-root "voidP") at (Here),
-                       (items_36 : alloc-root "__anonstruct_Value_6") at (Here)
-          tag_table: (items_36 : voidP) at (Here),
-                     (items_36 : __anonstruct_Value_6) at (Here)
-          memories: (map_3_14 : mem-field "count") at (Here),
-                    (map_3_14 : mem-field "capacity") at (Here),
-                    (map_3_14 : mem-field "items") at (Here),
-                    (items_36 : mem-field "existent") at (Here)
-          raw memories: (map_3_14 : mem-field "count") at (Here),
-                        (map_3_14 : mem-field "capacity") at (Here),
-                        (map_3_14 : mem-field "items") at (Here),
-                        (items_36 : mem-field "existent") at (Here)
+ writes:  alloc_table: (items_51 : alloc-root "voidP") at (Here),
+                       (items_51 : alloc-root "__anonstruct_Value_6") at (Here),
+                       (map_1_23 : alloc-root "__anonstruct_Map_8") at (Here)
+          tag_table: (items_51 : voidP) at (Here),
+                     (items_51 : __anonstruct_Value_6) at (Here)
+          memories: (map_1_23 : mem-field "count") at (Here),
+                    (map_1_23 : mem-field "capacity") at (Here),
+                    (map_1_23 : mem-field "items") at (Here),
+                    (items_51 : mem-field "existent") at (Here)
+          raw memories: (map_1_23 : mem-field "count") at (Here),
+                        (map_1_23 : mem-field "capacity") at (Here),
+                        (map_1_23 : mem-field "items") at (Here),
+                        (items_51 : mem-field "existent") at (Here)
           precise memories: 
           globals: 
           locals: __retres at (Here), i at (Here)
@@ -395,15 +537,16 @@ Effects: doing one iteration...
 Effects: doing one iteration...
 Effects: fixpoint reached
 Effects for function hash:
- reads:  alloc_table: (key_1_15 : alloc-root "__anonstruct_Key_5") at (Here)
+ reads:  alloc_table: (key_0_24 : alloc-root "__anonstruct_Key_5") at (Here)
          tag_table: 
-         memories: (key_1_15 : mem-field "b") at (Here),
-                   (key_1_15 : mem-field "a") at (Here)
-         raw memories: (key_1_15 : mem-field "b") at (Here),
-                       (key_1_15 : mem-field "a") at (Here)
+         memories: (key_0_24 : mem-field "b") at (Here),
+                   (key_0_24 : mem-field "a") at (Here)
+         raw memories: (key_0_24 : mem-field "b") at (Here),
+                       (key_0_24 : mem-field "a") at (Here)
          precise memories: 
          globals: 
-         locals: tmp at (Here), result at (Here), key_1 at (Here)
+         locals: tmp at (Here), result at (Here), \result at (Here),
+                 key_0 at (Here)
 
  writes:  alloc_table: 
           tag_table: 
@@ -420,24 +563,24 @@ Effects: doing one iteration...
 Effects: doing one iteration...
 Effects: fixpoint reached
 Effects for function getCalculatedIndex:
- reads:  alloc_table: (items_112 : alloc-root "voidP") at (Here),
-                      (items_112 : alloc-root "__anonstruct_Value_6") at (Here),
-                      (map_1_16 : alloc-root "__anonstruct_Map_8") at (Here)
+ reads:  alloc_table: (items_159 : alloc-root "voidP") at (Here),
+                      (items_159 : alloc-root "__anonstruct_Value_6") at (Here),
+                      (map_25 : alloc-root "__anonstruct_Map_8") at (Here)
          tag_table: 
-         memories: (map_1_16 : mem-field "count") at (Here),
-                   (map_1_16 : mem-field "capacity") at (Here),
-                   (map_1_16 : mem-field "items") at (Here),
-                   (items_112 : mem-field "existent") at (Here),
-                   (items_112 : mem-field "value_2") at (Here),
-                   (items_112 : mem-field "__anonstruct_Key_5_b") at (Here),
-                   (items_112 : mem-field "__anonstruct_Key_5_a") at (Here),
-                   (items_112 : mem-field "d") at (Here),
-                   (items_112 : mem-field "c") at (Here)
-         raw memories: (map_1_16 : mem-field "capacity") at (Here)
+         memories: (map_25 : mem-field "count") at (Here),
+                   (map_25 : mem-field "capacity") at (Here),
+                   (map_25 : mem-field "items") at (Here),
+                   (items_159 : mem-field "existent") at (Here),
+                   (items_159 : mem-field "value_1") at (Here),
+                   (items_159 : mem-field "__anonstruct_Key_5_b") at (Here),
+                   (items_159 : mem-field "__anonstruct_Key_5_a") at (Here),
+                   (items_159 : mem-field "d") at (),
+                   (items_159 : mem-field "c") at ()
+         raw memories: (map_25 : mem-field "capacity") at (Here)
          precise memories: 
          globals: 
-         locals: __retres_0 at (Here), index at (Here), hashValue at (Here),
-                 map_1 at (Here)
+         locals: __retres_0 at (Here), \result at (Here), index at (Here),
+                 hashValue at (Here), map at (Here)
 
  writes:  alloc_table: 
           tag_table: 
@@ -454,54 +597,68 @@ Effects: doing one iteration...
 Effects: doing one iteration...
 Effects: fixpoint reached
 Effects for function removeElement:
- reads:  alloc_table: (items_39 : alloc-root "voidP") at (Here),
-                      (items_39 : alloc-root "__anonstruct_Value_6") at (Here),
-                      (value_1_19 : alloc-root "__anonstruct_Value_6") at (Here),
-                      (map_4_17 : alloc-root "__anonstruct_Map_8") at (Here),
-                      (key_2_18 : alloc-root "__anonstruct_Key_5") at (Here)
-         tag_table: (items_39 : voidP) at (Here)
-         memories: (map_4_17 : mem-field "count") at (Here, Old),
-                   (map_4_17 : mem-field "capacity") at (Here, Old),
-                   (map_4_17 : mem-field "items") at (Here, Old),
-                   (items_39 : mem-field "existent") at (Here, Old),
-                   (items_39 : mem-field "value_2") at (Here, Old),
-                   (items_39 : mem-field "__anonstruct_Key_5_b") at (Here),
-                   (items_39 : mem-field "__anonstruct_Key_5_a") at (Here),
-                   (items_39 : mem-field "d") at (Here, Old),
-                   (value_1_19 : mem-field "d") at (Here),
-                   (items_39 : mem-field "c") at (Here, Old),
-                   (value_1_19 : mem-field "c") at (Here),
-                   (key_2_18 : mem-field "b") at (Here),
-                   (key_2_18 : mem-field "a") at (Here)
-         raw memories: (map_4_17 : mem-field "count") at (Here, Old),
-                       (map_4_17 : mem-field "capacity") at (Here, Old),
-                       (map_4_17 : mem-field "items") at (Here, Old),
-                       (items_39 : mem-field "existent") at (Here, Old),
-                       (items_39 : mem-field "value_2") at (Here, Old),
-                       (items_39 : mem-field "__anonstruct_Key_5_b") at (Here),
-                       (items_39 : mem-field "__anonstruct_Key_5_a") at (Here),
-                       (items_39 : mem-field "d") at (Here, Old),
-                       (value_1_19 : mem-field "d") at (Here),
-                       (items_39 : mem-field "c") at (Here, Old),
-                       (value_1_19 : mem-field "c") at (Here),
-                       (key_2_18 : mem-field "b") at (Here),
-                       (key_2_18 : mem-field "a") at (Here)
+ reads:  alloc_table: (items_54 : alloc-root "voidP") at (Here, Old),
+                      (items_54 : alloc-root "__anonstruct_Value_6") at (Here,
+                      Old),
+                      (value_0_28 : alloc-root "__anonstruct_Value_6") at (Here,
+                      Old),
+                      (map_2_26 : alloc-root "__anonstruct_Map_8") at (Here,
+                      Old),
+                      (key_1_27 : alloc-root "__anonstruct_Key_5") at (Here)
+         tag_table: (items_54 : voidP) at (Here)
+         memories: (map_2_26 : mem-field "count") at (Here, Old),
+                   (map_2_26 : mem-field "capacity") at (Here, Pre, Old),
+                   (map_2_26 : mem-field "items") at (Here, Pre, Old),
+                   (items_54 : mem-field "existent") at (Here, Pre, Old),
+                   (items_54 : mem-field "value_1") at (Here, Old),
+                   (items_54 : mem-field "__anonstruct_Key_5_b") at (Here,
+                   Old),
+                   (items_54 : mem-field "__anonstruct_Key_5_a") at (Here,
+                   Old), (items_54 : mem-field "d") at (Here, Old),
+                   (value_0_28 : mem-field "d") at (Here),
+                   (items_54 : mem-field "c") at (Here, Old),
+                   (value_0_28 : mem-field "c") at (Here),
+                   (key_1_27 : mem-field "b") at (Here, Old),
+                   (key_1_27 : mem-field "a") at (Here, Old)
+         raw memories: (map_2_26 : mem-field "count") at (Here, Old),
+                       (map_2_26 : mem-field "capacity") at (Here, Old),
+                       (map_2_26 : mem-field "items") at (Here, Old),
+                       (items_54 : mem-field "existent") at (Here),
+                       (items_54 : mem-field "value_1") at (Here, Old),
+                       (items_54 : mem-field "__anonstruct_Key_5_b") at (Here),
+                       (items_54 : mem-field "__anonstruct_Key_5_a") at (Here),
+                       (items_54 : mem-field "d") at (Here, Old),
+                       (value_0_28 : mem-field "d") at (Here),
+                       (items_54 : mem-field "c") at (Here, Old),
+                       (value_0_28 : mem-field "c") at (Here),
+                       (key_1_27 : mem-field "b") at (Here, Old),
+                       (key_1_27 : mem-field "a") at (Here, Old)
          precise memories: 
          globals: 
          locals: __retres_1 at (Here), calcIndex at (Here),
                  index_0 at (Here), hashValue_0 at (Here), \result at (Here),
-                 value_1 at (Here), key_2 at (Here), map_4 at (Here)
+                 value_0 at (Here), key_1 at (Here), map_2 at (Here)
 
  writes:  alloc_table: 
           tag_table: 
-          memories: (map_4_17 : mem-field "count") at (Here),
-                    (items_39 : mem-field "existent") at (Here),
-                    (value_1_19 : mem-field "d") at (Here),
-                    (value_1_19 : mem-field "c") at (Here)
-          raw memories: (map_4_17 : mem-field "count") at (Here),
-                        (items_39 : mem-field "existent") at (Here),
-                        (value_1_19 : mem-field "d") at (Here),
-                        (value_1_19 : mem-field "c") at (Here)
+          memories: (map_2_26 : mem-field "count") at (Here, Old),
+                    (map_2_26 : mem-field "items") at (Old),
+                    (items_54 : mem-field "existent") at (Here, Old),
+                    (items_54 : mem-field "__anonstruct_Key_5_b") at (Old),
+                    (items_54 : mem-field "__anonstruct_Key_5_a") at (Old),
+                    (items_54 : mem-field "d") at (Old),
+                    (value_0_28 : mem-field "d") at (Here, Old),
+                    (items_54 : mem-field "c") at (Old),
+                    (value_0_28 : mem-field "c") at (Here, Old)
+          raw memories: (map_2_26 : mem-field "count") at (Here, Old),
+                        (map_2_26 : mem-field "items") at (Old),
+                        (items_54 : mem-field "existent") at (Here, Old),
+                        (items_54 : mem-field "__anonstruct_Key_5_b") at (Old),
+                        (items_54 : mem-field "__anonstruct_Key_5_a") at (Old),
+                        (items_54 : mem-field "d") at (Old),
+                        (value_0_28 : mem-field "d") at (Here, Old),
+                        (items_54 : mem-field "c") at (Old),
+                        (value_0_28 : mem-field "c") at (Here, Old)
           precise memories: 
           globals: 
           locals: __retres_1 at (Here), calcIndex at (Here),
@@ -514,52 +671,51 @@ Effects: doing one iteration...
 Effects: doing one iteration...
 Effects: fixpoint reached
 Effects for function getElement:
- reads:  alloc_table: (items_41 : alloc-root "voidP") at (Here),
-                      (items_41 : alloc-root "__anonstruct_Value_6") at (Here),
-                      (value_0_22 : alloc-root "__anonstruct_Value_6") at (Here),
-                      (map_2_20 : alloc-root "__anonstruct_Map_8") at (Here),
-                      (key_0_21 : alloc-root "__anonstruct_Key_5") at (Here)
-         tag_table: (items_41 : voidP) at (Here)
-         memories: (map_2_20 : mem-field "count") at (Here, Old),
-                   (map_2_20 : mem-field "capacity") at (Here, Old),
-                   (map_2_20 : mem-field "items") at (Here, Old),
-                   (items_41 : mem-field "existent") at (Here, Old),
-                   (items_41 : mem-field "value_2") at (Here, Old),
-                   (items_41 : mem-field "__anonstruct_Key_5_b") at (Here,
+ reads:  alloc_table: (items_56 : alloc-root "voidP") at (Here),
+                      (items_56 : alloc-root "__anonstruct_Value_6") at (Here),
+                      (value_31 : alloc-root "__anonstruct_Value_6") at (Here,
+                      Old),
+                      (map_0_29 : alloc-root "__anonstruct_Map_8") at (Here),
+                      (key_30 : alloc-root "__anonstruct_Key_5") at (Here)
+         tag_table: (items_56 : voidP) at (Here)
+         memories: (map_0_29 : mem-field "count") at (Here, Old),
+                   (map_0_29 : mem-field "capacity") at (Here, Old),
+                   (map_0_29 : mem-field "items") at (Here, Old),
+                   (items_56 : mem-field "existent") at (Here, Old),
+                   (items_56 : mem-field "value_1") at (Here, Old),
+                   (items_56 : mem-field "__anonstruct_Key_5_b") at (Here,
                    Old),
-                   (items_41 : mem-field "__anonstruct_Key_5_a") at (Here,
-                   Old), (items_41 : mem-field "d") at (Here, Old),
-                   (value_0_22 : mem-field "d") at (Here),
-                   (items_41 : mem-field "c") at (Here, Old),
-                   (value_0_22 : mem-field "c") at (Here),
-                   (key_0_21 : mem-field "b") at (Here),
-                   (key_0_21 : mem-field "a") at (Here)
-         raw memories: (map_2_20 : mem-field "count") at (Here, Old),
-                       (map_2_20 : mem-field "capacity") at (Here, Old),
-                       (map_2_20 : mem-field "items") at (Here, Old),
-                       (items_41 : mem-field "existent") at (Here, Old),
-                       (items_41 : mem-field "value_2") at (Here, Old),
-                       (items_41 : mem-field "__anonstruct_Key_5_b") at (Here,
+                   (items_56 : mem-field "__anonstruct_Key_5_a") at (Here,
+                   Old), (items_56 : mem-field "d") at (Here, Old),
+                   (value_31 : mem-field "d") at (Here),
+                   (items_56 : mem-field "c") at (Here, Old),
+                   (value_31 : mem-field "c") at (Here),
+                   (key_30 : mem-field "b") at (Here),
+                   (key_30 : mem-field "a") at (Here)
+         raw memories: (map_0_29 : mem-field "count") at (Here, Old),
+                       (map_0_29 : mem-field "capacity") at (Here, Old),
+                       (map_0_29 : mem-field "items") at (Here, Old),
+                       (items_56 : mem-field "existent") at (Here, Old),
+                       (items_56 : mem-field "value_1") at (Here, Old),
+                       (items_56 : mem-field "__anonstruct_Key_5_b") at (Here,
                        Old),
-                       (items_41 : mem-field "__anonstruct_Key_5_a") at (Here,
-                       Old), (items_41 : mem-field "d") at (Here, Old),
-                       (value_0_22 : mem-field "d") at (Here),
-                       (items_41 : mem-field "c") at (Here, Old),
-                       (value_0_22 : mem-field "c") at (Here),
-                       (key_0_21 : mem-field "b") at (Here),
-                       (key_0_21 : mem-field "a") at (Here)
+                       (items_56 : mem-field "__anonstruct_Key_5_a") at (Here,
+                       Old), (items_56 : mem-field "d") at (Here, Old),
+                       (items_56 : mem-field "c") at (Here, Old),
+                       (key_30 : mem-field "b") at (Here),
+                       (key_30 : mem-field "a") at (Here)
          precise memories: 
          globals: 
          locals: __retres_2 at (Here), calcIndex_0 at (Here),
                  index_1 at (Here), hashValue_1 at (Here), \result at (Here),
-                 value_0 at (Here), key_0 at (Here), map_2 at (Here)
+                 value at (Here), key at (Here), map_0 at (Here)
 
  writes:  alloc_table: 
           tag_table: 
-          memories: (value_0_22 : mem-field "d") at (Here),
-                    (value_0_22 : mem-field "c") at (Here)
-          raw memories: (value_0_22 : mem-field "d") at (Here),
-                        (value_0_22 : mem-field "c") at (Here)
+          memories: (value_31 : mem-field "d") at (Here, Old),
+                    (value_31 : mem-field "c") at (Here, Old)
+          raw memories: (value_31 : mem-field "d") at (Here, Old),
+                        (value_31 : mem-field "c") at (Here, Old)
           precise memories: 
           globals: 
           locals: __retres_2 at (Here), calcIndex_0 at (Here),
@@ -1870,18 +2026,25 @@ Translate exceptions
 Translate enumerated types
 Translate dummies
 Translate standalone logic functions
-Logic function key_valid
-Logic function value_valid
-Logic function item_valid
-Logic function items_valid
-Logic function map_valid
-Logic function full
-Logic function range_existent
-Logic function item_saved
-Logic function items_saved
 Logic function count
 Logic function count_saved_p
 Logic function all_count
+Logic function into_int_range
+Logic function is_key_valid
+Logic function is_value_valid
+Logic function is_key_exists
+Logic function is_item_exists
+Logic function is_items_valid
+Logic function is_pair_exists
+Logic function full
+Logic function range_existent
+Logic function item_deleted
+Logic function items_deleted
+Logic function is_keys_unique
+Logic function is_states_correct
+Logic function is_map_valid
+Logic function is_map_correct
+Logic function map_stability
 Translate axiomatic declarations
 Axiomatic ItemsCount
 Axiomatic Padding
